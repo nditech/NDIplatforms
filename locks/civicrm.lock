@@ -8,6 +8,11 @@ projects[drupal][version] = "7.39"
 projects[drupal][type] = "core"
 
 ; Modules
+projects[civicrm][subdir] = "contrib"
+projects[civicrm][type] = "module"
+projects[civicrm][download][type] = "get"
+projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.7/civicrm-4.6.7-drupal.tar.gz"
+
 projects[webform_civicrm][subdir] = "contrib"
 projects[webform_civicrm][version] = "4.12"
 
@@ -22,11 +27,4 @@ projects[ctools][version] = "1.9"
 
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
-
-; Libraries
-libraries[civicrm][destination] = "modules"
-libraries[civicrm][directory_name] = "civicrm"
-libraries[civicrm][download][type] = "get"
-libraries[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.7/civicrm-4.6.7-drupal.tar.gz"
-libraries[civicrm][type] = "library"
 
