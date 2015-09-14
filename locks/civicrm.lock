@@ -27,3 +27,9 @@ projects[ctools][version] = "1.9"
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
 
+; Libraries
+libraries[reporterror][download][type] = "git"
+libraries[reporterror][download][url] = "https://github.com/mlutfy/ca.bidon.reporterror.git"
+libraries[reporterror][destination] = "modules/civicrm/extensions"
+libraries[reporterror][type] = "library"
+

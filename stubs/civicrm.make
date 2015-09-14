@@ -21,7 +21,13 @@ defaults[projects][subdir] = "contrib"
 includes[] = ../includes/modules.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;         CiviCRM core             ;;
+;;           CiviCRM core           ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 includes[] = ../includes/civicrm.make
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;        CiviCRM Extensions        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+includes[] = ../includes/civicrm-extensions.make
