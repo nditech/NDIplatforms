@@ -5,7 +5,7 @@ api = 2
 ;;               Core               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-includes[] = includes/core.make
+includes[] = ../includes/core.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;             Defaults             ;;
@@ -18,10 +18,10 @@ defaults[projects][subdir] = "contrib"
 ;;         Released Modules         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-includes[] = includes/modules.make
+includes[] = ../includes/modules.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;         CiviCRM core             ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-includes[] = includes/civicrm.make
+includes[] = ../includes/civicrm.make
