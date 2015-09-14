@@ -8,7 +8,6 @@ projects[drupal][version] = "7.39"
 projects[drupal][type] = "core"
 
 ; Modules
-projects[civicrm][subdir] = "contrib"
 projects[civicrm][type] = "module"
 projects[civicrm][download][type] = "get"
 projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.7/civicrm-4.6.7-drupal.tar.gz"
