@@ -4,8 +4,9 @@ api = 2
 
 ; Core
 projects[drupal][subdir] = "contrib"
-projects[drupal][version] = "7.39"
+projects[drupal][patch][0] = "https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch"
 projects[drupal][type] = "core"
+projects[drupal][version] = "7.39"
 
 ; Themes
 projects[CiviParty][subdir] = "contrib"
@@ -28,18 +29,15 @@ projects[ndi-pushbutton-profile][directory_name] = "ndi_pushbutton"
 
 ; Modules
 projects[ndi-pushbutton-roles][subdir] = "custom"
-projects[ndi-pushbutton-roles][type] = "module"
 projects[ndi-pushbutton-roles][download][type] = "git"
 projects[ndi-pushbutton-roles][download][url] = "git://git.koumbit.net/ndi-pushbutton-roles.git"
 projects[ndi-pushbutton-roles][directory_name] = "ndi_civi_admin_role"
 
 projects[ndi-pushbutton-config][subdir] = "custom"
-projects[ndi-pushbutton-config][type] = "module"
 projects[ndi-pushbutton-config][download][type] = "git"
 projects[ndi-pushbutton-config][download][url] = "git://git.koumbit.net/ndi-pushbutton-config.git"
 projects[ndi-pushbutton-config][directory_name] = "ndi_civi"
 
-projects[civicrm][type] = "module"
 projects[civicrm][download][type] = "get"
 projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.7/civicrm-4.6.7-drupal.tar.gz"
 
