@@ -41,6 +41,12 @@ projects[ndi-pushbutton-config][directory_name] = "ndi_civi"
 projects[civicrm][download][type] = "get"
 projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.7/civicrm-4.6.7-drupal.tar.gz"
 
+; Specify 'module' for custom code, so Drush6 doesn't fail to find them on
+; drupal.org
+projects[ndi-pushbutton-roles][type] = "module"
+projects[ndi-pushbutton-config][type] = "module"
+projects[civicrm][type] = "module"
+
 projects[webform_civicrm][subdir] = "contrib"
 projects[webform_civicrm][version] = "4.12"
 
