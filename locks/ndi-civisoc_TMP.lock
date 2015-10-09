@@ -44,6 +44,15 @@ projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civ
 projects[webform_civicrm][subdir] = "contrib"
 projects[webform_civicrm][version] = "4.12"
 
+projects[webform][subdir] = "contrib"
+projects[webform][version] = "4.11"
+
+projects[libraries][subdir] = "contrib"
+projects[libraries][version] = "2.2"
+
+projects[options_element][subdir] = "contrib"
+projects[options_element][version] = "1.12"
+
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.6"
 
@@ -55,6 +64,12 @@ projects[ctools][version] = "1.9"
 
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
+
+projects[variable][subdir] = "contrib"
+projects[variable][version] = "2.5"
+
+projects[i18n][subdir] = "contrib"
+projects[i18n][version] = "1.13"
 
 ; Libraries
 libraries[ndiciviparty][download][type] = "git"
@@ -86,6 +101,13 @@ libraries[reporterror][download][type] = "git"
 libraries[reporterror][download][url] = "https://github.com/mlutfy/ca.bidon.reporterror.git"
 libraries[reporterror][destination] = "modules/civicrm/extensions"
 libraries[reporterror][type] = "library"
+
+libraries[civicrm_l10n_core][destination] = "modules"
+libraries[civicrm_l10n_core][directory_name] = "civicrm/l10n"
+libraries[civicrm_l10n_core][download][type] = "file"
+libraries[civicrm_l10n_core][download][url] = "https://download.civicrm.org/civicrm-l10n-core/archives/civicrm-l10n-daily.tar.gz"
+libraries[civicrm_l10n_core][overwrite] = "1"
+libraries[civicrm_l10n_core][type] = "library"
 
 libraries[ukrainerayons][download][type] = "git"
 libraries[ukrainerayons][download][url] = "https://github.com/nditech/ukrainerayons.git"
