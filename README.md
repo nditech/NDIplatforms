@@ -6,7 +6,7 @@ along with the Aegir Hosting System (http://aegirproject.org), to maintain
 NDI's DemTools mass-hosting platforms (https://www.nditech.org/demtools).
 
 Normal usage of NDIplatforms involves simply running Drush Make with one of the
-supplied "lock" files.  Lockfiles are simply mankefiles with all versions
+supplied "lock" files.  Lockfiles are simply makefiles with all versions
 completely specified.  Further instructions can be found in docs/USAGE.md.
 
 NDIplatforms uses a particular directory layout to make maintaining makefiles
