@@ -24,10 +24,11 @@ includes[] = ../includes/modules.make
 ;;            Dkan core             ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-includes[] = ../includes/dkan.make
+includes[] = ../includes/dkan/dkan.make
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;          Dkan Extensions         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-includes[] = ../includes/dkan-extensions.make
+includes[] = ../includes/dkan/drupal-org-core.make
+includes[] = ../includes/dkan/drupal-org.make

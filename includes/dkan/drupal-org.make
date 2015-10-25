@@ -1,3 +1,5 @@
+; not req'd
+
 core = 7.x
 api = 2
 
@@ -165,3 +167,8 @@ libraries[spyc][download][url] = "https://raw.github.com/mustangostang/spyc/79f6
 libraries[spyc][filename] = "../spyc.php"
 libraries[spyc][directory_name] = "lib"
 libraries[spyc][destination] = "modules/contrib/services/servers/rest_server"
+
+; Originally in drupal-org-core.make
+; Use vocabulary machine name for permissions
+; http://drupal.org/node/995156
+projects[drupal][patch][995156] = http://drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
