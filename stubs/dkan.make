@@ -30,5 +30,4 @@ includes[] = ../includes/dkan/dkan.make
 ;;          Dkan Extensions         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-includes[] = ../includes/dkan/drupal-org-core.make
 includes[] = ../includes/dkan/drupal-org.make
