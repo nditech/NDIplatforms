@@ -1,10 +1,5 @@
-; not req'd
-
 core = 7.x
 api = 2
-
-; Set the default subdirectory for projects.
-defaults[projects][subdir] = contrib
 
 ; DKAN core modules
 
