@@ -4,19 +4,31 @@ api = 2
 
 ; Core
 projects[drupal][subdir] = "contrib"
-projects[drupal][version] = "7.39"
+projects[drupal][patch][0] = "https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch"
+projects[drupal][version] = "7.41"
 projects[drupal][type] = "core"
 
 ; Modules
-projects[civicrm][type] = "module"
 projects[civicrm][download][type] = "get"
-projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.7/civicrm-4.6.7-drupal.tar.gz"
+projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.8/civicrm-4.6.8-drupal.tar.gz"
 
 projects[webform_civicrm][subdir] = "contrib"
-projects[webform_civicrm][version] = "4.12"
+projects[webform_civicrm][version] = "4.13"
+
+projects[webform][subdir] = "contrib"
+projects[webform][version] = "4.12"
+
+projects[libraries][subdir] = "contrib"
+projects[libraries][version] = "2.2"
+
+projects[options_element][subdir] = "contrib"
+projects[options_element][version] = "1.12"
+
+projects[views][subdir] = "contrib"
+projects[views][version] = "3.11"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.6"
+projects[features][version] = "2.7"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
@@ -27,9 +39,22 @@ projects[ctools][version] = "1.9"
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
 
+projects[variable][subdir] = "contrib"
+projects[variable][version] = "2.5"
+
+projects[i18n][subdir] = "contrib"
+projects[i18n][version] = "1.13"
+
 ; Libraries
 libraries[reporterror][download][type] = "git"
 libraries[reporterror][download][url] = "https://github.com/mlutfy/ca.bidon.reporterror.git"
 libraries[reporterror][destination] = "modules/civicrm/extensions"
 libraries[reporterror][type] = "library"
+
+libraries[civicrm_l10n_core][destination] = "modules"
+libraries[civicrm_l10n_core][directory_name] = "civicrm/l10n"
+libraries[civicrm_l10n_core][download][type] = "file"
+libraries[civicrm_l10n_core][download][url] = "https://download.civicrm.org/civicrm-l10n-core/archives/civicrm-l10n-daily.tar.gz"
+libraries[civicrm_l10n_core][overwrite] = "1"
+libraries[civicrm_l10n_core][type] = "library"
 
