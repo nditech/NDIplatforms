@@ -10,9 +10,9 @@ docs/MAINTENANCE.md.
 STRUCTURE
 ---------
 
-For simplicity, we are limiting our discussion to the ndi-common platform.
+For simplicity, we are limiting our discussion to the ndi-civisociety platform.
 Several more platforms may be included in NDIplatforms, and this system scales
-very well. However, listing them all here would complicate explanations.
+very well.  However, listing them all here would complicate explanations.
 
 
 Filesystem layout
@@ -32,16 +32,14 @@ Here is the (abridged) layout of files and directories:
     │   ├── civicrm-extensions.make
     │   ├── civicrm.make
     │   ├── core.make
-    │   └── modules.make
+    │   ├── modules.make
+    │   └── ndi-civi-extensions.make
     ├── locks
-    │   ├── civicrm.lock
-    │   ├── ndi-common.lock
-    │   └── ndi-custom.lock
+    │   └── ndi-civisociety.lock
     ├── README.md
     └── stubs
         ├── civicrm.make
-        ├── ndi-common.make
-        └── ndi-custom.make
+        └── ndi-civisociety.make
 
 There are 4 top-level directories: docs, includes, locks and stubs.  We examine
 these in more detail later.  The locks and stubs directories simply contain
@@ -56,64 +54,64 @@ Stubs
 -----
 
 Stubs are makefiles that usually do not contain any projects to download
-directly. Instead, they usually include a version of core, and various other
+directly.  Instead, they usually include a version of core, and various other
 makefiles to build up a full platform.
 
-In the example below, we see that the contents are pretty basic. The is
+In the example below, we see that the contents are pretty basic.  There is
 documentation throughout, as well as the basic Drush make "api" and "core"
-elements. We also set a default sub-directory within which to download
-projects. This allows us to keep our included makefiles cleaner.
+elements.  We also set a default sub-directory within which to download
+projects.  This allows us to keep our included makefiles cleaner.
 
-We then include a core makefile, module, civicrm and extensions makefiles and a
+We then include a core makefile, module, civicrm, and extensions makefiles and a
 theme makefile.  Note that we specify the location of the include file relative
 to the location of the stub.
- 
+
     core = 7.x
     api = 2
-    
+
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;;               Core               ;;
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
     includes[] = ../includes/core.make
-    
+
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;;             Defaults             ;;
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
     ; Specify common subdir
     defaults[projects][subdir] = "contrib"
-    
+
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;;         Released Modules         ;;
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
     includes[] = ../includes/modules.make
-    
+
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;;           CiviCRM core           ;;
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
     includes[] = ../includes/civicrm.make
-    
+
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;;        CiviCRM Extensions        ;;
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
     includes[] = ../includes/civicrm-extensions.make
-    
+
 
 Includes
 --------
 
 In the includes directory we find a core makefile that includes a core
-distribution and any patches we need to apply to Drupal. These included
+distribution and any patches we need to apply to Drupal.  These included
 makefiles have standard headers similar to the stub makefile above.
 
-In modules.make, we have a general list of modules, an excerpt of which can be
-found below. This makefile lists all the modules that will be downloaded as
-part of the platform. We segment related module into their own dedicated
-makefiles, if this helps organization or re-use.
+In modules.make, we have a general list of modules.  This makefile lists all
+the modules that will be downloaded as part of the platform.  We segment
+related modules into their own dedicated makefiles, if this helps organization
+or re-use.
 
 
 Lockfiles

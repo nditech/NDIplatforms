@@ -11,7 +11,7 @@ api = 2
 projects[civicrm][type] = "module"
 projects[civicrm][subdir] = ""
 projects[civicrm][download][type] = "get"
-projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.8/civicrm-4.6.8-drupal.tar.gz"
+projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.9/civicrm-4.6.9-drupal.tar.gz"
 
 
 ;****************************************
