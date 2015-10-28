@@ -16,11 +16,13 @@ projects[ndi-pushbutton-profile][directory_name] = "ndi_pushbutton"
 
 ; Modules
 projects[ndi-pushbutton-roles][subdir] = "custom"
+projects[ndi-pushbutton-roles][type] = "module"
 projects[ndi-pushbutton-roles][download][type] = "git"
 projects[ndi-pushbutton-roles][download][url] = "git://git.koumbit.net/ndi-pushbutton-roles.git"
 projects[ndi-pushbutton-roles][directory_name] = "ndi_civi_admin_role"
 
 projects[ndi-pushbutton-config][subdir] = "custom"
+projects[ndi-pushbutton-config][type] = "module"
 projects[ndi-pushbutton-config][download][type] = "git"
 projects[ndi-pushbutton-config][download][url] = "git://git.koumbit.net/ndi-pushbutton-config.git"
 projects[ndi-pushbutton-config][directory_name] = "ndi_civi"
@@ -40,6 +42,7 @@ projects[civimp_theme][download][url] = "https://github.com/nditech/civimp_theme
 
 ; Modules
 projects[civicrm][download][type] = "get"
+projects[civicrm][type] = "module"
 projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.9/civicrm-4.6.9-drupal.tar.gz"
 
 projects[webform_civicrm][subdir] = "contrib"
