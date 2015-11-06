@@ -16,11 +16,13 @@ projects[ndi-pushbutton-profile][directory_name] = "ndi_pushbutton"
 
 ; Modules
 projects[ndi-pushbutton-roles][subdir] = "custom"
+projects[ndi-pushbutton-roles][type] = "module"
 projects[ndi-pushbutton-roles][download][type] = "git"
 projects[ndi-pushbutton-roles][download][url] = "git://git.koumbit.net/ndi-pushbutton-roles.git"
 projects[ndi-pushbutton-roles][directory_name] = "ndi_civi_admin_role"
 
 projects[ndi-pushbutton-config][subdir] = "custom"
+projects[ndi-pushbutton-config][type] = "module"
 projects[ndi-pushbutton-config][download][type] = "git"
 projects[ndi-pushbutton-config][download][url] = "git://git.koumbit.net/ndi-pushbutton-config.git"
 projects[ndi-pushbutton-config][directory_name] = "ndi_civi"
@@ -39,14 +41,15 @@ projects[civimp_theme][download][type] = "git"
 projects[civimp_theme][download][url] = "https://github.com/nditech/civimp_theme.git"
 
 ; Modules
+projects[civicrm][type] = "module"
 projects[civicrm][download][type] = "get"
-projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.9/civicrm-4.6.9-drupal.tar.gz"
+projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.10/civicrm-4.6.10-drupal.tar.gz"
 
 projects[webform_civicrm][subdir] = "contrib"
-projects[webform_civicrm][version] = "4.13"
+projects[webform_civicrm][version] = "4.14"
 
 projects[webform][subdir] = "contrib"
-projects[webform][version] = "4.11"
+projects[webform][version] = "4.12"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.2"
@@ -55,7 +58,7 @@ projects[options_element][subdir] = "contrib"
 projects[options_element][version] = "1.12"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.11"
+projects[views][version] = "3.12"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.7"
