@@ -11,7 +11,7 @@ projects[drupal][type] = "core"
 ; Modules
 projects[civicrm][type] = "module"
 projects[civicrm][download][type] = "get"
-projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.9/civicrm-4.6.9-drupal.tar.gz"
+projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.10/civicrm-4.6.10-drupal.tar.gz"
 
 projects[webform_civicrm][subdir] = "contrib"
 projects[webform_civicrm][version] = "4.14"
