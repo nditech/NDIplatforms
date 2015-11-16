@@ -383,8 +383,8 @@ projects[views_autocomplete_filters][patch][2317351] = "http://www.drupal.org/fi
 
 projects[panopoly_widgets][subdir] = "contrib"
 projects[panopoly_widgets][version] = "1.25"
-projects[panopoly_widgets][patch][1] = "patches/panopoly_widgets_overrides.patch"
-projects[panopoly_widgets][patch][2] = "patches/panopoly_widgets_add_jquery_ui_tabs.patch"
+;projects[panopoly_widgets][patch][1] = "patches/panopoly_widgets_overrides.patch"
+;projects[panopoly_widgets][patch][2] = "patches/panopoly_widgets_add_jquery_ui_tabs.patch"
 
 projects[panopoly_images][subdir] = "contrib"
 projects[panopoly_images][version] = "1.21"
