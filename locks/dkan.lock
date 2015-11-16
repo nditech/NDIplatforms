@@ -466,10 +466,10 @@ projects[ndi_dkan][download][url] = "https://fb075e082fb65cd78a190d917424520631c
 projects[ndi_dkan][download][branch] = "master"
 
 ; Modules
-projects[civicrm_error][subdir] = "contrib"
+;projects[civicrm_error][subdir] = "contrib"
 
-projects[webform_civicrm][subdir] = "contrib"
-projects[webform_civicrm][version] = "4.14"
+;projects[webform_civicrm][subdir] = "contrib"
+;projects[webform_civicrm][version] = "4.14"
 
 projects[webform][subdir] = "contrib"
 projects[webform][version] = "4.12"
