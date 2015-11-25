@@ -5,6 +5,8 @@ projects:
   hierarchical_select: { version: ~ }
   quicktabs: { version: ~ }
   better_exposed_filters: { version: ~ }
+  i18n: { version: ~ }
+  variable: { version: ~ }
   # Temporary overrides. All of the below should be incorporated upstream at some point, and removed from here.
   # See: https://github.com/NuCivic/dkan/issues/668
   visualization_entity:

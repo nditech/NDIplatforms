@@ -30,6 +30,10 @@ projects:
     version: '3.6'
   better_exposed_filters:
     version: '3.2'
+  i18n:
+    version: '1.13'
+  variable:
+    version: '2.5'
   visualization_entity:
     download:
       url: 'https://github.com/NuCivic/visualization_entity.git'
