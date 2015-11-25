@@ -30,6 +30,22 @@ projects:
     version: '3.6'
   better_exposed_filters:
     version: '3.2'
+  visualization_entity:
+    download:
+      url: 'https://github.com/NuCivic/visualization_entity.git'
+      branch: access_control
+      revision: 234306c
+      type: git
+  visualization_entity_maps:
+    download:
+      url: 'https://github.com/NuCivic/visualization_entity_maps.git'
+      revision: d324462
+      type: git
+  visualization_entity_charts:
+    download:
+      url: 'https://github.com/NuCivic/visualization_entity_charts.git'
+      revision: 934fd1d
+      type: git
   dkan:
     subdir: .
     type: profile
@@ -38,4 +54,3 @@ projects:
       url: 'https://github.com/nditech/dkan.git'
       branch: 7.x-1.x
       revision: 1bf5dd5
-
