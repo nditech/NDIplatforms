@@ -1,0 +1,12 @@
+core: 7.x
+api: 2
+
+defaults:
+  projects:
+    subdir: contrib
+
+includes:
+  - ../includes/core.make.yml
+  - ../includes/dkan/profile.make.yml
+  - ../includes/dkan/modules.make.yml
+  - ../includes/dkan/custom.make.yml

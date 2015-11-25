@@ -1,0 +1,7 @@
+core: 7.x
+api: 2
+
+projects:
+  hierarchical_select: { version: ~ }
+  quicktabs: { version: ~ }
+  better_exposed_filters: { version: ~ }

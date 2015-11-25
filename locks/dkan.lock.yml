@@ -1,0 +1,41 @@
+core: 7.x
+api: 2
+defaults:
+  projects:
+    subdir: contrib
+projects:
+  drupal:
+    type: core
+    patch:
+      - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
+    version: '7.41'
+  elections:
+    subdir: custom
+    download:
+      type: git
+      url: 'https://github.com/nditech/elections_module.git'
+      branch: master
+      revision: '4774174'
+  ndi_dkan_theme:
+    subdir: custom
+    type: theme
+    download:
+      type: git
+      url: 'git@github.com:NDItech/ndi_dkan_theme.git'
+      branch: master
+      revision: 5e5b982
+  hierarchical_select:
+    version: 3.0-beta2
+  quicktabs:
+    version: '3.6'
+  better_exposed_filters:
+    version: '3.2'
+  dkan:
+    subdir: .
+    type: profile
+    download:
+      type: git
+      url: 'https://github.com/nditech/dkan.git'
+      branch: 7.x-1.x
+      revision: 1bf5dd5
+
