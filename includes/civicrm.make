@@ -12,7 +12,8 @@ projects[civicrm][type] = "module"
 projects[civicrm][subdir] = ""
 projects[civicrm][download][type] = "get"
 projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.10/civicrm-4.6.10-drupal.tar.gz"
-
+; Add Ukranian and Russion locale support
+projects[civicrm][patch][] = "https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch"
 
 ;****************************************
 ; CiviCRM l10n -- most recent translations for use with gettext
