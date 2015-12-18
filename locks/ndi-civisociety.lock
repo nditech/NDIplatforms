@@ -2,80 +2,69 @@
 core = 7.x
 api = 2
 
+; Defaults
+defaults[projects][subdir] = "contrib"
+defaults[libraries][overwrite] = "1"
+
 ; Core
-projects[drupal][subdir] = "contrib"
 projects[drupal][patch][0] = "https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch"
 projects[drupal][type] = "core"
 projects[drupal][version] = "7.41"
 
 ; Profiles
+projects[ndi-pushbutton-profile][subdir] = "."
 projects[ndi-pushbutton-profile][download][type] = "git"
-projects[ndi-pushbutton-profile][download][url] = "git://git.koumbit.net/ndi-pushbutton-profile.git"
+projects[ndi-pushbutton-profile][download][url] = "https://github.com/nditech/demtools_civisociety_profile.git"
 projects[ndi-pushbutton-profile][type] = "profile"
 projects[ndi-pushbutton-profile][directory_name] = "ndi_pushbutton"
 
 ; Modules
 projects[ndi-pushbutton-roles][subdir] = "custom"
-projects[ndi-pushbutton-roles][type] = "module"
 projects[ndi-pushbutton-roles][download][type] = "git"
 projects[ndi-pushbutton-roles][download][url] = "git://git.koumbit.net/ndi-pushbutton-roles.git"
 projects[ndi-pushbutton-roles][directory_name] = "ndi_civi_admin_role"
 
 projects[ndi-pushbutton-config][subdir] = "custom"
-projects[ndi-pushbutton-config][type] = "module"
 projects[ndi-pushbutton-config][download][type] = "git"
 projects[ndi-pushbutton-config][download][url] = "git://git.koumbit.net/ndi-pushbutton-config.git"
 projects[ndi-pushbutton-config][directory_name] = "ndi_civi"
 
 ; Themes
-projects[CiviParty][subdir] = "contrib"
 projects[CiviParty][type] = "theme"
 projects[CiviParty][download][type] = "git"
 projects[CiviParty][download][url] = "https://github.com/nditech/civiparty_drupal_theme.git"
 projects[CiviParty][destination] = "sites/all/themes"
 
-projects[civimp_theme][subdir] = "contrib"
 projects[civimp_theme][type] = "theme"
 projects[civimp_theme][directory_name] = "civimp"
 projects[civimp_theme][download][type] = "git"
 projects[civimp_theme][download][url] = "https://github.com/nditech/civimp_theme.git"
 
 ; Modules
-projects[civicrm][type] = "module"
 projects[civicrm][download][type] = "get"
 projects[civicrm][download][url] = "http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.10/civicrm-4.6.10-drupal.tar.gz"
+;projects[civicrm][patch][0] = "https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch"
 
-projects[webform_civicrm][subdir] = "contrib"
 projects[webform_civicrm][version] = "4.14"
 
-projects[webform][subdir] = "contrib"
 projects[webform][version] = "4.12"
 
-projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.2"
 
-projects[options_element][subdir] = "contrib"
 projects[options_element][version] = "1.12"
 
-projects[views][subdir] = "contrib"
-projects[views][version] = "3.12"
+projects[views][version] = "3.13"
 
-projects[features][subdir] = "contrib"
 projects[features][version] = "2.7"
 
-projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
-projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.9"
 
-projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
 
-projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 
-projects[i18n][subdir] = "contrib"
 projects[i18n][version] = "1.13"
 
 ; Libraries
@@ -148,10 +137,26 @@ libraries[twilio_sms][download][url] = "https://github.com/civicrm/org.civicrm.s
 libraries[twilio_sms][destination] = "modules/civicrm/extensions"
 libraries[twilio_sms][type] = "library"
 
+;libraries[civicrm-metrics-server][download][type] = "git"
+;libraries[civicrm-metrics-server][download][url] = "https://github.com/ginkgostreet/civicrm-metrics-server"
+;libraries[civicrm-metrics-server][destination] = "modules/civicrm/extensions"
+;libraries[civicrm-metrics-server][type] = "library"
+
+;libraries[civicrm-metrics-client][download][type] = "git"
+;libraries[civicrm-metrics-client][download][url] = "https://github.com/ginkgostreet/civicrm-metrics-client"
+;libraries[civicrm-metrics-client][destination] = "modules/civicrm/extensions"
+;libraries[civicrm-metrics-client][type] = "library"
+
+;libraries[org.ndi.metrics][download][type] = "git"
+;libraries[org.ndi.metrics][download][url] = "https://github.com/ginkgostreet/org.ndi.metrics"
+;libraries[org.ndi.metrics][destination] = "modules/civicrm/extensions"
+;libraries[org.ndi.metrics][type] = "library"
+
 libraries[civicrm_l10n_core][destination] = "modules"
 libraries[civicrm_l10n_core][directory_name] = "civicrm/l10n"
 libraries[civicrm_l10n_core][download][type] = "file"
 libraries[civicrm_l10n_core][download][url] = "https://download.civicrm.org/civicrm-l10n-core/archives/civicrm-l10n-daily.tar.gz"
-libraries[civicrm_l10n_core][overwrite] = "1"
+;libraries[civicrm_l10n_core][overwrite] = "1"
 libraries[civicrm_l10n_core][type] = "library"
+
 

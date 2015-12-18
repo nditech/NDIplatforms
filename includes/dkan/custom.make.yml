@@ -8,12 +8,27 @@ projects:
       type: git
       url: 'https://github.com/nditech/elections_module.git'
       branch: master
-      revision: '4774174'
+      #revision: '4774174'
   ndi_dkan_theme:
     type: theme
     subdir: custom
     download:
       type: git
       url: 'git@github.com:NDItech/ndi_dkan_theme.git'
+      #branch: master
+      branch: subtheme
+      #revision: '5e5b982'
+  ndi_dkan_additions:
+    subdir: custom
+    download:
+      type: git
+      url: 'git@github.com:NDItech/ndi_dkan_additions.git'
       branch: master
-      revision: '5e5b982'
+      #revision: '5e5b982'
+  ndi_dkan_feature_overrides:
+    subdir: custom
+    download:
+      type: git
+      url: 'git@github.com:NDItech/ndi_dkan_feature_overrides.git'
+      branch: master
+      #revision: '5e5b982'

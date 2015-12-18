@@ -1,7 +1,6 @@
 core = 7.x
 api = 2
 
-projects[] = civicrm_error
 projects[] = webform_civicrm
 ;; Dependencies of webform_civicrm:
 projects[] = webform

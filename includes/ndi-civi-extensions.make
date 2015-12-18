@@ -5,6 +5,10 @@ api = 2
 ;;      NDI Specific Extensions     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+defaults[libraries][download][type] = "git"
+defaults[libraries][destination] = "modules/civicrm/extensions"
+defaults[libraries][overwrite] = 1
+
 libraries[ukrainerayons][download][type] = "git"
 libraries[ukrainerayons][download][url] = "https://github.com/nditech/ukrainerayons.git"
 libraries[ukrainerayons][destination] = "modules/civicrm/extensions"
