@@ -23,14 +23,14 @@ projects:
     download:
       url: https://github.com/NuCivic/visualization_entity_maps.git
       revision: d324462
-    patch:
-      # See: https://github.com/NuCivic/dkan/commit/84921bc372768af6f2bc529ee69ea23f83e135ad
-      - "https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch"
   # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-81
   visualization_entity_charts:
     download:
       url: https://github.com/NuCivic/visualization_entity_charts.git
       revision: 934fd1d
+    patch:
+      # See: https://github.com/NuCivic/dkan/commit/84921bc372768af6f2bc529ee69ea23f83e135ad
+      - "https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch"
   # Added for ndi_dkan_additions exported nodes
   uuid_features:
     download:

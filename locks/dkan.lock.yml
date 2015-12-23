@@ -59,13 +59,13 @@ projects:
       url: 'https://github.com/NuCivic/visualization_entity_maps.git'
       revision: d324462
       type: git
-    patch:
-      - 'https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch'
   visualization_entity_charts:
     download:
       url: 'https://github.com/NuCivic/visualization_entity_charts.git'
       revision: 934fd1d
       type: git
+    patch:
+      - 'https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch'
   uuid_features:
     download:
       url: 'http://git.drupal.org/project/uuid_features.git'
