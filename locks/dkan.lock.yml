@@ -77,4 +77,4 @@ projects:
       type: git
       url: 'https://github.com/nditech/dkan.git'
       branch: 7.x-1.x
-      revision: 1bf5dd5
+
