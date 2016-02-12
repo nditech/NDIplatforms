@@ -78,3 +78,70 @@ projects:
       url: 'https://github.com/nditech/dkan.git'
       branch: 7.x-1.x
 
+core: 7.x
+api: 2
+defaults:
+  projects:
+    subdir: contrib
+projects:
+  drupal:
+    type: core
+    patch:
+      - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
+    version: '7.42'
+  elections:
+    subdir: custom
+    download:
+      type: git
+      url: 'https://github.com/nditech/elections_module.git'
+      branch: master
+  ndi_dkan_theme:
+    subdir: custom
+    type: theme
+    download:
+      type: git
+      url: 'git@github.com:NDItech/ndi_dkan_theme.git'
+      branch: subtheme
+  ndi_dkan_additions:
+    subdir: custom
+    download:
+      type: git
+      url: 'git@github.com:NDItech/ndi_dkan_additions.git'
+      branch: master
+  ndi_dkan_feature_overrides:
+    subdir: custom
+    download:
+      type: git
+      url: 'git@github.com:NDItech/ndi_dkan_feature_overrides.git'
+      branch: master
+  hierarchical_select:
+    version: 3.0-beta3
+  quicktabs:
+    version: '3.6'
+  better_exposed_filters:
+    version: '3.2'
+  i18n:
+    version: '1.13'
+  i18nviews:
+    version: 3.0-alpha1
+  variable:
+    version: '2.5'
+  visualization_entity_maps:
+    download:
+      url: 'https://github.com/NuCivic/visualization_entity_maps.git'
+      revision: d324462
+      type: git
+  uuid_features:
+    download:
+      url: 'http://git.drupal.org/project/uuid_features.git'
+      type: git
+  dkan:
+    subdir: .
+    type: profile
+    download:
+      type: git
+      url: 'https://github.com/nucivic/dkan.git'
+      branch: 7.x-1.10-with-ndi-enhacements
+    patch:
+      - 'https://github.com/nditech/dkan/commit/54d2322e0baec34882d84d8994412613694c20ac.patch'
+
