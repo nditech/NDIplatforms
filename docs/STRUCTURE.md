@@ -1,7 +1,7 @@
 NDI PLATFORMS
 =============
 
-This document describes the filesystem layout for NDIplatforms makefiles.
+This document describes the filesystem layout for NDIplatforms Drush makefiles.
 To understand how to use them to build platforms, please see docs/USAGE.md.
 To better understand how these makefiles are maintained, please see
 docs/MAINTENANCE.md.
@@ -10,8 +10,8 @@ docs/MAINTENANCE.md.
 STRUCTURE
 ---------
 
-For simplicity, we are limiting our discussion to the ndi-civisociety platform.
-Several more platforms may be included in NDIplatforms, and this system scales
+For simplicity, we are limiting our discussion to the DemTools Civi platform.
+Several more platforms are included in NDIplatforms, and this system scales
 very well.  However, listing them all here would complicate explanations.
 
 

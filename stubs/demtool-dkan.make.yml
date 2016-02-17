@@ -6,5 +6,7 @@ defaults:
     subdir: contrib
 
 includes:
-  - ../locks/drupal7.lock.yml
+  - ../includes/core.make.yml
   - ../includes/dkan/profile.make.yml
+  - ../includes/dkan/modules.make.yml
+  - ../includes/dkan/custom.make.yml

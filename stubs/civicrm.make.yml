@@ -7,4 +7,4 @@ defaults:
 
 includes:
   - ../locks/drupal7.lock.yml
-  - ../includes/dkan/profile.make.yml
+  - ../includes/civicrm/civicrm.make.yml

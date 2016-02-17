@@ -1,0 +1,16 @@
+core: 7.x
+api: 2
+
+projects:
+  dkan:
+    type: profile
+    subdir: '.'
+    download:
+      type: git
+      #url: 'https://github.com/nditech/dkan.git'
+      url: 'https://github.com/nucivic/dkan.git'
+      branch: 7.x-1.10-with-ndi-enhacements
+      #branch: 7.x-1.x
+#      revision: '1bf5dd5'
+    patch:
+      - "https://github.com/nditech/dkan/commit/54d2322e0baec34882d84d8994412613694c20ac.patch"

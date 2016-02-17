@@ -8,27 +8,22 @@ projects:
       type: git
       url: 'https://github.com/nditech/elections_module.git'
       branch: master
-      #revision: '4774174'
-  ndi_dkan_theme:
+  demtools_dkan_theme:
     type: theme
     subdir: custom
+    directory_name: "demtools_dkan"
     download:
       type: git
-      url: 'git@github.com:NDItech/ndi_dkan_theme.git'
-      #branch: master
-      branch: subtheme
-      #revision: '5e5b982'
-  ndi_dkan_additions:
+      url: 'git@github.com:NDItech/demtools_dkan_theme.git'
+      branch: 7.x-1.x
+  demtools_dkan:
     subdir: custom
     download:
       type: git
-      url: 'git@github.com:NDItech/ndi_dkan_additions.git'
-      branch: master
-      #revision: '5e5b982'
-  ndi_dkan_feature_overrides:
+      url: 'git@github.com:NDItech/demtools_dkan.git'
+  demtools:
     subdir: custom
     download:
       type: git
-      url: 'git@github.com:NDItech/ndi_dkan_feature_overrides.git'
-      branch: master
-      #revision: '5e5b982'
+      url: 'git@github.com:NDItech/demtools.git'
+

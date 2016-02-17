@@ -8,31 +8,20 @@ projects:
   i18n: { version: ~ }
   i18nviews: { version: ~ }
   variable: { version: ~ }
-  # Temporary overrides. All of the below should be incorporated upstream at some point, and removed from here.
-  # See: https://github.com/NuCivic/dkan/issues/668
-#  visualization_entity:
-#    download:
-#      url: https://github.com/NuCivic/visualization_entity.git
-#      branch: access_control
-#      revision: 234306c
-#    patch:
-#      # See: https://github.com/NuCivic/dkan/commit/84921bc372768af6f2bc529ee69ea23f83e135ad
-#      - "https://github.com/NuCivic/visualization_entity/commit/74ba9ca8629ec38ddfa016ac1b46d3f65ca9dfe7.patch"
-  # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-82
-  visualization_entity_maps:
-    download:
-      url: https://github.com/NuCivic/visualization_entity_maps.git
-      revision: d324462
-  # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-81
-#  visualization_entity_charts:
-#    download:
-#      url: https://github.com/NuCivic/visualization_entity_charts.git
-#      revision: 934fd1d
-#    patch:
-#      # See: https://github.com/NuCivic/dkan/commit/84921bc372768af6f2bc529ee69ea23f83e135ad
-#      - "https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch"
+
   # Added for ndi_dkan_additions exported nodes
   uuid_features:
     download:
       url: http://git.drupal.org/project/uuid_features.git
-      #revision: ''
+      branch: 7.x-1.x
+      # TODO: Remove this pinning once `drush make-lock` can lock to specific commits.
+      revision: '8f7f1c5e1'
+
+  # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-82
+  visualization_entity_maps:
+    download:
+      url: https://github.com/NuCivic/visualization_entity_maps.git
+      branch: master
+      # TODO: Remove this pinning once `drush make-lock` can lock to specific commits.
+      revision: d324462
+ 

@@ -1,7 +1,7 @@
 NDI PLATFORMS
 =============
 
-This document describes building platforms using the NDIplatforms stub
+This document describes building platforms using the NDIplatforms stub Drush
 makefiles.  To understand how these makefiles are maintained, please see
 docs/MAINTENANCE.md.
 
@@ -30,10 +30,7 @@ Build a platform on the command-line
 
 We start by simply calling Drush make (usually as the "aegir" user):
 
-    $ drush make ~/makefiles/NDIplatforms/locks/ndi-polls.lock ~/platforms/DemTools_2015-10-21
-
-We can then make any manual alterations to the platform that might be required.
-For example, copying a favicon, makefile, and release notes into the platform.
+    $ drush make ~/makefiles/NDIplatforms/locks/ndi-polls.lock.yml ~/platforms/DemTools_2015-10-21
 
 Assuming that the platform build worked, we need to tell Aegir about it.
 The easiest way to do that is to visit /node/add/platform on the Aegir site.
@@ -56,8 +53,12 @@ This is the preferred method, as it:
   * creates a link to the makefile that was used in building the platform; and
   * avoids having to import the platform separately.
 
+However, some YAML makefiles require Drush 8, which only shipped with Aegir
+Debian packages starting in version 3.4. As a result, building fro the command
+line may be required, if you are using an older version.
+
 First, find the lockfile we want to use to build the platform on Github, such
-as https://github.com/nditech/NDIplatforms/blob/master/locks/ndi-polls.lock.
+as https://github.com/nditech/NDIplatforms/blob/master/locks/ndi-polls.lock.yml.
 Then click the "Raw" button to get a link to the output that Drush Make can
 accept.  Copy that URL into the "makefile" field on "/node/add/platform" on the
 Aegir site.  Then provide a meaningful name, such as "DemTools_2015-10-21", and
