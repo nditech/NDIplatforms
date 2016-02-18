@@ -10,9 +10,22 @@ list:
 clean:
 	rm -rf $(tmp_dir)
 
-install:
-	mkdir -p tmp
+drush:
+	mkdir -p $(tmp_dir)
 	curl -SsL -z $(d) -o $(d) http://files.drush.org/drush.phar
+	chmod a+x $(d)
+
+drush-unstable:
+	mkdir -p $(tmp_dir)
+	curl -SsL -z $(d) -o $(d) http://files.drush.org/drush-unstable.phar
+	chmod a+x $(d)
+
+drush-source:
+	mkdir -p $(tmp_dir)
+	cd $(tmp_dir); curl -SsL -z ./composer.phar https://getcomposer.org/installer | php
+	chmod a+x $(tmp_dir)/composer.phar
+	cd $(tmp_dir); ./composer.phar require drush/drush:dev-master --prefer-source
+	rm $(d); cd $(tmp_dir); ln -s vendor/drush/drush/drush drush
 	chmod a+x $(d)
 
 all: stock demtools
