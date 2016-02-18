@@ -1,0 +1,80 @@
+core: 7.x
+api: '2'
+projects:
+  ndi-pushbutton-profile:
+    download:
+      type: git
+      url: 'https://github.com/nditech/demtools_civisociety_profile.git'
+    type: profile
+    subdir: .
+    directory_name: ndi_pushbutton
+  ndi-pushbutton-roles:
+    download:
+      type: git
+      url: 'git://git.koumbit.net/ndi-pushbutton-roles.git'
+    type: module
+    subdir: custom
+    directory_name: ndi_civi_admin_role
+  ndi-pushbutton-config:
+    download:
+      type: git
+      url: 'git://git.koumbit.net/ndi-pushbutton-config.git'
+    type: module
+    subdir: custom
+    directory_name: ndi_civi
+  CiviParty:
+    type: theme
+    download:
+      type: git
+      url: 'https://github.com/nditech/civiparty_drupal_theme.git'
+    destination: sites/all/themes
+  civimp_theme:
+    type: theme
+    directory_name: civimp
+    download:
+      type: git
+      url: 'https://github.com/nditech/civimp_theme.git'
+libraries:
+  ndipermissions:
+    download:
+      type: git
+      url: 'https://github.com/nditech/CiviLocalPermissionsExtension.git'
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+  ndimisc:
+    download:
+      type: git
+      url: 'https://github.com/nditech/CiviCitizenCustomizerExtension.git'
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+  ndiciviparty:
+    download:
+      type: git
+      url: 'https://github.com/nditech/ndiciviparty.git'
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+  ndicivimp:
+    download:
+      type: git
+      url: 'https://github.com/nditech/ndicivimp.git'
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+  legcase:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.legcase.git'
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+  ukrainerayons:
+    download:
+      type: git
+      url: 'https://github.com/nditech/ukrainerayons.git'
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+defaults:
+  libraries:
+    download:
+      type: git
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+includes: {  }

@@ -10,10 +10,10 @@ defaults:
     subdir: contrib
 projects:
   drupal:
+    type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    type: core
-    version: '7.41'
+    version: '7.42'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -45,12 +45,6 @@ projects:
     download:
       type: git
       url: 'https://github.com/nditech/civimp_theme.git'
-  civicrm:
-    download:
-      type: get
-      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.12/civicrm-4.6.12-drupal.tar.gz'
-    patch:
-      - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
   webform_civicrm:
     version: '4.14'
   webform:
@@ -73,6 +67,12 @@ projects:
     version: '2.5'
   i18n:
     version: '1.13'
+  civicrm:
+    download:
+      type: get
+      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.12/civicrm-4.6.12-drupal.tar.gz'
+    patch:
+      - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
   ndipermissions:
     download:
@@ -198,4 +198,3 @@ libraries:
     overwrite: true
     directory_name: civicrm/l10n
     type: library
-

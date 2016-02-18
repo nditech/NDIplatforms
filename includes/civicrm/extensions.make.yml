@@ -1,0 +1,43 @@
+core: 7.x
+api: '2'
+defaults:
+  libraries:
+    download:
+      type: git
+    destination: modules/civicrm/extensions
+    overwrite: '1'
+libraries:
+  civicrm_activity_ical:
+    download:
+      url: 'git://git.drupal.org/project/civicrm_activity_ical.git'
+      tag: 7.x-1.1
+  civisualize:
+    download:
+      url: 'https://github.com/agh1/civisualize.git'
+      branch: member-viz
+  clickatell_sms_provider:
+    download:
+      url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
+  event_calendar:
+    download:
+      url: 'https://github.com/osseed/com.osseed.eventcalendar.git'
+      tag: '1.1'
+  mandrill_email:
+    download:
+      url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
+      tag: v2.0
+  reporterror:
+    download:
+      url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
+  twilio_sms:
+    download:
+      url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
+  civicrm-metrics-server:
+    download:
+      url: 'https://github.com/ginkgostreet/civicrm-metrics-server'
+  civicrm-metrics-client:
+    download:
+      url: 'https://github.com/ginkgostreet/civicrm-metrics-client'
+  org.ndi.metrics:
+    download:
+      url: 'https://github.com/ginkgostreet/org.ndi.metrics'

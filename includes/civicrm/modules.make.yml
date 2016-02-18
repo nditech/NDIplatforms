@@ -1,0 +1,16 @@
+core: 7.x
+api: '2'
+projects:
+  webform_civicrm: { version: ~ }
+  # Dependencies of webform_civicrm:
+  webform:  { version: ~ } 
+  libraries: { version: ~ }
+  options_element: { version: ~ }
+  views: { version: ~ }
+
+  features: { version: ~ }
+  strongarm: { version: ~ }
+  ctools: { version: ~ }
+  admin_menu: { version: ~ }
+  variable: { version: ~ }
+  i18n: { version: ~ }
