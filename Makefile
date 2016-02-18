@@ -54,8 +54,7 @@ locks/dkan.lock.yml: stubs/dkan.make.yml
 
 demtools-dkan: dkan locks/demtools-dkan.lock.yml
 
-# We need to list the included makefiles here in order to ensure the lockfile is rebuilt if any of these change.
-locks/demtools-dkan.lock.yml: stubs/demtools-dkan.make.yml includes/dkan/modules.make.yml includes/dkan/custom.make.yml
+locks/demtools-dkan.lock.yml: stubs/demtools-dkan.make.yml includes/dkan/*
 	$(d) $(cmd) stubs/demtools-dkan.make.yml --result-file=locks/demtools-dkan.lock.yml
 
 test-demtools-dkan: demtools-dkan
@@ -64,7 +63,7 @@ test-demtools-dkan: demtools-dkan
 
 civicrm: drupal7 locks/civicrm.lock.yml
 
-locks/civicrm.lock.yml: stubs/civicrm.make.yml
+locks/civicrm.lock.yml: stubs/civicrm.make.yml includes/civicrm/*
 	$(d) $(cmd) stubs/civicrm.make.yml --result-file=locks/civicrm.lock.yml
 
 demtools-civi: civicrm locks/demtools-civi.lock.yml
