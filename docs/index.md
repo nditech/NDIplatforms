@@ -1,6 +1,8 @@
 NDI PLATFORMS
 =============
 
+![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)
+
 NDIplatforms is a set of makefiles structured for easy maintenance.  It is used,
 along with the [Aegir Hosting System](http://aegirproject.org), to maintain
 NDI's [DemTools](https://dem.tools) mass-hosting platform, DemCloud.
