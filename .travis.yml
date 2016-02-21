@@ -1,11 +1,18 @@
 ---
 language: php
 
+# http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
+sudo: false
+
+env:
+  matrix:
+    - MAKE_PLATFORM=demtools-civi-test
+    - MAKE_PLATFORM=demtools-dkan-test
+
 before_install:
   - sudo apt-get -qq update
 
 script:
   - make list
   - make drush-unstable
-  - make demtools-dkan-test
-  - make demtools-civi-platform
+  - make $MAKE_PLATFORM
