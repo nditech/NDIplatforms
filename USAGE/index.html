@@ -147,7 +147,7 @@
             <div class="section">
               
                 <h1 id="ndi-platforms">NDI PLATFORMS</h1>
-<p>This document describes building platforms using the NDIplatforms stub
+<p>This document describes building platforms using the NDIplatforms stub Drush
 makefiles.  To understand how these makefiles are maintained, please see
 docs/MAINTENANCE.md.</p>
 <h2 id="usage">USAGE</h2>
@@ -165,10 +165,8 @@ git repository containing such a lockfile, and be confident that the platform
 that is built will be identical to one built right after that commit.</p>
 <h2 id="build-a-platform-on-the-command-line">Build a platform on the command-line</h2>
 <p>We start by simply calling Drush make (usually as the "aegir" user):</p>
-<pre><code>$ drush make ~/makefiles/NDIplatforms/locks/ndi-polls.lock ~/platforms/DemTools_2015-10-21
+<pre><code>$ drush make ~/makefiles/NDIplatforms/locks/ndi-polls.lock.yml ~/platforms/DemTools_2015-10-21
 </code></pre>
-<p>We can then make any manual alterations to the platform that might be required.
-For example, copying a favicon, makefile, and release notes into the platform.</p>
 <p>Assuming that the platform build worked, we need to tell Aegir about it.
 The easiest way to do that is to visit /node/add/platform on the Aegir site.
 We then need to provide a name, such as "DemTools_2015-10-21", and specify
@@ -185,8 +183,11 @@ This is the preferred method, as it:</p>
 <li>creates a link to the makefile that was used in building the platform; and</li>
 <li>avoids having to import the platform separately.</li>
 </ul>
+<p>However, some YAML makefiles require Drush 8, which only shipped with Aegir
+Debian packages starting in version 3.4. As a result, building fro the command
+line may be required, if you are using an older version.</p>
 <p>First, find the lockfile we want to use to build the platform on Github, such
-as https://github.com/nditech/NDIplatforms/blob/master/locks/ndi-polls.lock.
+as https://github.com/nditech/NDIplatforms/blob/master/locks/ndi-polls.lock.yml.
 Then click the "Raw" button to get a link to the output that Drush Make can
 accept.  Copy that URL into the "makefile" field on "/node/add/platform" on the
 Aegir site.  Then provide a meaningful name, such as "DemTools_2015-10-21", and
