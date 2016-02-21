@@ -14,16 +14,16 @@ projects:
     directory_name: "demtools_dkan"
     download:
       type: git
-      url: 'git@github.com:NDItech/demtools_dkan_theme.git'
+      url: 'https://github.com/NDItech/demtools_dkan_theme.git'
       branch: 7.x-1.x
   demtools_dkan:
     subdir: custom
     download:
       type: git
-      url: 'git@github.com:NDItech/demtools_dkan.git'
+      url: 'https://github.com/NDItech/demtools_dkan.git'
   demtools:
     subdir: custom
     download:
       type: git
-      url: 'git@github.com:NDItech/demtools.git'
+      url: 'https://github.com/NDItech/demtools.git'
 
