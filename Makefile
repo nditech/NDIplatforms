@@ -54,19 +54,19 @@ locks/drupal8.lock.yml: stubs/drupal8.make.yml includes/drupal/core.8.make.yml
 	$(d) $(lock) stubs/drupal8.make.yml --result-file=locks/drupal8.lock.yml
 
 dkan: locks/dkan.lock.yml
-locks/dkan.lock.yml: drupal7 stubs/dkan.make.yml includes/dkan/profile.make.yml
+locks/dkan.lock.yml: locks/drupal7.lock.yml stubs/dkan.make.yml includes/dkan/profile.make.yml
 	$(d) $(lock) stubs/dkan.make.yml --result-file=locks/dkan.lock.yml
 demtools-dkan: locks/demtools-dkan.lock.yml
-locks/demtools-dkan.lock.yml: dkan stubs/demtools-dkan.make.yml includes/dkan/*
+locks/demtools-dkan.lock.yml: locks/dkan.lock.yml stubs/demtools-dkan.make.yml includes/dkan/*
 	$(d) $(lock) stubs/demtools-dkan.make.yml --result-file=locks/demtools-dkan.lock.yml
 demtools-dkan-test: demtools-dkan
 	$(d) make locks/demtools-dkan.lock.yml $(tmp_dir)/demtools-dkan-$(ts)
 
 civicrm: locks/civicrm.lock.yml
-locks/civicrm.lock.yml: drupal7 stubs/civicrm.make.yml includes/civicrm/civicrm.make.yml
+locks/civicrm.lock.yml: locks/drupal7.lock.yml stubs/civicrm.make.yml includes/civicrm/civicrm.make.yml
 	$(d) $(lock) stubs/civicrm.make.yml --result-file=locks/civicrm.lock.yml
 demtools-civi: locks/demtools-civi.lock.yml
-locks/demtools-civi.lock.yml: civicrm stubs/demtools-civi.make.yml
+locks/demtools-civi.lock.yml: locks/civicrm.lock.yml stubs/demtools-civi.make.yml
 	$(d) $(lock) stubs/demtools-civi.make.yml --result-file=locks/demtools-civi.lock.yml
 demtools-civi-test: demtools-civi
 	$(d) $(make) locks/demtools-civi.lock.yml $(tmp_dir)/demtools-civi-$(ts)
