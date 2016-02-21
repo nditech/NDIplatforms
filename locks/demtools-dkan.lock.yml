@@ -141,6 +141,6 @@ libraries:
   reclineViewNvd3:
     download:
       type: git
-      url: 'https://github.com/NuCivic/recline.view.nvd3.js.git'
-      revision: bda409987
+      url: 'https://github.com/NDItech/recline.view.nvd3.js.git'
+      branch: date-formats
     type: library

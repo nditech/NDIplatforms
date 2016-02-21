@@ -65,5 +65,7 @@ libraries:
   reclineViewNvd3:
     type: libraries
     download:
-      url: "https://github.com/NuCivic/recline.view.nvd3.js.git"
-      revision: bda409987
+      # Forked NüCivic repo to add mmm-yyyy date format to graphs
+      url: "https://github.com/NDItech/recline.view.nvd3.js.git"
+      branch: date-formats
+      revision: ~
