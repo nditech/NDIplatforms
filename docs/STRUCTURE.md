@@ -29,33 +29,47 @@ Here is the (abridged) layout of files and directories:
     ├── docs
     │   ...
     ├── includes
-    │   ├── civicrm-extensions.make
-    │   ├── civicrm.make
-    │   ├── core.make
-    │   ├── modules.make
-    │   └── ndi-civi-extensions.make
+    │   ├── civicrm
+    │   │   ├── civicrm.make.yml
+    │   │   ├── custom.make.yml
+    │   │   ...
+    │   ├── dkan
+    │   │   ...
+    │   └── drupal
+    │       ├── core.7.make.yml
+    │       ...
     ├── locks
-    │   └── ndi-civisociety.lock
+    │   ├── civicrm.lock.yml
+    │   ├── demtools-civi.lock.yml
+    │   ...
+    │   └── drupal7.lock.yml
+    ├── Makefile
     ├── README.md
-    └── stubs
-        ├── civicrm.make
-        └── ndi-civisociety.make
+    ├── stubs
+    │   ├── civicrm.make.yml
+    │   ├── demtools-civi.make.yml
+    │   ...
+    │   └── drupal7.make.yml
+    └── tmp
+        └── drush
+
+
 
 There are 4 top-level directories: docs, includes, locks and stubs.  We examine
 these in more detail later.  The locks and stubs directories simply contain
-lockfiles and release notes in the former, and stub makefiles in the latter,
-with no further hierarchy.
+lockfiles in the former, and stub makefiles in the latter, with no further
+hierarchy.
 
-The "includes" directory, on the other hand, may have subdirectories, though it
-currently does not.
+The "includes" directory, on the other hand, has subdirectories that contain
+makefiles specific to each product.
 
 
 Stubs
 -----
 
 Stubs are makefiles that usually do not contain any projects to download
-directly.  Instead, they usually include a version of core, and various other
-makefiles to build up a full platform.
+directly.  Instead, they include a version of core, and various other makefiles
+to build up a full platform.
 
 In the example below, we see that the contents are pretty basic.  There is
 documentation throughout, as well as the basic Drush make "api" and "core"
@@ -118,10 +132,11 @@ Lockfiles
 ---------
 
 Finally, the lockfiles directory includes makefiles that have been run through
-"drush make --lock --no-build" (see docs/MAINTENANCE.md).  This basically takes our
-stub makefile, compiles all the inclusions, and then checks with drupal.org to
+"drush make-lock" (see docs/MAINTENANCE.md).  This basically takes our stub
+makefile, compiles all the inclusions, and then checks with drupal.org to
 determine the latest versions of all the components, just as if they were all
 going to be downloaded in a normal run of Drush make.  It then writes this out
 into a new makefile that now specifies all the up-to-date versions.  This form
 of makefile is called a lockfile, similar to what we see with Composer or Gem.
+
 
