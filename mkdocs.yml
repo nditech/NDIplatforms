@@ -1,0 +1,13 @@
+site_name: NDIplatforms
+repo_url: https://github.com/NDItech/NDIplatforms
+theme: readthedocs
+site_favicon: '_images/favicon.ico'
+docs_dir: docs
+site_dir: '/tmp/NDIplatforms/_site'
+pages:
+- 'Home': 'index.md'
+- 'Install': 'INSTALL.md'
+- 'Usage': 'USAGE.md'
+- 'Structure': 'STRUCTURE.md'
+- 'Maintenance': 'MAINTENANCE.md'
+- 'Documentation': 'DOCUMENTATION.md'
