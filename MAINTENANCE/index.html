@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Maintenance - NDIplatforms</title>
+  
+
+  <link rel="shortcut icon" href="../_images/favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Maintenance";
+    var mkdocs_page_input_path = "MAINTENANCE.md";
+    var mkdocs_page_url = "/MAINTENANCE/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> NDIplatforms</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../INSTALL/">Install</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../USAGE/">Usage</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../STRUCTURE/">Structure</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Maintenance</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#ndi-platforms">NDI PLATFORMS</a></li>
+                
+                    <li><a class="toctree-l4" href="#maintenance">MAINTENANCE</a></li>
+                
+                    <li><a class="toctree-l4" href="#update-your-makefiles">Update your makefiles</a></li>
+                
+                    <li><a class="toctree-l4" href="#test-the-new-lockfile">Test the new lockfile</a></li>
+                
+                    <li><a class="toctree-l4" href="#finalize-the-new-lockfile">Finalize the new lockfile</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../DOCUMENTATION/">Documentation</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">NDIplatforms</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Maintenance</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/NDItech/NDIplatforms" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ndi-platforms">NDI PLATFORMS</h1>
+<p>This document describes how to maintain locked makefiles.  To understand how to
+build platforms using them, please see USAGE.md.  To better understand how these
+makefiles are structured, please see STRUCTURE.md.</p>
+<p>Please follow the installation instructions in INSTALL.md, as we currently use
+git versions of both Drush and an extension, make_diff.  The usage instructions
+below assume that you have followed those instructions exactly.</p>
+<h2 id="maintenance">MAINTENANCE</h2>
+<p>For simplicity, we use the (hypothetical) "stubs/ndi-polls.make" makefile in
+our examples.  Obviously, replace this with whichever platform stub makefile
+is appropriate.</p>
+<h2 id="update-your-makefiles">Update your makefiles</h2>
+<p>First, we create a temporary lockfile based on a given platform stub:</p>
+<pre><code>$ drush7 make --no-build --lock=/tmp/make.lock stubs/ndi-polls.make
+Wrote .make file /tmp/make.lock
+</code></pre>
+<p>Note: the --lock parameter does not work with the ~ path shortcut.</p>
+<p>Then, we compare it to the current lockfile, so we can see what changes have
+occurred:</p>
+<pre><code>$ drush7 diff locks/ndi-polls.lock /tmp/make.lock --list=0
+ Project  Old version  New version  Notices                            
+ drupal   7.38         7.39         version upgraded, patches changed.
+</code></pre>
+<p>Investigate and fix any warnings as appropriate.  This will generally involve
+pinning a version for a module.  This is done by commenting out the module from
+the general modules list (i.e., includes/modules.make), then adding an entry
+in the modules pin list (e.g., includes/modules-pins.make):</p>
+<pre><code>; The recommended release is on the 2.x branch, so we pin to the latest
+; supported version on the 1.x branch.
+; For updates, check: https://drupal.org/project/google_analytics
+projects[goole_analytics][version] = 1
+</code></pre>
+<p>It is usually best to pin to a major version in this case, so that new releases
+on that branch are incorporated automatically.</p>
+<p>Re-running the commands above should now no longer show any major version
+upgrade warnings.</p>
+<h2 id="test-the-new-lockfile">Test the new lockfile</h2>
+<p>It is usually worthwhile to test the new lockfile at this point.  For example,
+an update to a module could cause a patch to no longer apply.  Usually, in such
+cases, updating the patches makefile with a new patch, or simply removing
+patches that have been incorporated into the new release, will be sufficient to
+resolve any issues at this stage.</p>
+<p>Adding or changing patches or libraries, adding new modules or themes, and
+other such modifications can also cause build failures.  Running a test build is
+as simple as running drush make on the new lockfile:</p>
+<pre><code>$ drush7 make /tmp/make.lock test_demtools
+</code></pre>
+<h2 id="finalize-the-new-lockfile">Finalize the new lockfile</h2>
+<p>Once all changes and warnings are resolved or accepted, and documented, we copy
+the temporary lockfile over the existing one in our repo:</p>
+<pre><code>$ cp /tmp/make.lock locks/ndi-polls.lock
+</code></pre>
+<p>Then commit these changes into git:</p>
+<pre><code>$ git commit -am"Update NDI's common platform."
+</code></pre>
+<p>It may also be useful to include the output of "drush make-diff" in the commit
+message.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../DOCUMENTATION/" class="btn btn-neutral float-right" title="Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../STRUCTURE/" class="btn btn-neutral" title="Structure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/NDItech/NDIplatforms" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../STRUCTURE/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../DOCUMENTATION/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
