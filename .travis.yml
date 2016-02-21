@@ -1,0 +1,11 @@
+---
+language: php
+
+before_install:
+  - sudo apt-get -qq update
+
+script:
+  - make list
+  - make drush-unstable
+  - make demtools-dkan-test
+  - make demtools-civi-platform
