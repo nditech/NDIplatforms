@@ -9,9 +9,6 @@ env:
     - MAKE_PLATFORM=demtools-civi-test
     - MAKE_PLATFORM=demtools-dkan-test
 
-before_install:
-  - sudo apt-get -qq update
-
 script:
   - make list
   - make drush-unstable
