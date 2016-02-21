@@ -4,7 +4,7 @@ defaults:
   libraries:
     download:
       type: git
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
   projects:
     subdir: contrib
@@ -17,36 +17,36 @@ projects:
   ndi-pushbutton-profile:
     subdir: .
     download:
-      type: git
       url: 'https://github.com/nditech/demtools_civisociety_profile.git'
+      type: git
     type: profile
     directory_name: ndi_pushbutton
   ndi-pushbutton-roles:
     subdir: custom
     download:
-      type: git
       url: 'git://git.koumbit.net/ndi-pushbutton-roles.git'
+      type: git
     directory_name: ndi_civi_admin_role
   ndi-pushbutton-config:
     subdir: custom
     download:
-      type: git
       url: 'git://git.koumbit.net/ndi-pushbutton-config.git'
+      type: git
     directory_name: ndi_civi
   CiviParty:
     type: theme
     download:
-      type: git
       url: 'https://github.com/nditech/civiparty_drupal_theme.git'
+      type: git
     destination: sites/all/themes
   civimp_theme:
     type: theme
     directory_name: civimp
     download:
-      type: git
       url: 'https://github.com/nditech/civimp_theme.git'
+      type: git
   webform_civicrm:
-    version: '4.14'
+    version: '4.15'
   webform:
     version: '4.12'
   libraries:
@@ -70,7 +70,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.12/civicrm-4.6.12-drupal.tar.gz'
+      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.13/civicrm-4.6.13-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
@@ -78,42 +78,42 @@ libraries:
     download:
       type: git
       url: 'https://github.com/nditech/CiviLocalPermissionsExtension.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   ndimisc:
     download:
       type: git
       url: 'https://github.com/nditech/CiviCitizenCustomizerExtension.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   ndiciviparty:
     download:
       type: git
       url: 'https://github.com/nditech/ndiciviparty.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   ndicivimp:
     download:
       type: git
       url: 'https://github.com/nditech/ndicivimp.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   legcase:
     download:
       type: git
       url: 'https://github.com/civicrm/org.civicrm.legcase.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   ukrainerayons:
     download:
       type: git
       url: 'https://github.com/nditech/ukrainerayons.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   civicrm_activity_ical:
@@ -121,7 +121,7 @@ libraries:
       type: git
       url: 'git://git.drupal.org/project/civicrm_activity_ical.git'
       tag: 7.x-1.1
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   civisualize:
@@ -129,14 +129,14 @@ libraries:
       type: git
       url: 'https://github.com/agh1/civisualize.git'
       branch: member-viz
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   clickatell_sms_provider:
     download:
       type: git
       url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   event_calendar:
@@ -144,7 +144,7 @@ libraries:
       type: git
       url: 'https://github.com/osseed/com.osseed.eventcalendar.git'
       tag: '1.1'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   mandrill_email:
@@ -152,49 +152,49 @@ libraries:
       type: git
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   reporterror:
     download:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   twilio_sms:
     download:
       type: git
       url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   civicrm-metrics-server:
     download:
       type: git
       url: 'https://github.com/ginkgostreet/civicrm-metrics-server'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   civicrm-metrics-client:
     download:
       type: git
       url: 'https://github.com/ginkgostreet/civicrm-metrics-client'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   org.ndi.metrics:
     download:
       type: git
       url: 'https://github.com/ginkgostreet/org.ndi.metrics'
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
   civicrm_l10n_core:
     download:
       type: file
       url: 'https://download.civicrm.org/civicrm-l10n-core/archives/civicrm-l10n-daily.tar.gz'
-    destination: modules
+    destination: modules/contrib/civicrm
     overwrite: true
-    directory_name: civicrm/l10n
+    directory_name: l10n
     type: library

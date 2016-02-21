@@ -4,7 +4,7 @@ defaults:
   libraries:
     download:
       type: git
-    destination: modules/civicrm/extensions
+    destination: modules/contrib/civicrm/extensions
     overwrite: '1'
 libraries:
   civicrm_activity_ical:

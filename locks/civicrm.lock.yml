@@ -12,13 +12,13 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.12/civicrm-4.6.12-drupal.tar.gz'
+      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.13/civicrm-4.6.13-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
   civicrm_l10n_core:
-    destination: modules
-    directory_name: civicrm/l10n
+    destination: modules/contrib/civicrm
+    directory_name: l10n
     download:
       type: file
       url: 'https://download.civicrm.org/civicrm-l10n-core/archives/civicrm-l10n-daily.tar.gz'
