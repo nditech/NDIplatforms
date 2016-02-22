@@ -1,0 +1,11 @@
+core: 7.x
+api: 2
+
+defaults:
+  projects:
+    subdir: contrib
+
+includes:
+  - ../stock/civicrm.lock.yml
+  - civicrm/modules.make.yml
+  - civicrm/custom.make.yml

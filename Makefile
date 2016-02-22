@@ -8,9 +8,13 @@ ts=`date --iso-8601=seconds`
 ds=`date +%Y%m%d`
 pl=/var/aegir/platforms
 makes=~/makefiles/NDIplatforms
+cores = drupal7 drupal8
+stock = dkan civicrm
+demtools = demtools/dkan demtools/civicrm
 
 list:
-	@cat Makefile | grep "^[[:alpha:]]" | grep ":" | grep -v "^locks" | sed s/:[^:]*//
+	@echo "The following targets are available:"
+	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'| sed 's/^/  /' --
 
 clean:
 	@rm -rf $(tmp_dir)
@@ -44,38 +48,25 @@ drush-source: clean-drush
 	@echo " Drush git branch:" `cd tmp/drush-source/; git rev-parse --abbrev-ref HEAD`
 
 
-all: stock demtools
+all: cores stock demtools
 
-stock: drupal7 drupal8 dkan civicrm
+cores: $(cores)
+$(cores): %: cores/%.lock.yml
+cores/%.lock.yml: cores/%.build.yml cores/%.make.yml
+	$(d) $(lock) $< --result-file=$@
 
-demtools: demtools-dkan demtools-civi
+stock: $(stock)
+$(stock): %: stock/%.lock.yml
+stock/%.lock.yml: stock/%.build.yml cores/drupal7.lock.yml stock/%.make.yml
+	$(d) $(lock) $< --result-file=$@
 
-drupal7: locks/drupal7.lock.yml
-locks/drupal7.lock.yml: stubs/drupal7.make.yml includes/drupal/core.7.make.yml
-	$(d) $(lock) stubs/drupal7.make.yml --result-file=locks/drupal7.lock.yml
-drupal8: locks/drupal8.lock.yml
-locks/drupal8.lock.yml: stubs/drupal8.make.yml includes/drupal/core.8.make.yml
-	$(d) $(lock) stubs/drupal8.make.yml --result-file=locks/drupal8.lock.yml
-
-dkan: locks/dkan.lock.yml
-locks/dkan.lock.yml: locks/drupal7.lock.yml stubs/dkan.make.yml includes/dkan/profile.make.yml
-	$(d) $(lock) stubs/dkan.make.yml --result-file=locks/dkan.lock.yml
-demtools-dkan: locks/demtools-dkan.lock.yml
-locks/demtools-dkan.lock.yml: locks/dkan.lock.yml stubs/demtools-dkan.make.yml includes/dkan/*
-	$(d) $(lock) stubs/demtools-dkan.make.yml --result-file=locks/demtools-dkan.lock.yml
-demtools-dkan-test: demtools-dkan
-	$(d) make locks/demtools-dkan.lock.yml $(tmp_dir)/demtools-dkan-$(ts)
-
-civicrm: locks/civicrm.lock.yml
-locks/civicrm.lock.yml: locks/drupal7.lock.yml stubs/civicrm.make.yml includes/civicrm/civicrm.make.yml
-	$(d) $(lock) stubs/civicrm.make.yml --result-file=locks/civicrm.lock.yml
-demtools-civi: locks/demtools-civi.lock.yml
-locks/demtools-civi.lock.yml: locks/civicrm.lock.yml stubs/demtools-civi.make.yml
-	$(d) $(lock) stubs/demtools-civi.make.yml --result-file=locks/demtools-civi.lock.yml
-demtools-civi-test: demtools-civi
-	$(d) $(make) locks/demtools-civi.lock.yml $(tmp_dir)/demtools-civi-$(ts)
-# Remove the `drush make` step once Aegir is using Drush 8+
-demtools-civi-platform: demtools-civi
-	$(d) $(make) locks/demtools-civi.lock.yml $(pl)/demtools-civi-$(ds)$(inc)
-	drush provision-save @platform_demtoolscivi$(ds)$(inc) --root=$(pl)/demtools-civi-$(ds)$(inc) --makefile=$(makes)/locks/demtools-civi.lock.yml --context_type=platform
-	drush @hostmaster hosting-import @platform_demtoolscivi$(ds)$(inc)
+demtools: $(demtools)
+$(demtools): %: %.lock.yml
+demtools/%.lock.yml: demtools/%.build.yml stock/%.lock.yml demtools/%/*
+	$(d) $(lock) $< --result-file=$@
+demtools/%-test: demtools/%
+	$(d) make demtools/$*.lock.yml $(tmp_dir)/demtools-dkan-$(ts)
+demtools/%-platform: demtools/%
+	#$(d) $(make) demtools/$*.lock.yml $(pl)/demtools-$*-$(ds)$(inc)
+	#drush provision-save @platform_demtools$*$(ds)$(inc) --root=$(pl)/demtools-$*-$(ds)$(inc) --makefile=$(makes)/demtools/$*.lock.yml --context_type=platform
+	#drush @hostmaster hosting-import @platform_demtools$*$(ds)$(inc)

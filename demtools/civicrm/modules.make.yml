@@ -1,11 +1,28 @@
 core: 7.x
 api: '2'
+
 defaults:
   libraries:
     download:
       type: git
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
+
+projects:
+  webform_civicrm: { version: ~ }
+  # Dependencies of webform_civicrm:
+  webform:  { version: ~ } 
+  libraries: { version: ~ }
+  options_element: { version: ~ }
+  views: { version: ~ }
+
+  features: { version: ~ }
+  strongarm: { version: ~ }
+  ctools: { version: ~ }
+  admin_menu: { version: ~ }
+  variable: { version: ~ }
+  i18n: { version: ~ }
+
 libraries:
   civicrm_activity_ical:
     download:

@@ -1,0 +1,9 @@
+core: 8.x
+api: 2
+
+defaults:
+  projects:
+    subdir: contrib
+
+includes:
+  - drupal8.make.yml
