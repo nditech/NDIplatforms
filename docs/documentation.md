@@ -6,16 +6,17 @@ We maintain the NDIplatform documentation site using
 contributing to this project, fork it on Github. Then install mkdocs and clone
 this repo:
 
-    # brew install python;               # For OSX users
-    # sudo aptitude install python-pip   # For Debian/Ubuntu users
-    # pip install mkdocs
+    :::bash
+    $ sudo brew install python              # For OSX users
+    $ sudo aptitude install python-pip      # For Debian/Ubuntu users
+    $ sudo pip install mkdocs
     $ git clone https://github.com/NDItech/NDIplatforms.git
     $ cd NDIplatforms
     $ git remote add sandbox https://github.com/<username>/NDIplatforms.git
     $ mkdocs serve
 
 Your local NDIplatforms docs site should now be available for browsing:
-http://127.0.0.1:8000/. When you find a typo, an error, unclear or missing
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/). When you find a typo, an error, unclear or missing
 explanations or instructions, hit ctrl-c, to stop the server, and start
 editing. Find the page you’d like to edit; everything is in the docs/
 directory. Make your changes, commit and push them, and start a pull request:
