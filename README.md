@@ -1,4 +1,4 @@
-NDI PLATFORMS ![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)
+NDI PLATFORMS [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
 =============
 
 NDIplatforms is a set of Drush makefiles structured for easy maintenance.  It

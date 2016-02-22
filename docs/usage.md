@@ -1,4 +1,4 @@
-USAGE
+USAGE [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
 =====
 
 This section describes building platforms using the NDIplatforms stub Drush

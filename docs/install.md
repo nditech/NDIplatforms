@@ -1,4 +1,4 @@
-INSTALLATION
+INSTALLATION [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
 ============
 
 Download

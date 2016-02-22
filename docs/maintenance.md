@@ -1,4 +1,4 @@
-MAINTENANCE
+MAINTENANCE [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
 ===========
 
 This section describes how to maintain Drush Make lockfiles. To understand how

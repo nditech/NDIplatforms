@@ -1,4 +1,4 @@
-STRUCTURE
+STRUCTURE [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
 =========
 
 This section describes the filesystem layout for NDIplatforms Drush makefiles.

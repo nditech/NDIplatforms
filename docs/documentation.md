@@ -1,5 +1,5 @@
-NDI Platforms Documentation
-===========================
+DOCUMENTATION [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
+=============
 
 We maintain the NDIplatform documentation site using
 [mkdocs](http://www.mkdocs.org/) to build this site. To get started
