@@ -29,6 +29,7 @@ projects:
       type: git
       url: 'https://github.com/nditech/elections_module.git'
       branch: master
+      revision: 73b5c20ea429092a8b952d5fbcdd63802c8fed9e
   demtools_dkan_theme:
     subdir: custom
     type: theme
@@ -37,16 +38,21 @@ projects:
       type: git
       url: 'https://github.com/NDItech/demtools_dkan_theme.git'
       branch: 7.x-1.x
+      revision: cadbe0d5272d939c9567e2f3ea6d6c15c6325372
   demtools_dkan:
     subdir: custom
     download:
       type: git
       url: 'https://github.com/NDItech/demtools_dkan.git'
+      branch: master
+      revision: 56a5d54843fe56429f2da7c8f4db722bf164d12c
   demtools:
     subdir: custom
     download:
       type: git
       url: 'https://github.com/NDItech/demtools.git'
+      branch: master
+      revision: 34dc306ac5cfee67a2011b00ec995271fa085d0f
   hierarchical_select:
     version: 3.0-beta3
   quicktabs:
@@ -119,28 +125,33 @@ libraries:
       type: git
       url: 'https://github.com/novus/nvd3.git'
       revision: 7ebd54ca09061022a248bec9a050a4dec93e2b28
+      branch: master
     type: library
   d3:
     download:
       type: git
       url: 'https://github.com/mbostock/d3.git'
       revision: f82dd6fb414a15bca4f9c39c7c9442295ddea416
+      branch: master
     type: library
   gdocs:
     download:
       type: git
       url: 'https://github.com/okfn/recline.backend.gdocs.git'
       revision: e81bb237759353932834a38a0ec810441e0ada10
+      branch: master
     type: library
   lodash_data:
     download:
       type: git
       url: 'https://github.com/NuCivic/lodash.data.git'
       revision: 0dbe0701003b8a45037ab5fada630db2dbf75d9d
+      branch: master
     type: library
   reclineViewNvd3:
     download:
       type: git
       url: 'https://github.com/NDItech/recline.view.nvd3.js.git'
+      revision: 7283459ef2590ae2662203e35276c9a31269430e
       branch: date-formats
     type: library
