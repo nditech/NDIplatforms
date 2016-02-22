@@ -2,43 +2,47 @@ lock=make-lock
 make=make
 tmp_dir=tmp
 d=$(tmp_dir)/drush
+drush_dir=$(tmp_dir)/drush-source
+branch=master
 ts=`date --iso-8601=seconds`
 ds=`date +%Y%m%d`
 pl=/var/aegir/platforms
-makes=/var/aegir/makefiles/NDIplatforms
+makes=~/makefiles/NDIplatforms
 
 list:
-	cat Makefile | grep "^[[:alpha:]]" | grep ":" | grep -v "^locks" | sed s/:[^:]*//
+	@cat Makefile | grep "^[[:alpha:]]" | grep ":" | grep -v "^locks" | sed s/:[^:]*//
 
 clean:
-	rm -rf $(tmp_dir)
+	@rm -rf $(tmp_dir)
 
 clean-tests:
-	rm -rf $(tmp_dir)/demtools-*
+	@rm -rf $(tmp_dir)/demtools-*
 
 clean-drush:
-	mkdir -p $(tmp_dir)
-	rm -f $(d)
-	rm -f $(tmp_dir)/composer.*
-	rm -rf $(tmp_dir)/vendor
+	@mkdir -p $(tmp_dir)
+	@rm -f $(d)
 
 drush: clean-drush
-	curl -SsL -z $(d) -o $(d) http://files.drush.org/drush.phar
-	chmod a+x $(d)
-	./tmp/drush --version
+	@curl -SsL -z $(d) -o $(d) http://files.drush.org/drush.phar
+	@chmod a+x $(d)
+	@$(d) --version
 
 drush-unstable: clean-drush
-	curl -SsL -z $(d) -o $(d) http://files.drush.org/drush-unstable.phar
-	chmod a+x $(d)
-	./tmp/drush --version
+	@curl -SsL -z $(d) -o $(d) http://files.drush.org/drush-unstable.phar
+	@chmod a+x $(d)
+	@$(d) --version
 
 drush-source: clean-drush
-	cd $(tmp_dir); curl -SsL -z ./composer.phar https://getcomposer.org/installer | php
-	chmod a+x $(tmp_dir)/composer.phar
-	cd $(tmp_dir); ./composer.phar require drush/drush:dev-master --prefer-source
-	cd $(tmp_dir); ln -s vendor/drush/drush/drush drush
-	chmod a+x $(d)
-	./tmp/drush --version
+	@if ! [ -d $(drush_dir) ]; then git clone https://github.com/drush-ops/drush.git $(drush_dir); fi
+	@cd $(drush_dir); git checkout $(branch)
+	@cd $(drush_dir); curl -SsL -z ./composer.phar https://getcomposer.org/installer | php
+	@chmod a+x $(drush_dir)/composer.phar
+	@cd $(drush_dir); ./composer.phar install --prefer-source
+	@ln -s drush-source/drush $(d)
+	@chmod a+x $(d)
+	@$(d) --version
+	@echo " Drush git branch:" `cd tmp/drush-source/; git rev-parse --abbrev-ref HEAD`
+
 
 all: stock demtools
 
