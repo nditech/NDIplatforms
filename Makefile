@@ -70,6 +70,6 @@ demtools/%.lock.yml: demtools/%.build.yml stock/%.lock.yml demtools/%/*
 demtools/%-test: demtools/%
 	$(d) make demtools/$*.lock.yml $(tmp_dir)/demtools-dkan-$(ts)
 demtools/%-platform: demtools/%
-	#$(d) $(make) demtools/$*.lock.yml $(pl)/demtools-$*-$(ds)$(inc)
-	#drush provision-save @platform_demtools$*$(ds)$(inc) --root=$(pl)/demtools-$*-$(ds)$(inc) --makefile=$(makes)/demtools/$*.lock.yml --context_type=platform
-	#drush @hostmaster hosting-import @platform_demtools$*$(ds)$(inc)
+	$(d) $(make) demtools/$*.lock.yml $(pl)/demtools-$*-$(ds)$(inc)
+	drush provision-save @platform_demtools$*$(ds)$(inc) --root=$(pl)/demtools-$*-$(ds)$(inc) --makefile=$(makes)/demtools/$*.lock.yml --context_type=platform
+	drush @hostmaster hosting-import @platform_demtools$*$(ds)$(inc)
