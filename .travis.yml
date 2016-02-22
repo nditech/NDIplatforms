@@ -6,8 +6,8 @@ sudo: false
 
 env:
   matrix:
-    - MAKE_PLATFORM=demtools-civi-test
-    - MAKE_PLATFORM=demtools-dkan-test
+    - MAKE_PLATFORM=demtools/civicrm-test
+    - MAKE_PLATFORM=demtools/dkan-test
 
 script:
   - make list
