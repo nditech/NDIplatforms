@@ -1,22 +1,18 @@
-NDI PLATFORMS
-=============
-
-This document describes the filesystem layout for NDIplatforms Drush makefiles.
-To understand how to use them to build platforms, please see docs/USAGE.md.
-To better understand how these makefiles are maintained, please see
-docs/MAINTENANCE.md.
-
-
 STRUCTURE
----------
+=========
 
-For simplicity, we are limiting our discussion to the DemTools Civi platform.
-Several more platforms are included in NDIplatforms, and this system scales
-very well.  However, listing them all here would complicate explanations.
+This section describes the filesystem layout for NDIplatforms Drush makefiles.
+To understand how to use them to build platforms, please see the
+[Usage](usage.md) section. To better understand how these makefiles are
+maintained, please see the [Maintenance](maintenance.md) section.
 
 
 Filesystem layout
 -----------------
+
+For simplicity, we are limiting our discussion to the DemTools Civi platform.
+Several more platforms are included in NDIplatforms, and this system scales
+very well. However, listing them all here would complicate explanations.
 
 Drush makefiles allow for the inclusion of other makefiles.  In order to reduce
 duplication and encourage these makefiles to be self-documenting, NDIplatforms
@@ -68,8 +64,8 @@ Stubs
 -----
 
 Stubs are makefiles that usually do not contain any projects to download
-directly.  Instead, they include a version of core, and various other makefiles
-to build up a full platform.
+directly. Instead, they include a version of core, and various other makefiles
+to build up a full platform. Stub makefiles are suffixes with `.build.yml`.
 
 In the example below, we see that the contents are pretty basic.  There is
 documentation throughout, as well as the basic Drush make "api" and "core"
