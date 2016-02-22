@@ -1,8 +1,8 @@
 INSTALLATION
 ============
 
-Download NDIplatforms
----------------------
+Download
+--------
 
 Download NDIplatforms somewhere convenient, such as:
 
@@ -11,12 +11,26 @@ Download NDIplatforms somewhere convenient, such as:
     $ cd ~/makefiles/NDIplatforms
 
 
-Install Drush
--------------
+Install
+-------
 
 To use the latest version of NDIplatforms effectively, you need a recent version
 of Drush. As such, we recommend using a local Drush install, so as not to
 interfere with other Drush functionality on the server.
+
+There are various options available, that are explained further in the next
+section. Use the following command to install the recommended version of Drush:
+
+    :::bash
+    $ make install
+    Switched to branch 'dev/2000'
+    [...]
+     Drush git branch: dev/2000
+
+
+### Install Drush
+
+If you prefer to use the latest release of Drush:
 
     :::bash
     $ make drush
