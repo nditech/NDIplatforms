@@ -20,13 +20,14 @@
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../_css/menu.css" rel="stylesheet">
 
   
   <script>
     // Current page data
     var mkdocs_page_name = "Install";
-    var mkdocs_page_input_path = "INSTALL.md";
-    var mkdocs_page_url = "/INSTALL/";
+    var mkdocs_page_input_path = "install.md";
+    var mkdocs_page_url = "/install/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -68,13 +69,11 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#ndi-platforms">NDI PLATFORMS</a></li>
+                <li class="toctree-l3"><a href="#installation">INSTALLATION</a></li>
                 
-                    <li><a class="toctree-l4" href="#download-ndiplatforms">Download NDIplatforms</a></li>
+                    <li><a class="toctree-l4" href="#download">Download</a></li>
                 
-                    <li><a class="toctree-l4" href="#install-drush-7x">Install Drush 7.x</a></li>
-                
-                    <li><a class="toctree-l4" href="#install-make_diff">Install make_diff</a></li>
+                    <li><a class="toctree-l4" href="#install">Install</a></li>
                 
             
             </ul>
@@ -84,28 +83,28 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../USAGE/">Usage</a>
+        <a class="" href="../usage/">Usage</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../STRUCTURE/">Structure</a>
+        <a class="" href="../structure/">Structure</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../MAINTENANCE/">Maintenance</a>
+        <a class="" href="../maintenance/">Maintenance</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../DOCUMENTATION/">Documentation</a>
+        <a class="" href="../documentation/">Documentation</a>
         
     </li>
 <li>
@@ -146,40 +145,59 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ndi-platforms">NDI PLATFORMS</h1>
-<h2 id="download-ndiplatforms">Download NDIplatforms</h2>
+                <h1 id="installation">INSTALLATION</h1>
+<h2 id="download">Download</h2>
 <p>Download NDIplatforms somewhere convenient, such as:</p>
-<pre><code>$ git clone https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
-</code></pre>
-<h2 id="install-drush-7x">Install Drush 7.x</h2>
+<div class="codehilite"><pre><span class="nv">$ </span>git clone https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
+<span class="nv">$ </span><span class="nb">cd</span> ~/makefiles/NDIplatforms
+</pre></div>
+
+
+<h2 id="install">Install</h2>
 <p>To use the latest version of NDIplatforms effectively, you need a recent version
-of Drush, as well as a custom Drush extension.  As such, we recommend using a
-local Drush install, so as not to interfere with other Drush functionality on
-the server.</p>
-<pre><code>$ git clone --branch 7.x https://github.com/drush-ops/drush.git ~/drush7
-$ cd ~/drush7
-$ curl -sS https://getcomposer.org/installer | php
-$ php ./composer.phar install
-$ alias drush7="~/drush7/drush"
-</code></pre>
-<p>You can test whether the "drush7" alias is working like so:</p>
-<pre><code>$ drush7 status
- PHP configuration      :  /etc/php5/cli/php.ini
- PHP OS                 :  Linux
- Drush version          :  7.0-dev
- Drush temp directory   :  /tmp
- Drush configuration    :
- Drush alias files      :
-</code></pre>
-<p>If you are running PHP with the suhosin module, you may have to pass the PHP
-CLI an option to allow .phar files:</p>
-<pre><code>-d suhosin.executor.include.whitelist=phar
-</code></pre>
-<h2 id="install-make_diff">Install make_diff</h2>
-<p>The "make_diff" extension allows two makefiles to be compared easily. To
-install it, simply run the following command:</p>
-<pre><code>$ drush dl make_diff
-</code></pre>
+of Drush. As such, we recommend using a local Drush install, so as not to
+interfere with other Drush functionality on the server.</p>
+<p>There are various options available, that are explained further in the next
+section. Use the following command to install the recommended version of Drush:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>make install
+Switched to branch <span class="s1">&#39;dev/2000&#39;</span>
+<span class="o">[</span>...<span class="o">]</span>
+ Drush git branch: dev/2000
+</pre></div>
+
+
+<h3 id="install-drush">Install Drush</h3>
+<p>If you prefer to use the latest release of Drush:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>make drush
+ Drush Version   :  8.0.3
+</pre></div>
+
+
+<p>Alternatively, you might want to use the latest (unstable) Drush development
+build:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>make drush-unstable
+ Drush Version   :  8.1-dev
+</pre></div>
+
+
+<p>You could also deploy Drush from source code:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>make drush-source
+Already on <span class="s1">&#39;master&#39;</span>
+<span class="o">[</span>...<span class="o">]</span>
+All settings correct <span class="k">for</span> using Composer
+Downloading...
+<span class="o">[</span>...<span class="o">]</span>
+ Drush Version   :  8.1-dev
+</pre></div>
+
+
+<p>Finally, deploying Drush from source code allows the use of arbitrary branches
+(from a PR, for example):</p>
+<div class="codehilite"><pre><span class="nv">$ </span>make drush-source <span class="nv">branch</span><span class="o">=</span>dev/2000
+Switched to branch <span class="s1">&#39;dev/2000&#39;</span>
+<span class="o">[</span>...<span class="o">]</span>
+ Drush git branch: dev/2000
+</pre></div>
               
             </div>
           </div>
@@ -187,7 +205,7 @@ install it, simply run the following command:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../USAGE/" class="btn btn-neutral float-right" title="Usage">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../usage/" class="btn btn-neutral float-right" title="Usage">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -221,7 +239,7 @@ install it, simply run the following command:</p>
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../USAGE/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../usage/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -20,13 +20,14 @@
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../_css/menu.css" rel="stylesheet">
 
   
   <script>
     // Current page data
     var mkdocs_page_name = "Structure";
-    var mkdocs_page_input_path = "STRUCTURE.md";
-    var mkdocs_page_url = "/STRUCTURE/";
+    var mkdocs_page_input_path = "structure.md";
+    var mkdocs_page_url = "/structure/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -64,14 +65,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../INSTALL/">Install</a>
+        <a class="" href="../install/">Install</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../USAGE/">Usage</a>
+        <a class="" href="../usage/">Usage</a>
         
     </li>
 <li>
@@ -82,9 +83,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#ndi-platforms">NDI PLATFORMS</a></li>
-                
-                    <li><a class="toctree-l4" href="#structure">STRUCTURE</a></li>
+                <li class="toctree-l3"><a href="#structure">STRUCTURE</a></li>
                 
                     <li><a class="toctree-l4" href="#filesystem-layout">Filesystem layout</a></li>
                 
@@ -102,14 +101,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../MAINTENANCE/">Maintenance</a>
+        <a class="" href="../maintenance/">Maintenance</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../DOCUMENTATION/">Documentation</a>
+        <a class="" href="../documentation/">Documentation</a>
         
     </li>
 <li>
@@ -150,21 +149,20 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ndi-platforms">NDI PLATFORMS</h1>
-<p>This document describes the filesystem layout for NDIplatforms Drush makefiles.
-To understand how to use them to build platforms, please see docs/USAGE.md.
-To better understand how these makefiles are maintained, please see
-docs/MAINTENANCE.md.</p>
-<h2 id="structure">STRUCTURE</h2>
+                <h1 id="structure">STRUCTURE</h1>
+<p>This section describes the filesystem layout for NDIplatforms Drush makefiles.
+To understand how to use them to build platforms, please see the
+<a href="../usage/">Usage</a> section. To better understand how these makefiles are
+maintained, please see the <a href="../maintenance/">Maintenance</a> section.</p>
+<h2 id="filesystem-layout">Filesystem layout</h2>
 <p>For simplicity, we are limiting our discussion to the DemTools Civi platform.
 Several more platforms are included in NDIplatforms, and this system scales
-very well.  However, listing them all here would complicate explanations.</p>
-<h2 id="filesystem-layout">Filesystem layout</h2>
+very well. However, listing them all here would complicate explanations.</p>
 <p>Drush makefiles allow for the inclusion of other makefiles.  In order to reduce
 duplication and encourage these makefiles to be self-documenting, NDIplatforms
 makes extensive use of makefile includes.</p>
 <p>Here is the (abridged) layout of files and directories:</p>
-<pre><code>$ tree
+<div class="codehilite"><pre><span class="nv">$ </span>tree
 .
 ├── docs
 │   ...
@@ -192,7 +190,9 @@ makes extensive use of makefile includes.</p>
 │   └── drupal7.make.yml
 └── tmp
     └── drush
-</code></pre>
+</pre></div>
+
+
 <p>There are 4 top-level directories: docs, includes, locks and stubs.  We examine
 these in more detail later.  The locks and stubs directories simply contain
 lockfiles in the former, and stub makefiles in the latter, with no further
@@ -201,8 +201,8 @@ hierarchy.</p>
 makefiles specific to each product.</p>
 <h2 id="stubs">Stubs</h2>
 <p>Stubs are makefiles that usually do not contain any projects to download
-directly.  Instead, they include a version of core, and various other makefiles
-to build up a full platform.</p>
+directly. Instead, they include a version of core, and various other makefiles
+to build up a full platform. Stub makefiles are suffixes with <code>.build.yml</code>.</p>
 <p>In the example below, we see that the contents are pretty basic.  There is
 documentation throughout, as well as the basic Drush make "api" and "core"
 elements.  We also set a default sub-directory within which to download
@@ -210,7 +210,7 @@ projects.  This allows us to keep our included makefiles cleaner.</p>
 <p>We then include a core makefile, module, civicrm, and extensions makefiles and a
 theme makefile.  Note that we specify the location of the include file relative
 to the location of the stub.</p>
-<pre><code>core = 7.x
+<div class="codehilite"><pre>core = 7.x
 api = 2
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -224,7 +224,7 @@ includes[] = ../includes/core.make
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Specify common subdir
-defaults[projects][subdir] = "contrib"
+defaults[projects][subdir] = &quot;contrib&quot;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;         Released Modules         ;;
@@ -243,7 +243,9 @@ includes[] = ../includes/civicrm.make
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 includes[] = ../includes/civicrm-extensions.make
-</code></pre>
+</pre></div>
+
+
 <h2 id="includes">Includes</h2>
 <p>In the includes directory we find a core makefile that includes a core
 distribution and any patches we need to apply to Drupal.  These included
@@ -267,10 +269,10 @@ of makefile is called a lockfile, similar to what we see with Composer or Gem.</
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../MAINTENANCE/" class="btn btn-neutral float-right" title="Maintenance">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../maintenance/" class="btn btn-neutral float-right" title="Maintenance">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../USAGE/" class="btn btn-neutral" title="Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../usage/" class="btn btn-neutral" title="Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -298,10 +300,10 @@ of makefile is called a lockfile, similar to what we see with Composer or Gem.</
           <a href="https://github.com/NDItech/NDIplatforms" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../USAGE/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../usage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../MAINTENANCE/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../maintenance/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
