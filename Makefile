@@ -3,7 +3,7 @@ make=make
 tmp_dir=tmp
 d=$(tmp_dir)/drush
 drush_dir=$(tmp_dir)/drush-source
-branch=master
+branch=dev/2000
 ts=`date --iso-8601=seconds`
 ds=`date +%Y%m%d`
 pl=/var/aegir/platforms
@@ -11,13 +11,15 @@ makes=~/makefiles/NDIplatforms
 cores = drupal7 drupal8
 stock = dkan civicrm
 demtools = demtools/dkan demtools/civicrm
+os := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+debian := $(shell sh -c 'which apt > /dev/null; echo $$?')
+mkdocs := $(shell sh -c 'which mkdocs > /dev/null; echo $$?')
 
 list:
 	@echo "The following targets are available:"
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'| sed 's/^/  /' --
 
-install:
-	@make drush-source branch=dev/2000
+install: drush-source mkdocs
 
 clean:
 	@rm -rf $(tmp_dir)
@@ -50,6 +52,26 @@ drush-source: clean-drush
 	@$(d) --version
 	@echo " Drush git branch:" `cd tmp/drush-source/; git rev-parse --abbrev-ref HEAD`
 
+mkdocs:
+ifeq ($(mkdocs),1)
+	@echo Installing MkDocs. Administrator rights are required.
+ifeq ($(debian),0)
+	@sudo apt-get install python-pip
+else ifeq ($(os),Darwin)
+	@sudo brew install python
+else
+	@echo Only Debian flavours of GNU/Linux and OSX are currently supported.
+	@echo Install mkdocs manually: http://www.mkdocs.org/\#installation
+	@exit 1
+endif
+	@sudo pip install mkdocs
+endif
+
+docs: mkdocs
+	@mkdocs build --clean && mkdocs serve
+
+docs-deploy: mkdocs
+	@mkdocs gh-deploy --clean
 
 all: cores stock demtools
 
