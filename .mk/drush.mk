@@ -5,6 +5,10 @@ lock=make-lock
 make=make
 pl=/var/aegir/platforms
 makes=~/makefiles/NDIplatforms
+makefile_dir=makefiles
+cores_dir=$(makefile_dir)/cores
+stock_dir=$(makefile_dir)/stock
+demtools_dir=$(makefile_dir)/demtools
 
 clean-drush:
 	@rm -f $(d)
