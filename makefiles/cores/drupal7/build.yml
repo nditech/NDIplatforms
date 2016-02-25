@@ -6,5 +6,4 @@ defaults:
     subdir: contrib
 
 includes:
-  - ../cores/drupal7.lock.yml
-  - civicrm.make.yml
+  - core.make.yml

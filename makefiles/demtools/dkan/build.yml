@@ -6,9 +6,9 @@ defaults:
     subdir: contrib
 
 includes:
-  - ../stock/dkan.lock.yml
-  - dkan/modules.make.yml
-  - dkan/custom.make.yml
+  - ../../stock/dkan/lock.yml
+  - contrib.make.yml
+  - custom.make.yml
   - https://raw.githubusercontent.com/NuCivic/visualization_entity_charts/9beed7770e4793874c38c6e2aded3b55a31b30a3/visualization_entity_charts.make
   - https://raw.githubusercontent.com/NuCivic/visualization_entity/586a7fdaec075d527e3d280890f3069077a912e7/visualization_entity.make
 

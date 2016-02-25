@@ -13,7 +13,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.42'
+    version: '7.43'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -182,7 +182,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: 5aecbd93d66847e9c8a135726dc167e83c0a39ac
+      revision: 0b666b518d283ba0f4095a1d2724a7d04c08f890
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library

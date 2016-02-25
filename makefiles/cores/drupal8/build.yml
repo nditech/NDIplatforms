@@ -1,4 +1,4 @@
-core: 7.x
+core: 8.x
 api: 2
 
 defaults:
@@ -6,4 +6,4 @@ defaults:
     subdir: contrib
 
 includes:
-  - drupal7.make.yml
+  - core.make.yml
