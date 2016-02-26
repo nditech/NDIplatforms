@@ -10,12 +10,12 @@ Please follow the installation instructions in the [Install](install.md)
 section, as we currently recommend using a git version of Drush. The usage
 instructions below assume that you have followed those instructions exactly.
 
-For simplicity, we use the "demtools/dkan" project in our examples. Obviously,
-replace this with whichever platform is appropriate.
+For simplicity, we use the "demtools/dkan" project (unless otherwis specified)
+in our examples. Obviously, replace this with whichever platform is
+appropriate.
 
 
-Drush Make lockfiles
---------------------
+### Drush Make lockfiles
 
 The principle benefit of using lockfiles, over regular makefiles, is that they
 allow us to build the same platform in a repeatable fashion. A lockfile is
@@ -34,35 +34,122 @@ will be identical.
 Update your makefiles
 ---------------------
 
-First, we create a temporary lockfile based on a given platform stub:
+Under normal circumstances, you'll only need to modify makefiles to add or
+remove components from your platform build. Some (very few) makefiles require
+manual updates to version numbers. The only use-case we are currently aware of
+is when downloading a project or library using the `get` download type. An
+example of this can be seen in `makefiles/stock/civicrm/contrib.make.yml`:
 
-    $ drush7 make --no-build --lock=/tmp/make.lock stubs/ndi-polls.make
-    Wrote .make file /tmp/make.lock
+    :::yaml
+    projects:
+      civicrm:
+        type: module
+        download:
+          type: get
+          url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.13/civicrm-4.6.13-drupal.tar.gz'
 
-Note: the --lock parameter does not work with the ~ path shortcut.
+We can see the result of updating a makefile by building our lockfiles with
+`make all` and `git diff`. But that is covered in more detail in the next section.
 
-Then, we compare it to the current lockfile, so we can see what changes have
-occurred:
+### Pinning major versions
 
-    $ drush7 diff locks/ndi-polls.lock /tmp/make.lock --list=0
-     Project  Old version  New version  Notices                            
-     drupal   7.38         7.39         version upgraded, patches changed.
+Occasionally we'll see a new major version of a project released. By default,
+Drush Make will select the most recent supported version of a project. As a
+result, our lockfiles would show a major version bump as well. Generally
+speaking, major version upgrades of modules are not a part of the day-to-day
+maintenance of platforms. They will likely require some manual intervention,
+or, at very least, thorough testing.
 
-Investigate and fix any warnings as appropriate.  This will generally involve
-pinning a version for a module.  This is done by commenting out the module from
-the general modules list (i.e., includes/modules.make), then adding an entry
-in the modules pin list (e.g., includes/modules-pins.make):
+Assuming the current version of such a component is still supported, the most
+expedient solution is likely to involve pinning a major version for the module.
+This allows new releases on that branch to be incorporated automatically.
 
-    ; The recommended release is on the 2.x branch, so we pin to the latest
-    ; supported version on the 1.x branch.
-    ; For updates, check: https://drupal.org/project/google_analytics
-    projects[goole_analytics][version] = 1
+For example, in `makefiles/demtools/civicrm/contrib.make.yml`, we could replace
+this:
 
-It is usually best to pin to a major version in this case, so that new releases
-on that branch are incorporated automatically.
+    :::yaml
+    projects:
+      webform:  { version: ~ }
 
-Re-running the commands above should now no longer show any major version
-upgrade warnings.
+With the following:
+
+    :::yaml
+    projects:
+      webform:
+        # The recommended release is on the 4.x branch, so we pin to the latest
+        # supported version on the 3.x branch.
+        version: 3
+
+Note that it is usually worthwhile to document the reasons for such pinning.
+Rebuild the lockfiles, and check what has changed:
+
+    :::console
+    $ make all
+    tmp/drush make-lock makefiles/demtools/civicrm/build.yml --result-file=makefiles/demtools/civicrm/lock.yml
+    Wrote .make file makefiles/demtools/civicrm/lock.yml                                                                       [ok]
+    $ git diff makefiles/demtools/civicrm/lock.yml
+
+The resulting diff should show something like this:
+
+    :::git-diff
+    diff --git a/makefiles/demtools/civicrm/lock.yml b/makefiles/demtools/civicrm/lock.yml
+    index d3ab256..212a373 100644
+    --- a/makefiles/demtools/civicrm/lock.yml
+    +++ b/makefiles/demtools/civicrm/lock.yml
+    @@ -58,7 +58,7 @@ projects:
+       webform_civicrm:
+         version: '4.15'
+       webform:
+    -    version: '4.12'
+    +    version: '3.24'
+       libraries:
+         version: '2.2'
+       options_element:
+
+
+Update the lockfiles
+--------------------
+
+We use a GNU Makefile to simplify updates to lockfiles. This Makefile defines
+dependencies between the various lockfiles, and their includes. This means that
+when a (Drush) makefile is updated, all lockfiles that include that makefile
+will be rebuilt.
+
+Since we keep all our lockfiles in git, it's often easiest to simply force the
+re-compilation of all the lockfiles:
+
+    :::console
+    $ make all -B
+    tmp/drush make-lock makefiles/cores/drupal7/build.yml --result-file=makefiles/cores/drupal7/lock.yml
+    Wrote .make file makefiles/cores/drupal7/lock.yml                                                                          [ok]
+    tmp/drush make-lock makefiles/cores/drupal8/build.yml --result-file=makefiles/cores/drupal8/lock.yml
+    Wrote .make file makefiles/cores/drupal8/lock.yml                                                                          [ok]
+    tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml
+    Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]
+    tmp/drush make-lock makefiles/stock/civicrm/build.yml --result-file=makefiles/stock/civicrm/lock.yml
+    Wrote .make file makefiles/stock/civicrm/lock.yml                                                                          [ok]
+    tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml
+    Wrote .make file makefiles/demtools/dkan/lock.yml                                                                          [ok]
+    tmp/drush make-lock makefiles/demtools/civicrm/build.yml --result-file=makefiles/demtools/civicrm/lock.yml
+    Wrote .make file makefiles/demtools/civicrm/lock.yml                                                                       [ok]
+
+A quick `git diff` will then show any updates to lockfiles.
+
+This behaviour is based on file timestamps, even if the contents have not changed. To see it in action, you can test it with:
+
+    :::console
+    $ touch makefiles/stock/dkan/contrib.make.yml
+    ergonlogic@debian:~/code/ndi/NDIplatforms(0.4.x)$ make all
+    tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml
+    Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]
+    tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml
+    Wrote .make file makefiles/demtools/dkan/lock.yml                                                                          [ok]
+
+As you can see, updating the timestamp on a single file, triggered updates to
+the two lockfiles that include it. In fact, only
+`makefiles/stock/dkan/lock.yml` depends directly on
+`makefiles/stock/dkan/contrib.make.yml`. The `demtools/dkan` lockfile depends
+on the stock dkan lockfile, and so is rebuilt when that one is updated.
 
 
 Test the new lockfile
@@ -76,23 +163,27 @@ issues at this stage.
 
 Adding or changing patches or libraries, adding new modules or themes, and
 other such modifications can also cause build failures. Running a test build is
-as simple as running drush make on the new lockfile:
+as simple as running:
 
-    $ drush7 make /tmp/make.lock test_demtools
+    :::console
+    $ make demtools/dkan-test
+    Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]
+    drupal-7.43 downloaded.                                        [ok]
+    [...]
+
+Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) have such a test
+command defined (although it may not show up in the `make list` output).
+
+Note that running such a test will re-compile any relevant lockfiles whose
+sources have changed.
 
 
 Finalize the new lockfile
 -------------------------
 
-Once all changes and warnings are resolved or accepted, and documented, we copy
-the temporary lockfile over the existing one in our repo:
+Once any changes or updates are done, we can then commit these changes into git:
 
-    $ cp /tmp/make.lock locks/ndi-polls.lock
+    :::console
+    $ git commit -am"Update DemTools platforms."
 
-Then commit these changes into git:
-
-    $ git commit -am"Update NDI's common platform."
-
-It may also be useful to include the output of "drush make-diff" in the commit
-message.
 
