@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
   <link href="../_css/menu.css" rel="stylesheet">
+  <link href="../_css/term.css" rel="stylesheet">
+  <link href="../_css/style.css" rel="stylesheet">
 
   
   <script>
@@ -159,7 +161,7 @@ the <a href="../maintenance/">Maintenance</a> section.</p>
 <p>While most of Drupal platform creation refers to Drush makefiles, this project
 includes a <a href="https://www.gnu.org/software/make/">GNU Makefile</a> to simplify its
 usage. To see what commands are available, run:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>make list
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make list
 </pre></div>
 
 
@@ -173,10 +175,10 @@ to build the DemTools platforms after each code push to the NDIplatforms
 project. However, changes to included project (e.g., reference git branch
 deleted) since then might cause a build to break.</p>
 <p>To run a test build, simply run:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>make demtools/dkan-test
-Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
-<span class="o">[</span>...<span class="o">]</span>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make demtools/dkan-test
+<span style="color: #888888">Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]</span>
+<span style="color: #888888">drupal-7.43 downloaded.                                        [ok]</span>
+<span style="color: #888888">[...]</span>
 </pre></div>
 
 
@@ -187,10 +189,10 @@ sources have changed. See the <a href="../structure/">Structure</a> and
 <a href="../maintenance/">Maintenance</a> sections for further details.</p>
 <h2 id="build-a-platform">Build a platform</h2>
 <p>The easiest way to build a platform is to use the provided Make commands:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>make demtools/dkan-platform
-Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
-<span class="o">[</span>...<span class="o">]</span>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make demtools/dkan-platform
+<span style="color: #888888">Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]</span>
+<span style="color: #888888">drupal-7.43 downloaded.                                        [ok]</span>
+<span style="color: #888888">[...]</span>
 </pre></div>
 
 
@@ -205,10 +207,10 @@ which is the most current. If multiple platforms of the same type are required
 during the course of a single day (e.g., for iterative bug fixing and testing),
 we can include a revision counter to keep platforms and aliases unique. To do
 so, simply add <code>inc=&lt;suffix&gt;</code> when calling the platform build command:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>make demtools/dkan-platform <span class="nv">inc</span><span class="o">=</span>a
-Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
-<span class="o">[</span>...<span class="o">]</span>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make demtools/dkan-platform <span style="color: #B8860B">inc</span><span style="color: #666666">=</span>a
+<span style="color: #888888">Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]</span>
+<span style="color: #888888">drupal-7.43 downloaded.                                        [ok]</span>
+<span style="color: #888888">[...]</span>
 </pre></div>
 
 
@@ -216,10 +218,10 @@ drupal-7.43 downloaded.                                              <span class
 <p>To build a platform (also referred to as a code-base), we can also use Drush
 Make directly, along with our lockfiles. We start by simply calling Drush make
 (usually as the "aegir" user):</p>
-<div class="codehilite"><pre><span class="nv">$ </span>drush make ~/makefiles/NDIplatforms/makefiles/demtools/dkan/lock.yml ~/platforms/DemTools_DKAN_2016-02-22
-Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
-<span class="o">[</span>...<span class="o">]</span>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> drush make ~/makefiles/NDIplatforms/makefiles/demtools/dkan/lock.yml ~/platforms/DemTools_DKAN_2016-02-22
+<span style="color: #888888">Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]</span>
+<span style="color: #888888">drupal-7.43 downloaded.                                         [ok]</span>
+<span style="color: #888888">[...]</span>
 </pre></div>
 
 

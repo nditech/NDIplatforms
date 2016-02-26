@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
   <link href="../_css/menu.css" rel="stylesheet">
+  <link href="../_css/term.css" rel="stylesheet">
+  <link href="../_css/style.css" rel="stylesheet">
 
   
   <script>
@@ -146,13 +148,13 @@
 <a href="http://www.mkdocs.org/">mkdocs</a> to build this site. To get started
 contributing to this project, fork it on Github. Then install mkdocs and clone
 this repo:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>sudo brew install python              <span class="c"># For OSX users</span>
-<span class="nv">$ </span>sudo aptitude install python-pip      <span class="c"># For Debian/Ubuntu users</span>
-<span class="nv">$ </span>sudo pip install mkdocs
-<span class="nv">$ </span>git clone https://github.com/NDItech/NDIplatforms.git
-<span class="nv">$ </span><span class="nb">cd </span>NDIplatforms
-<span class="nv">$ </span>git remote add sandbox https://github.com/&lt;username&gt;/NDIplatforms.git
-<span class="nv">$ </span>mkdocs serve
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> sudo brew install python              <span style="color: #008800; font-style: italic"># For OSX users</span>
+<span style="color: #000080; font-weight: bold">$</span> sudo aptitude install python-pip      <span style="color: #008800; font-style: italic"># For Debian/Ubuntu users</span>
+<span style="color: #000080; font-weight: bold">$</span> sudo pip install mkdocs
+<span style="color: #000080; font-weight: bold">$</span> git clone https://github.com/NDItech/NDIplatforms.git
+<span style="color: #000080; font-weight: bold">$</span> <span style="color: #AA22FF">cd</span> NDIplatforms
+<span style="color: #000080; font-weight: bold">$</span> git remote add sandbox https://github.com/&lt;username&gt;/NDIplatforms.git
+<span style="color: #000080; font-weight: bold">$</span> mkdocs serve
 </pre></div>
 
 
@@ -161,14 +163,14 @@ this repo:</p>
 explanations or instructions, hit ctrl-c, to stop the server, and start
 editing. Find the page you’d like to edit; everything is in the docs/
 directory. Make your changes, commit and push them, and start a pull request:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>git checkout -b fix_typo
-<span class="nv">$ </span>vim docs/index.md                     <span class="c"># Add/edit/remove whatever you see fit. Be bold!</span>
-<span class="nv">$ </span>mkdocs build --clean<span class="p">;</span> mkdocs serve    <span class="c"># Go check your changes. We’ll wait...</span>
-<span class="nv">$ </span>git diff                              <span class="c"># Make sure there aren’t any unintended changes.</span>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git checkout -b fix_typo
+$ vim docs/index.md                     <span style="color: #008800; font-style: italic"># Add/edit/remove whatever you see fit. Be bold!</span>
+$ mkdocs build --clean; mkdocs serve    <span style="color: #008800; font-style: italic"># Go check your changes. We’ll wait...</span>
+$ git diff                              <span style="color: #008800; font-style: italic"># Make sure there aren’t any unintended changes.</span>
 diff --git a/docs/index.md b/docs/index.md
 ...
-<span class="nv">$ </span>git commit -am”Fixed typo.”           <span class="c"># Useful commit message are a good habit.</span>
-<span class="nv">$ </span>git push sandbox fix_typo
+$ git commit -am”Fixed typo.”           <span style="color: #008800; font-style: italic"># Useful commit message are a good habit.</span>
+$ git push sandbox fix_typo
 </pre></div>
 
 

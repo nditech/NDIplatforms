@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
   <link href="../_css/menu.css" rel="stylesheet">
+  <link href="../_css/term.css" rel="stylesheet">
+  <link href="../_css/style.css" rel="stylesheet">
 
   
   <script>
@@ -87,11 +89,7 @@
                 
                     <li><a class="toctree-l4" href="#filesystem-layout">Filesystem layout</a></li>
                 
-                    <li><a class="toctree-l4" href="#cores">Cores</a></li>
-                
-                    <li><a class="toctree-l4" href="#stock">Stock</a></li>
-                
-                    <li><a class="toctree-l4" href="#demtools">DemTools</a></li>
+                    <li><a class="toctree-l4" href="#types-of-platforms">Types of platforms</a></li>
                 
             
             </ul>
@@ -163,49 +161,44 @@ explanations.</p>
 duplication and encourage these makefiles to be self-documenting, NDIplatforms
 makes extensive use of makefile includes.</p>
 <p>Here is the layout of <code>makefiles/</code> directory:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>tree makefiles
-makefiles/
-├── cores
-│   ├── drupal7
-│   │   ├── build.yml
-│   │   ├── core.make.yml
-│   │   └── lock.yml
-│   └── drupal8
-│       ├── build.yml
-│       ├── core.make.yml
-│       └── lock.yml
-├── demtools
-│   ├── civicrm
-│   │   ├── build.yml
-│   │   ├── contrib.make.yml
-│   │   ├── custom.make.yml
-│   │   └── lock.yml
-│   └── dkan
-│       ├── build.yml
-│       ├── contrib.make.yml
-│       ├── custom.make.yml
-│       └── lock.yml
-└── stock
-    ├── civicrm
-    │   ├── build.yml
-    │   ├── contrib.make.yml
-    │   └── lock.yml
-    └── dkan
-        ├── build.yml
-        ├── lock.yml
-        └── profile.make.yml
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> tree makefiles
+<span style="color: #888888">makefiles/</span>
+<span style="color: #888888">├── cores</span>
+<span style="color: #888888">│   ├── drupal7</span>
+<span style="color: #888888">│   │   ├── build.yml</span>
+<span style="color: #888888">│   │   ├── core.make.yml</span>
+<span style="color: #888888">│   │   └── lock.yml</span>
+<span style="color: #888888">│   └── drupal8</span>
+<span style="color: #888888">│       ├── build.yml</span>
+<span style="color: #888888">│       ├── core.make.yml</span>
+<span style="color: #888888">│       └── lock.yml</span>
+<span style="color: #888888">├── demtools</span>
+<span style="color: #888888">│   ├── civicrm</span>
+<span style="color: #888888">│   │   ├── build.yml</span>
+<span style="color: #888888">│   │   ├── contrib.make.yml</span>
+<span style="color: #888888">│   │   ├── custom.make.yml</span>
+<span style="color: #888888">│   │   └── lock.yml</span>
+<span style="color: #888888">│   └── dkan</span>
+<span style="color: #888888">│       ├── build.yml</span>
+<span style="color: #888888">│       ├── contrib.make.yml</span>
+<span style="color: #888888">│       ├── custom.make.yml</span>
+<span style="color: #888888">│       └── lock.yml</span>
+<span style="color: #888888">└── stock</span>
+<span style="color: #888888">    ├── civicrm</span>
+<span style="color: #888888">    │   ├── build.yml</span>
+<span style="color: #888888">    │   ├── contrib.make.yml</span>
+<span style="color: #888888">    │   └── lock.yml</span>
+<span style="color: #888888">    └── dkan</span>
+<span style="color: #888888">        ├── build.yml</span>
+<span style="color: #888888">        ├── lock.yml</span>
+<span style="color: #888888">        └── profile.make.yml</span>
 
-<span class="m">9</span> directories, <span class="m">20</span> files
+<span style="color: #888888">9 directories, 20 files</span>
 </pre></div>
 
 
-<p>There are 3 top-level directories: <code>cores/</code>, <code>stock/</code> and <code>demtools/</code>. <code>cores/</code>
-contains various versions of Drupal. <code>stock/</code> contains basic implementations of
-underlying applications: CiviCRM and DKAN. These are useful for debugging, and
-isolating issues between the applications and the DemTools customizations.
-Finally, <code>demtools/</code> contains the platforms used by DemTools: stock
-applications plus addtional contrib and custom components.</p>
-<p>We examine these in more detail later.</p>
+<p>There are 3 top-level directories: <code>cores/</code>, <code>stock/</code> and <code>demtools/</code>. We
+examine these in more detail later.</p>
 <h3 id="types-of-drush-makefiles">Types of Drush makefiles</h3>
 <h4 id="42makeyml">*.make.yml</h4>
 <p>These Drush makefiles define projects and libraries, but normally don't specify
@@ -224,12 +217,22 @@ from them are repeatable.  This process takes a stub (build) makefile, compiles
 all its inclusions, then checks with http://update.drupal.org to determine the
 latest versions of all the components. This is then written out as a lockfile,
 similar to what we see with Composer or Gem.</p>
-<h2 id="cores">Cores</h2>
-<p>TBD</p>
-<h2 id="stock">Stock</h2>
-<p>TBD</p>
-<h2 id="demtools">DemTools</h2>
-<p>TBD</p>
+<h2 id="types-of-platforms">Types of platforms</h2>
+<p>To encourage re-use and modularity, we split up our makefiles into "layers".
+Each layer includes the lockfile(s) generate from the the previous one.</p>
+<h3 id="cores">Cores</h3>
+<p>Cores simply contain various versions of Drupal. The lockfiles get included
+into the stock <code>build.yml</code> files.</p>
+<h3 id="stock">Stock</h3>
+<p><code>stock/</code> contains basic implementations of underlying applications: CiviCRM and
+DKAN. These are useful for debugging, and isolating issues between the
+applications and the DemTools customizations.</p>
+<p>The <code>build.yml</code> files each include a core lockfile. The generated lockfiles,
+are then included in the DemTools <code>build.yml</code> files.</p>
+<h3 id="demtools">DemTools</h3>
+<p>Finally, <code>demtools/</code> contains the platforms used by DemTools: stock
+applications plus addtional contrib and custom components, as well as overrides
+to the projects included from lower layers.</p>
               
             </div>
           </div>
