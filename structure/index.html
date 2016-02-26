@@ -197,8 +197,10 @@ makes extensive use of makefile includes.</p>
 </pre></div>
 
 
-<p>There are 3 top-level directories: <code>cores/</code>, <code>stock/</code> and <code>demtools/</code>. We
-examine these in more detail later.</p>
+<p>There are 3 top-level directories: <code>cores/</code>, <code>stock/</code> and <code>demtools/</code>. Each of
+these include a directory for a number of flavours. Wthin each of these, we
+find the actual makefiles, build files and lockfiles. We examine these in more
+detail later.</p>
 <h3 id="types-of-drush-makefiles">Types of Drush makefiles</h3>
 <h4 id="42makeyml">*.make.yml</h4>
 <p>These Drush makefiles define projects and libraries, but normally don't specify
@@ -224,11 +226,11 @@ Each layer includes the lockfile(s) generate from the the previous one.</p>
 <p>Cores simply contain various versions of Drupal. The lockfiles get included
 into the stock <code>build.yml</code> files.</p>
 <h3 id="stock">Stock</h3>
-<p><code>stock/</code> contains basic implementations of underlying applications: CiviCRM and
-DKAN. These are useful for debugging, and isolating issues between the
-applications and the DemTools customizations.</p>
-<p>The <code>build.yml</code> files each include a core lockfile. The generated lockfiles,
-are then included in the DemTools <code>build.yml</code> files.</p>
+<p><code>stock/</code> contains minimalist implementations of underlying applications:
+CiviCRM and DKAN (so far). These are useful for debugging, and isolating issues
+between the applications and the DemTools customizations.</p>
+<p>The <code>build.yml</code> files each include a core lockfile, along with any makefiles.
+The generated lockfiles, are then included in the DemTools <code>build.yml</code> files.</p>
 <h3 id="demtools">DemTools</h3>
 <p>Finally, <code>demtools/</code> contains the platforms used by DemTools: stock
 applications plus addtional contrib and custom components, as well as overrides
