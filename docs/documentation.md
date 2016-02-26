@@ -6,7 +6,7 @@ We maintain the NDIplatform documentation site using
 contributing to this project, fork it on Github. Then install mkdocs and clone
 this repo:
 
-    :::bash
+    :::console
     $ sudo brew install python              # For OSX users
     $ sudo aptitude install python-pip      # For Debian/Ubuntu users
     $ sudo pip install mkdocs

@@ -6,7 +6,7 @@ Download
 
 Download NDIplatforms somewhere convenient, such as:
 
-    :::bash
+    :::console
     $ git clone https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
     $ cd ~/makefiles/NDIplatforms
 
@@ -21,7 +21,7 @@ interfere with other Drush functionality on the server.
 There are various options available, that are explained further in the next
 section. Use the following command to install the recommended version of Drush:
 
-    :::bash
+    :::console
     $ make install
     Switched to branch 'dev/2000'
     [...]
@@ -32,20 +32,20 @@ section. Use the following command to install the recommended version of Drush:
 
 If you prefer to use the latest release of Drush:
 
-    :::bash
+    :::console
     $ make drush
      Drush Version   :  8.0.3
 
 Alternatively, you might want to use the latest (unstable) Drush development
 build:
 
-    :::bash
+    :::console
     $ make drush-unstable
      Drush Version   :  8.1-dev
 
 You could also deploy Drush from source code:
 
-    :::bash
+    :::console
     $ make drush-source
     Already on 'master'
     [...]
@@ -57,7 +57,7 @@ You could also deploy Drush from source code:
 Finally, deploying Drush from source code allows the use of arbitrary branches
 (from a PR, for example):
 
-    :::bash
+    :::console
     $ make drush-source branch=dev/2000
     Switched to branch 'dev/2000'
     [...]

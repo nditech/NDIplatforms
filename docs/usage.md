@@ -13,7 +13,7 @@ While most of Drupal platform creation refers to Drush makefiles, this project
 includes a [GNU Makefile](https://www.gnu.org/software/make/) to simplify its
 usage. To see what commands are available, run:
 
-    :::bash
+    :::console
     $ make list
 
 
@@ -33,10 +33,10 @@ deleted) since then might cause a build to break.
 
 To run a test build, simply run:
 
-    :::bash
+    :::console
     $ make demtools/dkan-test
-    Beginning to build makefiles/demtools/dkan/lock.yml.                 [ok]
-    drupal-7.43 downloaded.                                              [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
+    drupal-7.43 downloaded.                                         [ok]
     [...]
 
 Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) have such a test
@@ -52,10 +52,10 @@ Build a platform
 
 The easiest way to build a platform is to use the provided Make commands:
 
-    :::bash
+    :::console
     $ make demtools/dkan-platform
-    Beginning to build makefiles/demtools/dkan/lock.yml.                 [ok]
-    drupal-7.43 downloaded.                                              [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
+    drupal-7.43 downloaded.                                         [ok]
     [...]
 
 Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) has such a
@@ -72,10 +72,10 @@ during the course of a single day (e.g., for iterative bug fixing and testing),
 we can include a revision counter to keep platforms and aliases unique. To do
 so, simply add `inc=<suffix>` when calling the platform build command:
 
-    :::bash
+    :::console
     $ make demtools/dkan-platform inc=a
-    Beginning to build makefiles/demtools/dkan/lock.yml.                 [ok]
-    drupal-7.43 downloaded.                                              [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
+    drupal-7.43 downloaded.                                         [ok]
     [...]
 
 
@@ -86,10 +86,10 @@ To build a platform (also referred to as a code-base), we can also use Drush
 Make directly, along with our lockfiles. We start by simply calling Drush make
 (usually as the "aegir" user):
 
-    :::bash
+    :::console
     $ drush make ~/makefiles/NDIplatforms/makefiles/demtools/dkan/lock.yml ~/platforms/DemTools_DKAN_2016-02-22
-    Beginning to build makefiles/demtools/dkan/lock.yml.                 [ok]
-    drupal-7.43 downloaded.                                              [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
+    drupal-7.43 downloaded.                                         [ok]
     [...]
 
 Assuming that the platform build worked, we then need to tell Aegir about it.

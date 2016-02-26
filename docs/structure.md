@@ -21,7 +21,7 @@ makes extensive use of makefile includes.
 
 Here is the layout of `makefiles/` directory:
 
-    :::bash
+    :::console
     $ tree makefiles
     makefiles/
     ├── cores
