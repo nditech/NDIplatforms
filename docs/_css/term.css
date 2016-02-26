@@ -3,14 +3,5 @@ div.codehilite > pre {
   padding: 1em;
   border-radius: 5px;
   font-size: 110%;
-/*  font-weight: bolder;*/
-}
-/*
-div.codehilite > pre,
-div.codehilite > pre > span.nb {
-  color: white !important;
-}
-*/
-div.codehilite > pre > span.nv {
-/*  color: green;*/
+  overflow: auto;
 }

@@ -35,8 +35,8 @@ To run a test build, simply run:
 
     :::console
     $ make demtools/dkan-test
-    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
-    drupal-7.43 downloaded.                                         [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]
+    drupal-7.43 downloaded.                                        [ok]
     [...]
 
 Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) have such a test
@@ -54,8 +54,8 @@ The easiest way to build a platform is to use the provided Make commands:
 
     :::console
     $ make demtools/dkan-platform
-    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
-    drupal-7.43 downloaded.                                         [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]
+    drupal-7.43 downloaded.                                        [ok]
     [...]
 
 Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) has such a
@@ -74,8 +74,8 @@ so, simply add `inc=<suffix>` when calling the platform build command:
 
     :::console
     $ make demtools/dkan-platform inc=a
-    Beginning to build makefiles/demtools/dkan/lock.yml.            [ok]
-    drupal-7.43 downloaded.                                         [ok]
+    Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]
+    drupal-7.43 downloaded.                                        [ok]
     [...]
 
 

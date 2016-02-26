@@ -1,3 +1,24 @@
 h1 > a {
   float: right;
 }
+
+.wy-side-nav-search {
+  background-color: black;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a.icon.icon-home:before {
+  background:url('../_images/logo.png');
+  width: 58px;
+  height: 58px;
+  background-size: 58px;
+  content: '';
+  background-repeat: no-repeat;
+  margin-bottom: -15px;
+}
+
+a.icon.icon-home {
+  font-size: x-large;
+}
+
