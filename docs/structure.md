@@ -57,14 +57,11 @@ Here is the layout of `makefiles/` directory:
     9 directories, 20 files
 
 
-There are 3 top-level directories: `cores/`, `stock/` and `demtools/`. `cores/`
-contains various versions of Drupal. `stock/` contains basic implementations of
-underlying applications: CiviCRM and DKAN. These are useful for debugging, and
-isolating issues between the applications and the DemTools customizations.
-Finally, `demtools/` contains the platforms used by DemTools: stock
-applications plus addtional contrib and custom components.
+There are 3 top-level directories: `cores/`, `stock/` and `demtools/`. Each of
+these include a directory for a number of flavours. Wthin each of these, we
+find the actual makefiles, build files and lockfiles. We examine these in more
+detail later.
 
-We examine these in more detail later.
 
 ### Types of Drush makefiles
 
@@ -92,20 +89,29 @@ latest versions of all the components. This is then written out as a lockfile,
 similar to what we see with Composer or Gem.
 
 
-Cores
------
+Types of platforms
+------------------
 
-TBD
+To encourage re-use and modularity, we split up our makefiles into "layers".
+Each layer includes the lockfile(s) generate from the the previous one.
 
+### Cores
 
-Stock
------
+Cores simply contain various versions of Drupal. The lockfiles get included
+into the stock `build.yml` files.
 
-TBD
+### Stock
 
+`stock/` contains minimalist implementations of underlying applications:
+CiviCRM and DKAN (so far). These are useful for debugging, and isolating issues
+between the applications and the DemTools customizations.
 
-DemTools
---------
+The `build.yml` files each include a core lockfile, along with any makefiles.
+The generated lockfiles, are then included in the DemTools `build.yml` files.
 
-TBD
+### DemTools
+
+Finally, `demtools/` contains the platforms used by DemTools: stock
+applications plus addtional contrib and custom components, as well as overrides
+to the projects included from lower layers.
 
