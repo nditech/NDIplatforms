@@ -174,27 +174,27 @@ project. However, changes to included project (e.g., reference git branch
 deleted) since then might cause a build to break.</p>
 <p>To run a test build, simply run:</p>
 <div class="codehilite"><pre><span class="nv">$ </span>make demtools/dkan-test
-Beginning to build demtools/dkan.lock.yml.                           <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.42 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
+Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
+drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
 <span class="o">[</span>...<span class="o">]</span>
 </pre></div>
 
 
 <p>Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) have such a test
 command defined (although it may not show up in the <code>make list</code> output).</p>
-<p>Note that running such a test will re-compile any relevant lockfiles whise
+<p>Note that running such a test will re-compile any relevant lockfiles whose
 sources have changed. See the <a href="../structure/">Structure</a> and
 <a href="../maintenance/">Maintenance</a> sections for further details.</p>
 <h2 id="build-a-platform">Build a platform</h2>
 <p>The easiest way to build a platform is to use the provided Make commands:</p>
 <div class="codehilite"><pre><span class="nv">$ </span>make demtools/dkan-platform
-Beginning to build demtools/dkan.lock.yml.                           <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.42 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
+Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
+drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
 <span class="o">[</span>...<span class="o">]</span>
 </pre></div>
 
 
-<p>Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) have such a
+<p>Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) has such a
 platform build command defined (although it may not show up in the <code>make list</code>
 output).</p>
 <p>This command will build the platform to the usual production path on a stock
@@ -206,8 +206,8 @@ during the course of a single day (e.g., for iterative bug fixing and testing),
 we can include a revision counter to keep platforms and aliases unique. To do
 so, simply add <code>inc=&lt;suffix&gt;</code> when calling the platform build command:</p>
 <div class="codehilite"><pre><span class="nv">$ </span>make demtools/dkan-platform <span class="nv">inc</span><span class="o">=</span>a
-Beginning to build demtools/dkan.lock.yml.                           <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.42 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
+Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
+drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
 <span class="o">[</span>...<span class="o">]</span>
 </pre></div>
 
@@ -216,9 +216,9 @@ drupal-7.42 downloaded.                                              <span class
 <p>To build a platform (also referred to as a code-base), we can also use Drush
 Make directly, along with our lockfiles. We start by simply calling Drush make
 (usually as the "aegir" user):</p>
-<div class="codehilite"><pre><span class="nv">$ </span>drush make ~/makefiles/NDIplatforms/demtools/dkan.lock.yml ~/platforms/DemTools_DKAN_2016--2-22
-Beginning to build demtools/dkan.lock.yml.                           <span class="o">[</span>ok<span class="o">]</span>
-drupal-7.42 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
+<div class="codehilite"><pre><span class="nv">$ </span>drush make ~/makefiles/NDIplatforms/makefiles/demtools/dkan/lock.yml ~/platforms/DemTools_DKAN_2016-02-22
+Beginning to build makefiles/demtools/dkan/lock.yml.                 <span class="o">[</span>ok<span class="o">]</span>
+drupal-7.43 downloaded.                                              <span class="o">[</span>ok<span class="o">]</span>
 <span class="o">[</span>...<span class="o">]</span>
 </pre></div>
 
@@ -243,11 +243,27 @@ This is the preferred method, as it:</p>
 <p>However, YAML-formatted makefiles require Drush 8, which only shipped with
 Aegir Debian packages starting in version 3.4. As a result, building from the
 command line may be required, if you are using an older version.</p>
-<p>First, find the lockfile we want to use to build the platform on Github, such
-as https://github.com/nditech/NDIplatforms/blob/master/locks/ndi-polls.lock.yml.
-Then click the "Raw" button to get a link to the output that Drush Make can
-accept. Copy that URL into the "makefile" field on "/node/add/platform" on the
-Aegir site. Then provide a meaningful name, such as "DemTools_2015-10-21", and
+<p>First, find the lockfile we want to use to build the platform on Github. Visit
+the <a href="https://github.com/nditech/NDIplatforms">NDIplatforms project on GitHub</a>.
+From here, we'll want to work from the latest commit, as this will allow us to
+specify the commit hash in the makefile path. The benefit of doing so, is that
+we'll know <em>exactly</em> what the makefile contained at the time that we buil this
+platform. This can turn out to be very useful later.</p>
+<p>Either follow the "Latest commit" link, or append
+<a href="https://github.com/nditech/NDIplatforms/commit/HEAD">/commit/HEAD</a> to the
+project URL. We'll start seeing a long commit hash is subsequently. Click on
+the "Browse files" link to get back to the tree view of the project. Then
+navigate into the <code>makefiles/demtools/</code> directory, and choose which DemTools
+platform to build.</p>
+<p>In this directory, we'll find a <code>lock.yml</code> file. This will show all the
+components that will be pulled together to form the platform.  Next, click the
+"Raw" button to get a link to the output that Drush Make can
+accept. Here's an example of such a URL:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/nditech/NDIplatforms/5f93ef3c183574a79a7132bfce865e3f76894235/makefiles/demtools/dkan/lock.yml">https://raw.githubusercontent.com/nditech/NDIplatforms/5f93ef3c183574a79a7132bfce865e3f76894235/makefiles/demtools/dkan/lock.yml</a></li>
+</ul>
+<p>Copy that URL into the "makefile" field on "/node/add/platform" on the
+Aegir site. Then provide a meaningful name, such as "DemTools_2016-02-25", and
 click "Save".</p>
 <p>That should be all that is required. In the background, Aegir will download the
 makefile, run Drush Make, and register the platform. You should see a link to

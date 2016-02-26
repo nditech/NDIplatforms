@@ -87,11 +87,11 @@
                 
                     <li><a class="toctree-l4" href="#filesystem-layout">Filesystem layout</a></li>
                 
-                    <li><a class="toctree-l4" href="#stubs">Stubs</a></li>
+                    <li><a class="toctree-l4" href="#cores">Cores</a></li>
                 
-                    <li><a class="toctree-l4" href="#includes">Includes</a></li>
+                    <li><a class="toctree-l4" href="#stock">Stock</a></li>
                 
-                    <li><a class="toctree-l4" href="#lockfiles">Lockfiles</a></li>
+                    <li><a class="toctree-l4" href="#demtools">DemTools</a></li>
                 
             
             </ul>
@@ -155,113 +155,81 @@ To understand how to use them to build platforms, please see the
 <a href="../usage/">Usage</a> section. To better understand how these makefiles are
 maintained, please see the <a href="../maintenance/">Maintenance</a> section.</p>
 <h2 id="filesystem-layout">Filesystem layout</h2>
-<p>For simplicity, we are limiting our discussion to the DemTools Civi platform.
-Several more platforms are included in NDIplatforms, and this system scales
-very well. However, listing them all here would complicate explanations.</p>
-<p>Drush makefiles allow for the inclusion of other makefiles.  In order to reduce
+<p>For simplicity, we are limiting our discussion to the DemTools Civi and DKAN
+platforms. Several more platforms will be included in NDIplatforms, and this
+system scales very well. However, listing them all here would complicate
+explanations.</p>
+<p>Drush makefiles allow for the inclusion of other makefiles. In order to reduce
 duplication and encourage these makefiles to be self-documenting, NDIplatforms
 makes extensive use of makefile includes.</p>
-<p>Here is the (abridged) layout of files and directories:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>tree
-.
-├── docs
-│   ...
-├── includes
+<p>Here is the layout of <code>makefiles/</code> directory:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>tree makefiles
+makefiles/
+├── cores
+│   ├── drupal7
+│   │   ├── build.yml
+│   │   ├── core.make.yml
+│   │   └── lock.yml
+│   └── drupal8
+│       ├── build.yml
+│       ├── core.make.yml
+│       └── lock.yml
+├── demtools
 │   ├── civicrm
-│   │   ├── civicrm.make.yml
+│   │   ├── build.yml
+│   │   ├── contrib.make.yml
 │   │   ├── custom.make.yml
-│   │   ...
-│   ├── dkan
-│   │   ...
-│   └── drupal
-│       ├── core.7.make.yml
-│       ...
-├── locks
-│   ├── civicrm.lock.yml
-│   ├── demtools-civi.lock.yml
-│   ...
-│   └── drupal7.lock.yml
-├── Makefile
-├── README.md
-├── stubs
-│   ├── civicrm.make.yml
-│   ├── demtools-civi.make.yml
-│   ...
-│   └── drupal7.make.yml
-└── tmp
-    └── drush
+│   │   └── lock.yml
+│   └── dkan
+│       ├── build.yml
+│       ├── contrib.make.yml
+│       ├── custom.make.yml
+│       └── lock.yml
+└── stock
+    ├── civicrm
+    │   ├── build.yml
+    │   ├── contrib.make.yml
+    │   └── lock.yml
+    └── dkan
+        ├── build.yml
+        ├── lock.yml
+        └── profile.make.yml
+
+<span class="m">9</span> directories, <span class="m">20</span> files
 </pre></div>
 
 
-<p>There are 4 top-level directories: docs, includes, locks and stubs.  We examine
-these in more detail later.  The locks and stubs directories simply contain
-lockfiles in the former, and stub makefiles in the latter, with no further
-hierarchy.</p>
-<p>The "includes" directory, on the other hand, has subdirectories that contain
-makefiles specific to each product.</p>
-<h2 id="stubs">Stubs</h2>
-<p>Stubs are makefiles that usually do not contain any projects to download
-directly. Instead, they include a version of core, and various other makefiles
-to build up a full platform. Stub makefiles are suffixes with <code>.build.yml</code>.</p>
-<p>In the example below, we see that the contents are pretty basic.  There is
-documentation throughout, as well as the basic Drush make "api" and "core"
-elements.  We also set a default sub-directory within which to download
-projects.  This allows us to keep our included makefiles cleaner.</p>
-<p>We then include a core makefile, module, civicrm, and extensions makefiles and a
-theme makefile.  Note that we specify the location of the include file relative
-to the location of the stub.</p>
-<div class="codehilite"><pre>core = 7.x
-api = 2
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;               Core               ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-includes[] = ../includes/core.make
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;             Defaults             ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-; Specify common subdir
-defaults[projects][subdir] = &quot;contrib&quot;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;         Released Modules         ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-includes[] = ../includes/modules.make
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;           CiviCRM core           ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-includes[] = ../includes/civicrm.make
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;        CiviCRM Extensions        ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-includes[] = ../includes/civicrm-extensions.make
-</pre></div>
-
-
-<h2 id="includes">Includes</h2>
-<p>In the includes directory we find a core makefile that includes a core
-distribution and any patches we need to apply to Drupal.  These included
-makefiles have standard headers similar to the stub makefile above.</p>
-<p>In modules.make, we have a general list of modules.  This makefile lists all
-the modules that will be downloaded as part of the platform.  We segment
-related modules into their own dedicated makefiles, if this helps organization
-or re-use.</p>
-<h2 id="lockfiles">Lockfiles</h2>
-<p>Finally, the lockfiles directory includes makefiles that have been run through
-"drush make-lock" (see docs/MAINTENANCE.md).  This basically takes our stub
-makefile, compiles all the inclusions, and then checks with drupal.org to
-determine the latest versions of all the components, just as if they were all
-going to be downloaded in a normal run of Drush make.  It then writes this out
-into a new makefile that now specifies all the up-to-date versions.  This form
-of makefile is called a lockfile, similar to what we see with Composer or Gem.</p>
+<p>There are 3 top-level directories: <code>cores/</code>, <code>stock/</code> and <code>demtools/</code>. <code>cores/</code>
+contains various versions of Drupal. <code>stock/</code> contains basic implementations of
+underlying applications: CiviCRM and DKAN. These are useful for debugging, and
+isolating issues between the applications and the DemTools customizations.
+Finally, <code>demtools/</code> contains the platforms used by DemTools: stock
+applications plus addtional contrib and custom components.</p>
+<p>We examine these in more detail later.</p>
+<h3 id="types-of-drush-makefiles">Types of Drush makefiles</h3>
+<h4 id="42makeyml">*.make.yml</h4>
+<p>These Drush makefiles define projects and libraries, but normally don't specify
+any versions. They are not usually used on their own. Instead they get included
+in build makefiles.</p>
+<h4 id="buildyml">build.yml</h4>
+<p>Build makefiles, sometimes called stubs, do not contain any actual project
+definitions. Instead, they only include other makefiles (of the .make.yml
+variety) that define the core, extentions, and themes used. It may also contain
+overrides to the projects defined in the includes.</p>
+<h4 id="lockyml">lock.yml</h4>
+<p>Lockfiles are generated from build makefiles (see the
+<a href="../maintenance/">Maintenance</a> section. They have versions specified for all
+projects. This helps in ensuring that deployments of platforms (code-bases)
+from them are repeatable.  This process takes a stub (build) makefile, compiles
+all its inclusions, then checks with http://update.drupal.org to determine the
+latest versions of all the components. This is then written out as a lockfile,
+similar to what we see with Composer or Gem.</p>
+<h2 id="cores">Cores</h2>
+<p>TBD</p>
+<h2 id="stock">Stock</h2>
+<p>TBD</p>
+<h2 id="demtools">DemTools</h2>
+<p>TBD</p>
               
             </div>
           </div>
