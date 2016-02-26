@@ -10,129 +10,102 @@ maintained, please see the [Maintenance](maintenance.md) section.
 Filesystem layout
 -----------------
 
-For simplicity, we are limiting our discussion to the DemTools Civi platform.
-Several more platforms are included in NDIplatforms, and this system scales
-very well. However, listing them all here would complicate explanations.
+For simplicity, we are limiting our discussion to the DemTools Civi and DKAN
+platforms. Several more platforms will be included in NDIplatforms, and this
+system scales very well. However, listing them all here would complicate
+explanations.
 
-Drush makefiles allow for the inclusion of other makefiles.  In order to reduce
+Drush makefiles allow for the inclusion of other makefiles. In order to reduce
 duplication and encourage these makefiles to be self-documenting, NDIplatforms
 makes extensive use of makefile includes.
 
-Here is the (abridged) layout of files and directories:
+Here is the layout of `makefiles/` directory:
 
-    $ tree
-    .
-    ├── docs
-    │   ...
-    ├── includes
+    :::bash
+    $ tree makefiles
+    makefiles/
+    ├── cores
+    │   ├── drupal7
+    │   │   ├── build.yml
+    │   │   ├── core.make.yml
+    │   │   └── lock.yml
+    │   └── drupal8
+    │       ├── build.yml
+    │       ├── core.make.yml
+    │       └── lock.yml
+    ├── demtools
     │   ├── civicrm
-    │   │   ├── civicrm.make.yml
+    │   │   ├── build.yml
+    │   │   ├── contrib.make.yml
     │   │   ├── custom.make.yml
-    │   │   ...
-    │   ├── dkan
-    │   │   ...
-    │   └── drupal
-    │       ├── core.7.make.yml
-    │       ...
-    ├── locks
-    │   ├── civicrm.lock.yml
-    │   ├── demtools-civi.lock.yml
-    │   ...
-    │   └── drupal7.lock.yml
-    ├── Makefile
-    ├── README.md
-    ├── stubs
-    │   ├── civicrm.make.yml
-    │   ├── demtools-civi.make.yml
-    │   ...
-    │   └── drupal7.make.yml
-    └── tmp
-        └── drush
+    │   │   └── lock.yml
+    │   └── dkan
+    │       ├── build.yml
+    │       ├── contrib.make.yml
+    │       ├── custom.make.yml
+    │       └── lock.yml
+    └── stock
+        ├── civicrm
+        │   ├── build.yml
+        │   ├── contrib.make.yml
+        │   └── lock.yml
+        └── dkan
+            ├── build.yml
+            ├── lock.yml
+            └── profile.make.yml
+    
+    9 directories, 20 files
 
 
+There are 3 top-level directories: `cores/`, `stock/` and `demtools/`. `cores/`
+contains various versions of Drupal. `stock/` contains basic implementations of
+underlying applications: CiviCRM and DKAN. These are useful for debugging, and
+isolating issues between the applications and the DemTools customizations.
+Finally, `demtools/` contains the platforms used by DemTools: stock
+applications plus addtional contrib and custom components.
 
-There are 4 top-level directories: docs, includes, locks and stubs.  We examine
-these in more detail later.  The locks and stubs directories simply contain
-lockfiles in the former, and stub makefiles in the latter, with no further
-hierarchy.
+We examine these in more detail later.
 
-The "includes" directory, on the other hand, has subdirectories that contain
-makefiles specific to each product.
+### Types of Drush makefiles
+
+#### \*.make.yml
+
+These Drush makefiles define projects and libraries, but normally don't specify
+any versions. They are not usually used on their own. Instead they get included
+in build makefiles.
+
+#### build.yml
+
+Build makefiles, sometimes called stubs, do not contain any actual project
+definitions. Instead, they only include other makefiles (of the .make.yml
+variety) that define the core, extentions, and themes used. It may also contain
+overrides to the projects defined in the includes.
+
+#### lock.yml
+
+Lockfiles are generated from build makefiles (see the
+[Maintenance](maintenance.md) section. They have versions specified for all
+projects. This helps in ensuring that deployments of platforms (code-bases)
+from them are repeatable.  This process takes a stub (build) makefile, compiles
+all its inclusions, then checks with http://update.drupal.org to determine the
+latest versions of all the components. This is then written out as a lockfile,
+similar to what we see with Composer or Gem.
 
 
-Stubs
+Cores
 -----
 
-Stubs are makefiles that usually do not contain any projects to download
-directly. Instead, they include a version of core, and various other makefiles
-to build up a full platform. Stub makefiles are suffixes with `.build.yml`.
-
-In the example below, we see that the contents are pretty basic.  There is
-documentation throughout, as well as the basic Drush make "api" and "core"
-elements.  We also set a default sub-directory within which to download
-projects.  This allows us to keep our included makefiles cleaner.
-
-We then include a core makefile, module, civicrm, and extensions makefiles and a
-theme makefile.  Note that we specify the location of the include file relative
-to the location of the stub.
-
-    core = 7.x
-    api = 2
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;;               Core               ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    includes[] = ../includes/core.make
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;;             Defaults             ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    ; Specify common subdir
-    defaults[projects][subdir] = "contrib"
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;;         Released Modules         ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    includes[] = ../includes/modules.make
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;;           CiviCRM core           ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    includes[] = ../includes/civicrm.make
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;;        CiviCRM Extensions        ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    includes[] = ../includes/civicrm-extensions.make
+TBD
 
 
-Includes
+Stock
+-----
+
+TBD
+
+
+DemTools
 --------
 
-In the includes directory we find a core makefile that includes a core
-distribution and any patches we need to apply to Drupal.  These included
-makefiles have standard headers similar to the stub makefile above.
-
-In modules.make, we have a general list of modules.  This makefile lists all
-the modules that will be downloaded as part of the platform.  We segment
-related modules into their own dedicated makefiles, if this helps organization
-or re-use.
-
-
-Lockfiles
----------
-
-Finally, the lockfiles directory includes makefiles that have been run through
-"drush make-lock" (see docs/MAINTENANCE.md).  This basically takes our stub
-makefile, compiles all the inclusions, and then checks with drupal.org to
-determine the latest versions of all the components, just as if they were all
-going to be downloaded in a normal run of Drush make.  It then writes this out
-into a new makefile that now specifies all the up-to-date versions.  This form
-of makefile is called a lockfile, similar to what we see with Composer or Gem.
-
+TBD
 
