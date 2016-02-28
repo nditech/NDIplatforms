@@ -3,10 +3,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
   
   <title>Structure - NDIplatforms</title>
   
@@ -28,8 +25,6 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Structure";
-    var mkdocs_page_input_path = "structure.md";
-    var mkdocs_page_url = "/structure/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -161,40 +156,39 @@ explanations.</p>
 duplication and encourage these makefiles to be self-documenting, NDIplatforms
 makes extensive use of makefile includes.</p>
 <p>Here is the layout of <code>makefiles/</code> directory:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> tree makefiles
-<span style="color: #888888">makefiles/</span>
-<span style="color: #888888">├── cores</span>
-<span style="color: #888888">│   ├── drupal7</span>
-<span style="color: #888888">│   │   ├── build.yml</span>
-<span style="color: #888888">│   │   ├── core.make.yml</span>
-<span style="color: #888888">│   │   └── lock.yml</span>
-<span style="color: #888888">│   └── drupal8</span>
-<span style="color: #888888">│       ├── build.yml</span>
-<span style="color: #888888">│       ├── core.make.yml</span>
-<span style="color: #888888">│       └── lock.yml</span>
-<span style="color: #888888">├── demtools</span>
-<span style="color: #888888">│   ├── civicrm</span>
-<span style="color: #888888">│   │   ├── build.yml</span>
-<span style="color: #888888">│   │   ├── contrib.make.yml</span>
-<span style="color: #888888">│   │   ├── custom.make.yml</span>
-<span style="color: #888888">│   │   └── lock.yml</span>
-<span style="color: #888888">│   └── dkan</span>
-<span style="color: #888888">│       ├── build.yml</span>
-<span style="color: #888888">│       ├── contrib.make.yml</span>
-<span style="color: #888888">│       ├── custom.make.yml</span>
-<span style="color: #888888">│       └── lock.yml</span>
-<span style="color: #888888">└── stock</span>
-<span style="color: #888888">    ├── civicrm</span>
-<span style="color: #888888">    │   ├── build.yml</span>
-<span style="color: #888888">    │   ├── contrib.make.yml</span>
-<span style="color: #888888">    │   └── lock.yml</span>
-<span style="color: #888888">    └── dkan</span>
-<span style="color: #888888">        ├── build.yml</span>
-<span style="color: #888888">        ├── lock.yml</span>
-<span style="color: #888888">        └── profile.make.yml</span>
+<pre class="codehilite"><code class="language-console">$ tree makefiles
+makefiles/
+├── cores
+│   ├── drupal7
+│   │   ├── build.yml
+│   │   ├── core.make.yml
+│   │   └── lock.yml
+│   └── drupal8
+│       ├── build.yml
+│       ├── core.make.yml
+│       └── lock.yml
+├── demtools
+│   ├── civicrm
+│   │   ├── build.yml
+│   │   ├── contrib.make.yml
+│   │   ├── custom.make.yml
+│   │   └── lock.yml
+│   └── dkan
+│       ├── build.yml
+│       ├── contrib.make.yml
+│       ├── custom.make.yml
+│       └── lock.yml
+└── stock
+    ├── civicrm
+    │   ├── build.yml
+    │   ├── contrib.make.yml
+    │   └── lock.yml
+    └── dkan
+        ├── build.yml
+        ├── lock.yml
+        └── profile.make.yml
 
-<span style="color: #888888">9 directories, 20 files</span>
-</pre></div>
+9 directories, 20 files</code></pre>
 
 
 <p>There are 3 top-level directories: <code>cores/</code>, <code>stock/</code> and <code>demtools/</code>. Each of
@@ -242,7 +236,7 @@ to the projects included from lower layers.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../maintenance/" class="btn btn-neutral float-right" title="Maintenance">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../maintenance/" class="btn btn-neutral float-right" title="Maintenance"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../usage/" class="btn btn-neutral" title="Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -270,7 +264,7 @@ to the projects included from lower layers.</p>
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/NDItech/NDIplatforms" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../usage/" style="color: #fcfcfc;">&laquo; Previous</a></span>

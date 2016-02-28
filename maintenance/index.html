@@ -3,10 +3,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
   
   <title>Maintenance - NDIplatforms</title>
   
@@ -28,8 +25,6 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Maintenance";
-    var mkdocs_page_input_path = "maintenance.md";
-    var mkdocs_page_url = "/maintenance/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -182,13 +177,12 @@ remove components from your platform build. Some (very few) makefiles require
 manual updates to version numbers. The only use-case we are currently aware of
 is when downloading a project or library using the <code>get</code> download type. An
 example of this can be seen in <code>makefiles/stock/civicrm/contrib.make.yml</code>:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>projects:
+<pre class="codehilite"><code class="language-yaml">projects:
   civicrm:
     type: module
     download:
       type: get
-      url: <span style="color: #BB4444">&#39;http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.13/civicrm-4.6.13-drupal.tar.gz&#39;</span>
-</pre></div>
+      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.13/civicrm-4.6.13-drupal.tar.gz'</code></pre>
 
 
 <p>We can see the result of updating a makefile by building our lockfiles with
@@ -205,44 +199,40 @@ expedient solution is likely to involve pinning a major version for the module.
 This allows new releases on that branch to be incorporated automatically.</p>
 <p>For example, in <code>makefiles/demtools/civicrm/contrib.make.yml</code>, we could replace
 this:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>projects:
-  webform:  { <span style="color: #B8860B">version</span>: <span style="color: #B8860B">~</span> }
-</pre></div>
+<pre class="codehilite"><code class="language-yaml">projects:
+  webform:  { version: ~ }</code></pre>
 
 
 <p>With the following:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>projects:
+<pre class="codehilite"><code class="language-yaml">projects:
   webform:
-    <span style="color: #008800; font-style: italic"># The recommended release is on the 4.x branch, so we pin to the latest</span>
-    <span style="color: #008800; font-style: italic"># supported version on the 3.x branch.</span>
-    version: 3
-</pre></div>
+    # The recommended release is on the 4.x branch, so we pin to the latest
+    # supported version on the 3.x branch.
+    version: 3</code></pre>
 
 
 <p>Note that it is usually worthwhile to document the reasons for such pinning.
 Rebuild the lockfiles, and check what has changed:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make all
-<span style="color: #888888">tmp/drush make-lock makefiles/demtools/civicrm/build.yml --result-file=makefiles/demtools/civicrm/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/demtools/civicrm/lock.yml                                                                       [ok]</span>
-<span style="color: #000080; font-weight: bold">$</span> git diff makefiles/demtools/civicrm/lock.yml
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make all
+tmp/drush make-lock makefiles/demtools/civicrm/build.yml --result-file=makefiles/demtools/civicrm/lock.yml
+Wrote .make file makefiles/demtools/civicrm/lock.yml                                                                       [ok]
+$ git diff makefiles/demtools/civicrm/lock.yml</code></pre>
 
 
 <p>The resulting diff should show something like this:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">diff --git a/makefiles/demtools/civicrm/lock.yml b/makefiles/demtools/civicrm/lock.yml</span>
-<span style="color: #000080; font-weight: bold">index d3ab256..212a373 100644</span>
-<span style="color: #A00000">--- a/makefiles/demtools/civicrm/lock.yml</span>
-<span style="color: #00A000">+++ b/makefiles/demtools/civicrm/lock.yml</span>
-<span style="color: #800080; font-weight: bold">@@ -58,7 +58,7 @@ projects:</span>
+<pre class="codehilite"><code class="language-git-diff">diff --git a/makefiles/demtools/civicrm/lock.yml b/makefiles/demtools/civicrm/lock.yml
+index d3ab256..212a373 100644
+--- a/makefiles/demtools/civicrm/lock.yml
++++ b/makefiles/demtools/civicrm/lock.yml
+@@ -58,7 +58,7 @@ projects:
    webform_civicrm:
-     version: &#39;4.15&#39;
+     version: '4.15'
    webform:
-<span style="color: #A00000">-    version: &#39;4.12&#39;</span>
-<span style="color: #00A000">+    version: &#39;3.24&#39;</span>
+-    version: '4.12'
++    version: '3.24'
    libraries:
-     version: &#39;2.2&#39;
-   options_element:
-</pre></div>
+     version: '2.2'
+   options_element:</code></pre>
 
 
 <h2 id="update-the-lockfiles">Update the lockfiles</h2>
@@ -252,31 +242,29 @@ when a (Drush) makefile is updated, all lockfiles that include that makefile
 will be rebuilt.</p>
 <p>Since we keep all our lockfiles in git, it's often easiest to simply force the
 re-compilation of all the lockfiles:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make all -B
-<span style="color: #888888">tmp/drush make-lock makefiles/cores/drupal7/build.yml --result-file=makefiles/cores/drupal7/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/cores/drupal7/lock.yml                                                                          [ok]</span>
-<span style="color: #888888">tmp/drush make-lock makefiles/cores/drupal8/build.yml --result-file=makefiles/cores/drupal8/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/cores/drupal8/lock.yml                                                                          [ok]</span>
-<span style="color: #888888">tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]</span>
-<span style="color: #888888">tmp/drush make-lock makefiles/stock/civicrm/build.yml --result-file=makefiles/stock/civicrm/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/stock/civicrm/lock.yml                                                                          [ok]</span>
-<span style="color: #888888">tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/demtools/dkan/lock.yml                                                                          [ok]</span>
-<span style="color: #888888">tmp/drush make-lock makefiles/demtools/civicrm/build.yml --result-file=makefiles/demtools/civicrm/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/demtools/civicrm/lock.yml                                                                       [ok]</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make all -B
+tmp/drush make-lock makefiles/cores/drupal7/build.yml --result-file=makefiles/cores/drupal7/lock.yml
+Wrote .make file makefiles/cores/drupal7/lock.yml                                                                          [ok]
+tmp/drush make-lock makefiles/cores/drupal8/build.yml --result-file=makefiles/cores/drupal8/lock.yml
+Wrote .make file makefiles/cores/drupal8/lock.yml                                                                          [ok]
+tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml
+Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]
+tmp/drush make-lock makefiles/stock/civicrm/build.yml --result-file=makefiles/stock/civicrm/lock.yml
+Wrote .make file makefiles/stock/civicrm/lock.yml                                                                          [ok]
+tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml
+Wrote .make file makefiles/demtools/dkan/lock.yml                                                                          [ok]
+tmp/drush make-lock makefiles/demtools/civicrm/build.yml --result-file=makefiles/demtools/civicrm/lock.yml
+Wrote .make file makefiles/demtools/civicrm/lock.yml                                                                       [ok]</code></pre>
 
 
 <p>A quick <code>git diff</code> will then show any updates to lockfiles.</p>
 <p>This behaviour is based on file timestamps, even if the contents have not changed. To see it in action, you can test it with:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> touch makefiles/stock/dkan/contrib.make.yml
-<span style="color: #000080; font-weight: bold">ergonlogic@debian:~/code/ndi/NDIplatforms(0.4.x)$</span> make all
-<span style="color: #888888">tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]</span>
-<span style="color: #888888">tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml</span>
-<span style="color: #888888">Wrote .make file makefiles/demtools/dkan/lock.yml                                                                          [ok]</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ touch makefiles/stock/dkan/contrib.make.yml
+$ make all
+tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml
+Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]
+tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml
+Wrote .make file makefiles/demtools/dkan/lock.yml                                                                          [ok]</code></pre>
 
 
 <p>As you can see, updating the timestamp on a single file, triggered updates to
@@ -293,11 +281,10 @@ issues at this stage.</p>
 <p>Adding or changing patches or libraries, adding new modules or themes, and
 other such modifications can also cause build failures. Running a test build is
 as simple as running:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make demtools/dkan-test
-<span style="color: #888888">Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]</span>
-<span style="color: #888888">drupal-7.43 downloaded.                                        [ok]</span>
-<span style="color: #888888">[...]</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make demtools/dkan-test
+Beginning to build makefiles/demtools/dkan/lock.yml.           [ok]
+drupal-7.43 downloaded.                                        [ok]
+[...]</code></pre>
 
 
 <p>Each DemTools platform (demtools/dkan, demtools/civicrm, etc.) have such a test
@@ -306,8 +293,7 @@ command defined (although it may not show up in the <code>make list</code> outpu
 sources have changed.</p>
 <h2 id="finalize-the-new-lockfile">Finalize the new lockfile</h2>
 <p>Once any changes or updates are done, we can then commit these changes into git:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> git commit -am<span style="color: #BB4444">&quot;Update DemTools platforms.&quot;</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ git commit -am&quot;Update DemTools platforms.&quot;</code></pre>
               
             </div>
           </div>
@@ -315,7 +301,7 @@ sources have changed.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../documentation/" class="btn btn-neutral float-right" title="Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../documentation/" class="btn btn-neutral float-right" title="Documentation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../structure/" class="btn btn-neutral" title="Structure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -343,7 +329,7 @@ sources have changed.</p>
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/NDItech/NDIplatforms" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../structure/" style="color: #fcfcfc;">&laquo; Previous</a></span>

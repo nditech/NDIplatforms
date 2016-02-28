@@ -3,10 +3,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
   
   <title>Install - NDIplatforms</title>
   
@@ -28,8 +25,6 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Install";
-    var mkdocs_page_input_path = "install.md";
-    var mkdocs_page_url = "/install/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -150,9 +145,8 @@
                 <h1 id="installation">INSTALLATION <a href="https://travis-ci.org/nditech/NDIplatforms"><img alt="Build status" src="https://travis-ci.org/nditech/NDIplatforms.svg" /></a></h1>
 <h2 id="download">Download</h2>
 <p>Download NDIplatforms somewhere convenient, such as:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> git clone https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
-<span style="color: #000080; font-weight: bold">$</span> <span style="color: #AA22FF">cd</span> ~/makefiles/NDIplatforms
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ git clone https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
+$ cd ~/makefiles/NDIplatforms</code></pre>
 
 
 <h2 id="install">Install</h2>
@@ -161,45 +155,40 @@ of Drush. As such, we recommend using a local Drush install, so as not to
 interfere with other Drush functionality on the server.</p>
 <p>There are various options available, that are explained further in the next
 section. Use the following command to install the recommended version of Drush:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make install
-<span style="color: #888888">Switched to branch &#39;dev/2000&#39;</span>
-<span style="color: #888888">[...]</span>
-<span style="color: #888888"> Drush git branch: dev/2000</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make install
+Switched to branch 'dev/2000'
+[...]
+ Drush git branch: dev/2000</code></pre>
 
 
 <h3 id="install-drush">Install Drush</h3>
 <p>If you prefer to use the latest release of Drush:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make drush
-<span style="color: #888888"> Drush Version   :  8.0.3</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make drush
+ Drush Version   :  8.0.3</code></pre>
 
 
 <p>Alternatively, you might want to use the latest (unstable) Drush development
 build:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make drush-unstable
-<span style="color: #888888"> Drush Version   :  8.1-dev</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make drush-unstable
+ Drush Version   :  8.1-dev</code></pre>
 
 
 <p>You could also deploy Drush from source code:</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make drush-source
-<span style="color: #888888">Already on &#39;master&#39;</span>
-<span style="color: #888888">[...]</span>
-<span style="color: #888888">All settings correct for using Composer</span>
-<span style="color: #888888">Downloading...</span>
-<span style="color: #888888">[...]</span>
-<span style="color: #888888"> Drush Version   :  8.1-dev</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make drush-source
+Already on 'master'
+[...]
+All settings correct for using Composer
+Downloading...
+[...]
+ Drush Version   :  8.1-dev</code></pre>
 
 
 <p>Finally, deploying Drush from source code allows the use of arbitrary branches
 (from a PR, for example):</p>
-<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">$</span> make drush-source <span style="color: #B8860B">branch</span><span style="color: #666666">=</span>dev/2000
-<span style="color: #888888">Switched to branch &#39;dev/2000&#39;</span>
-<span style="color: #888888">[...]</span>
-<span style="color: #888888"> Drush git branch: dev/2000</span>
-</pre></div>
+<pre class="codehilite"><code class="language-console">$ make drush-source branch=dev/2000
+Switched to branch 'dev/2000'
+[...]
+ Drush git branch: dev/2000</code></pre>
               
             </div>
           </div>
@@ -207,7 +196,7 @@ build:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../usage/" class="btn btn-neutral float-right" title="Usage">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../usage/" class="btn btn-neutral float-right" title="Usage"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -235,7 +224,7 @@ build:</p>
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/NDItech/NDIplatforms" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
