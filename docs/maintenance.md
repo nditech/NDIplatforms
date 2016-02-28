@@ -139,7 +139,7 @@ This behaviour is based on file timestamps, even if the contents have not change
 
     :::console
     $ touch makefiles/stock/dkan/contrib.make.yml
-    ergonlogic@debian:~/code/ndi/NDIplatforms(0.4.x)$ make all
+    $ make all
     tmp/drush make-lock makefiles/stock/dkan/build.yml --result-file=makefiles/stock/dkan/lock.yml
     Wrote .make file makefiles/stock/dkan/lock.yml                                                                             [ok]
     tmp/drush make-lock makefiles/demtools/dkan/build.yml --result-file=makefiles/demtools/dkan/lock.yml

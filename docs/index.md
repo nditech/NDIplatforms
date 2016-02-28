@@ -1,9 +1,11 @@
 NDI PLATFORMS [![Build status](https://travis-ci.org/nditech/NDIplatforms.svg)](https://travis-ci.org/nditech/NDIplatforms)
 =============
 
-NDIplatforms is a set of Drush makefiles structured for easy maintenance. It
-is used, along with the [Aegir Hosting System](http://aegirproject.org), to
-maintain NDI's [DemTools](https://dem.tools) mass-hosting platform, DemCloud.
+NDIplatforms is a set of [Drush
+makefiles](http://www.drush.org/en/master/make/) structured for easy
+maintenance. It is used, along with the [Aegir Hosting
+System](http://aegirproject.org), to maintain [NDI](https://www.ndi.org/)'s
+[DemTools](https://dem.tools) mass-hosting platform, DemCloud.
 
 Normal usage of NDIplatforms involves simply running Drush Make with one of the
 supplied "lock" files. Lockfiles are simply makefiles with all versions
