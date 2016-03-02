@@ -240,6 +240,33 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  macedonia_custom_provinces:
+    download:
+      type: git
+      url: 'https://github.com/nditechteam/macedonia_custom_provinces.git'
+      branch: master
+      revision: e89763ed69fcfd0c6c30d48641238fabd35ffb48
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  morocco_custom_provinces:
+    download:
+      type: git
+      url: 'https://github.com/nditech/morocco_custom_provinces.git'
+      branch: master
+      revision: f44affb0a9cd73e50707c0ac0f1e0e61404be4b6
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  moroccocommunes:
+    download:
+      type: git
+      url: 'https://github.com/nditechteam/moroccocommunes.git'
+      branch: state-names
+      revision: e695bff56f7873da63172768624f01a86eceb79c
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_l10n_core:
     download:
       type: file

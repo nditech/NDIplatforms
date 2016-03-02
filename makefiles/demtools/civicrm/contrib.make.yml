@@ -61,3 +61,12 @@ libraries:
   coop.symbiotic.translationhelper:
     download:
       url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
+  macedonia_custom_provinces:
+    download:
+      url: 'https://github.com/nditechteam/macedonia_custom_provinces.git'
+  morocco_custom_provinces:
+    download:
+      url: 'https://github.com/nditech/morocco_custom_provinces.git'
+  moroccocommunes:
+    download:
+      url: 'https://github.com/nditechteam/moroccocommunes.git'
