@@ -58,3 +58,6 @@ libraries:
   org.ndi.metrics:
     download:
       url: 'https://github.com/ginkgostreet/org.ndi.metrics'
+  coop.symbiotic.translationhelper:
+    download:
+      url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
