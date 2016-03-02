@@ -80,7 +80,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.13/civicrm-4.6.13-drupal.tar.gz'
+      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.14/civicrm-4.6.14-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
@@ -182,7 +182,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: 0b666b518d283ba0f4095a1d2724a7d04c08f890
+      revision: fe0f4687d8086475c096841a94aad3491352097e
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -228,6 +228,15 @@ libraries:
       url: 'https://github.com/ginkgostreet/org.ndi.metrics'
       branch: master
       revision: 81adcb61b7f40efc8b35394eb64c906382edfd49
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  coop.symbiotic.translationhelper:
+    download:
+      type: git
+      url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
+      branch: master
+      revision: 56424dd3dd06939ab58b2a8afa881a0e9877cd3e
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
