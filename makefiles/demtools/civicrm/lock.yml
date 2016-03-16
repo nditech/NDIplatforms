@@ -240,30 +240,30 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
-  macedonia_custom_provinces:
+  org.ndi.macedoniaprovinces:
     download:
       type: git
-      url: 'https://github.com/nditechteam/macedonia_custom_provinces.git'
+      url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
       branch: master
-      revision: e89763ed69fcfd0c6c30d48641238fabd35ffb48
+      revision: ad715279c690b62499932b2fa60c6a42ee7b8ffe
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
-  morocco_custom_provinces:
+  org.ndi.moroccoprovinces:
     download:
       type: git
-      url: 'https://github.com/nditech/morocco_custom_provinces.git'
+      url: 'https://github.com/nditech/org.ndi.moroccoprovinces.git'
       branch: master
-      revision: f44affb0a9cd73e50707c0ac0f1e0e61404be4b6
+      revision: cdd5c1ce18e9ba884f26c551904e06833eb4ddfb
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
-  moroccocommunes:
+  org.ndi.moroccocommunes:
     download:
       type: git
-      url: 'https://github.com/nditechteam/moroccocommunes.git'
+      url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
       branch: state-names
-      revision: e695bff56f7873da63172768624f01a86eceb79c
+      revision: b7fb1fc490a0451ca027c7ebd1389d6811262913
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
