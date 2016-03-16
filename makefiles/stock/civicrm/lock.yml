@@ -12,7 +12,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.14/civicrm-4.6.14-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.6.14-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:

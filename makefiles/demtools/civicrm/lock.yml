@@ -80,7 +80,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'http://downloads.sourceforge.net/project/civicrm/civicrm-stable/4.6.14/civicrm-4.6.14-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.6.14-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
@@ -191,7 +191,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: 95726cae7c32bc492c0554d4e45f975de8705dcf
+      revision: 5bdc08138128984a99e588a735bf0bc350d78827
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -245,7 +245,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
       branch: master
-      revision: ad715279c690b62499932b2fa60c6a42ee7b8ffe
+      revision: 2b5be38b0da20ada7e9ef0074ab217c80f0d34d9
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -263,7 +263,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
       branch: state-names
-      revision: b7fb1fc490a0451ca027c7ebd1389d6811262913
+      revision: c6794e5c64dec8afeadc6d0b7cad53afd0b60c68
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
