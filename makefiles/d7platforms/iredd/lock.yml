@@ -5,23 +5,82 @@ defaults:
     subdir: contrib
 projects:
   drupal:
+    version: '7.41'
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.43'
-  libraries:
-    version: '2.2'
-  views:
-    version: '3.13'
-  features:
-    version: '2.10'
-  strongarm:
-    version: '2.0'
+  views_bulk_operations:
+    version: '3.3'
+  admin_views:
+    version: '1.5'
+  advagg:
+    version: '2.17'
+  auto_entitylabel:
+    version: '1.3'
+  block_class:
+    version: '2.3'
   ctools:
     version: '1.9'
-  admin_menu:
-    version: 3.0-rc5
-  variable:
-    version: '2.5'
-  i18n:
-    version: '1.13'
+  date:
+    version: '2.9'
+  email:
+    version: '1.3'
+  entity:
+    version: '1.6'
+  entityqueue:
+    version: '1.1'
+  entityreference:
+    version: '1.1'
+  features:
+    version: '2.7'
+  field_collection:
+    version: 1.0-beta11
+  field_group:
+    version: '1.5'
+  hierarchical_select:
+    version: 3.0-beta3
+  iframe:
+    version: '1.6'
+  imce:
+    version: '1.9'
+  imce_wysiwyg:
+    version: '1.0'
+  insert:
+    version: '1.3'
+  invisimail:
+    version: '1.2'
+  jquery_update:
+    version: '2.7'
+  lazyloader:
+    version: '1.4'
+  link:
+    version: '1.4'
+  metatag:
+    version: '1.11'
+  pathauto:
+    version: '1.3'
+  print:
+    version: '2.0'
+  quicktabs:
+    version: '3.6'
+  roleassign:
+    version: '1.0'
+  shortcutperrole:
+    version: '1.2'
+  superfish:
+    version: '2.0'
+  taxonomy_access_fix:
+    version: '2.3'
+  telephone:
+    version: 1.0-alpha1
+  token:
+    version: '1.6'
+  transliteration:
+    version: '3.2'
+  views:
+    version: '3.13'
+  wysiwyg:
+    version: '2.2'
+  bootstrap_business:
+    version: '1.1'
+    type: theme
