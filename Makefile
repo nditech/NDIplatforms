@@ -1,5 +1,5 @@
 cores = drupal7 drupal8
-stock = dkan civicrm
+stock = dkan civicrm drupal-7
 demtools = demtools/dkan demtools/civicrm
 
 include .mk/*
