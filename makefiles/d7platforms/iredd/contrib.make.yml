@@ -1,0 +1,15 @@
+core: 7.x
+api: '2'
+
+projects:
+  libraries: { version: ~ }
+  views: { version: ~ }
+
+  features: { version: ~ }
+  strongarm: { version: ~ }
+  ctools: { version: ~ }
+  admin_menu: { version: ~ }
+  variable: { version: ~ }
+  i18n: { version: ~ }
+
+libraries: {}

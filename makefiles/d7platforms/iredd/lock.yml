@@ -1,0 +1,27 @@
+core: 7.x
+api: 2
+defaults:
+  projects:
+    subdir: contrib
+projects:
+  drupal:
+    type: core
+    patch:
+      - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
+    version: '7.43'
+  libraries:
+    version: '2.2'
+  views:
+    version: '3.13'
+  features:
+    version: '2.10'
+  strongarm:
+    version: '2.0'
+  ctools:
+    version: '1.9'
+  admin_menu:
+    version: 3.0-rc5
+  variable:
+    version: '2.5'
+  i18n:
+    version: '1.13'

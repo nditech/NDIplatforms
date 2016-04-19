@@ -9,6 +9,7 @@ makefile_dir=makefiles
 cores_dir=$(makefile_dir)/cores
 stock_dir=$(makefile_dir)/stock
 demtools_dir=$(makefile_dir)/demtools
+d7platforms_dir=$(makefile_dir)/d7platforms
 
 clean-drush:
 	@rm -f $(d)
