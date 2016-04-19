@@ -1,11 +1,8 @@
 core: 8.x
 api: 2
-defaults:
-  projects:
-    subdir: contrib
 projects:
   drupal:
     type: core
     patch:
-      - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: 8.0.4
+      - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d8.patch'
+    version: 8.0.6
