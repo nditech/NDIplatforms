@@ -8,7 +8,7 @@ env:
   matrix:
     - MAKE_PLATFORM=demtools/civicrm-test
     - MAKE_PLATFORM=demtools/dkan-test
-    - MAKE_PLATFORM=d7platforms/iredd
+    - MAKE_PLATFORM=d7platforms/iredd-test
 
 script:
   - make list
