@@ -1,5 +1,12 @@
 core: 7.x
 api: '2'
+
+libraries:
+  ckeditor:
+    download:
+      type: get
+      url: http://download.cksource.com/CKEditor%20for%20Drupal/edit/ckeditor_4.4.3_edit.zip
+
 projects:
   views_bulk_operations:
     version: '3.3'
@@ -73,5 +80,4 @@ projects:
     version: '3.13'
   wysiwyg:
     version: '2.2'
-  bootstrap_business:
-    version: '1.1'
+

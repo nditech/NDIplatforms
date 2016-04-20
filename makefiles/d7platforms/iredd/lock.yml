@@ -5,10 +5,19 @@ defaults:
     subdir: contrib
 projects:
   drupal:
-    version: '7.41'
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
+    version: '7.43'
+  IREDD_theme:
+    subdir: custom
+    type: theme
+    directory_name: bootstrap_business
+    download:
+      type: git
+      url: 'https://github.com/NDItech/IREDD_theme.git'
+      branch: master
+      revision: db9cfe2253bc00298ebdfd2e34d104aaf96d582e
   views_bulk_operations:
     version: '3.3'
   admin_views:
@@ -81,6 +90,9 @@ projects:
     version: '3.13'
   wysiwyg:
     version: '2.2'
-  bootstrap_business:
-    version: '1.1'
-    type: theme
+libraries:
+  ckeditor:
+    download:
+      type: get
+      url: 'http://download.cksource.com/CKEditor%20for%20Drupal/edit/ckeditor_4.4.3_edit.zip'
+    type: library
