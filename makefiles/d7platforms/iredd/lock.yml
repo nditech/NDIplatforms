@@ -10,14 +10,14 @@ projects:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
     version: '7.43'
   IREDD_theme:
-    subdir: custom
+    subdir: .
     type: theme
     directory_name: bootstrap_business
     download:
       type: git
       url: 'https://github.com/NDItech/IREDD_theme.git'
       branch: master
-      revision: db9cfe2253bc00298ebdfd2e34d104aaf96d582e
+      revision: 1aa938efe4b93f0d7c92a07a5f23ba074f72d15c
   views_bulk_operations:
     version: '3.3'
   admin_views:
