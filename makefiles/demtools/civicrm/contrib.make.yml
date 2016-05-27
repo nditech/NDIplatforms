@@ -61,12 +61,7 @@ libraries:
   coop.symbiotic.translationhelper:
     download:
       url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
-  org.ndi.macedoniaprovinces:
+  com.pesc.sparkpost:
     download:
-      url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
-  org.ndi.moroccoprovinces:
-    download:
-      url: 'https://github.com/nditech/org.ndi.moroccoprovinces.git'
-  org.ndi.moroccocommunes:
-    download:
-      url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
+      url: 'https://github.com/proexchange/com.pesc.sparkpost.git'
+

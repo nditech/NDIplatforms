@@ -57,10 +57,20 @@ libraries:
   ukrainerayons:
     download:
       url: 'https://github.com/nditech/ukrainerayons.git'
-  nicaraguadepartmentos:
+  org.ndi.nicaraguadepartmentos:
     download:
       url: 'https://github.com/nditech/org.ndi.nicaraguadepartmentos.git'
-  nicaraguamunicipios:
+  org.ndi.nicaraguamunicipios:
     download:
       url: 'https://github.com/nditech/org.ndi.nicaraguamunicipios.git'
       branch: 'state-names'
+  org.ndi.macedoniaprovinces:
+    download:
+      url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
+  org.ndi.moroccoprovinces:
+    download:
+      url: 'https://github.com/nditech/org.ndi.moroccoprovinces.git'
+  org.ndi.moroccocommunes:
+    download:
+      url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
+ 
