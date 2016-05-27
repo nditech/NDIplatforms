@@ -60,13 +60,13 @@ projects:
   webform:
     version: '4.12'
   libraries:
-    version: '2.2'
+    version: '2.3'
   options_element:
     version: '1.12'
   views:
     version: '3.13'
   features:
-    version: '2.7'
+    version: '2.10'
   strongarm:
     version: '2.0'
   ctools:
@@ -80,7 +80,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.6.14-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.6.16-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
@@ -138,6 +138,51 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.ndi.nicaraguadepartmentos:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.nicaraguadepartmentos.git'
+      branch: master
+      revision: 820322f23897bf86c8cf8e563a5484a5ac0d2008
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.nicaraguamunicipios:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.nicaraguamunicipios.git'
+      branch: state-names
+      revision: 5d530ffbf84371f1bb225bb46312d833780753a7
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.macedoniaprovinces:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
+      branch: master
+      revision: 2b5be38b0da20ada7e9ef0074ab217c80f0d34d9
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.moroccoprovinces:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.moroccoprovinces.git'
+      branch: master
+      revision: cdd5c1ce18e9ba884f26c551904e06833eb4ddfb
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.moroccocommunes:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
+      branch: state-names
+      revision: c6794e5c64dec8afeadc6d0b7cad53afd0b60c68
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git
@@ -162,7 +207,7 @@ libraries:
       type: git
       url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
       branch: master
-      revision: 33d79766393ea30536858490bfac6edc998f366d
+      revision: 416ad4e765d235f424804836b082df18affb865e
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -240,30 +285,12 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
-  org.ndi.macedoniaprovinces:
+  com.pesc.sparkpost:
     download:
       type: git
-      url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
+      url: 'https://github.com/proexchange/com.pesc.sparkpost.git'
       branch: master
-      revision: 2b5be38b0da20ada7e9ef0074ab217c80f0d34d9
-    destination: modules/contrib/civicrm/extensions
-    overwrite: '1'
-    type: library
-  org.ndi.moroccoprovinces:
-    download:
-      type: git
-      url: 'https://github.com/nditech/org.ndi.moroccoprovinces.git'
-      branch: master
-      revision: cdd5c1ce18e9ba884f26c551904e06833eb4ddfb
-    destination: modules/contrib/civicrm/extensions
-    overwrite: '1'
-    type: library
-  org.ndi.moroccocommunes:
-    download:
-      type: git
-      url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
-      branch: state-names
-      revision: c6794e5c64dec8afeadc6d0b7cad53afd0b60c68
+      revision: eeeabd42381ee2076f2574a4106391c0f7da8c8d
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
