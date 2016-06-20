@@ -1,7 +1,7 @@
 cores = drupal7 drupal8
 stock = dkan civicrm d7
 demtools = demtools/dkan demtools/civicrm
-d7platforms = d7platforms/iredd
+d7platforms = d7platforms/iredd d7platforms/cp-manual
 
 include .mk/*
 
