@@ -135,8 +135,10 @@ libraries:
     type: library
   modernizr:
     download:
-      type: get
-      url: 'https://github.com/Modernizr/Modernizr/archive/v3.3.1.tar.gz'
+      type: git
+      url: 'https://github.com/BrianGilbert/modernizer-navbar.git'
+      revision: 5b89d9225320e88588f1cdc43b8b1e373fa4c60f
+      branch: 2.7.1
     directory_name: modernizr
     type: library
   pdf.js:
