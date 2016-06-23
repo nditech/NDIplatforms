@@ -35,9 +35,10 @@ libraries:
     directory_name: modernizr
     type: library
   pdf.js:
+    # See: http://mozilla.github.io/pdf.js/getting_started/#download
     download:
       type: 'get'
-      url: 'https://github.com/mozilla/pdf.js/archive/v1.4.20.tar.gz'
+      url: 'https://github.com/mozilla/pdf.js/releases/download/v1.4.20/pdfjs-1.4.20-dist.zip'
     directory_name: pdf.js
     type: library
 
