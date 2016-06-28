@@ -109,6 +109,8 @@ projects:
     version: '1.8'
   print:
     version: '2.0'
+    patch:
+      - 'https://www.drupal.org/files/issues/print-use_system_wkhtmltopdf-1813390-10.patch'
   redirect:
     version: 1.0-rc3
   roleassign:
