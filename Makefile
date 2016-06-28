@@ -36,6 +36,6 @@ d7platforms/%-test: d7platforms/% init
 	$(d) make $(d7platforms_dir)/$*/lock.yml $(test_dir)/d7platforms-$*-$(ts)
 d7platforms/%-platform: d7platforms/%
 	$(d) $(make) $(d7platforms_dir)/$*/lock.yml $(pl)/d7platforms-$*-$(ds)$(inc)
-	drush provision-save @platform_d7platforms$*$(ds)$(inc) --root=$(pl)/d7platforms-$*-$(ds)$(inc) --makefile=$(makes)/$(d7platforms_dir)/$*/lock.yml --context_type=platform
-	drush @hostmaster hosting-import @platform_d7platforms$*$(ds)$(inc)
+	drush provision-save @platform_d7platforms_$*$(ds)$(inc) --root=$(pl)/d7platforms-$*-$(ds)$(inc) --makefile=$(makes)/$(d7platforms_dir)/$*/lock.yml --context_type=platform
+	drush @hostmaster hosting-import @platform_d7platforms_$*$(ds)$(inc)
 
