@@ -18,12 +18,12 @@ projects:
   dkan:
     download:
       branch: 7.x-1.x
-      revision: 7.x-1.11
+      revision: 7.x-1.12.5
     patch:
       # Add dependency on our keystone feature.
       - "https://github.com/NuCivic/dkan/commit/9ce32eee738956393bb224ecbdc9aab2c361a932.patch"
       # Add extra install task.
-      - "https://github.com/NuCivic/dkan/commit/c039c7b81446baf96ce97e9ab90c615700c34fad.patch"
+      - "https://github.com/NuCivic/dkan/commit/8d8309ed0171636008f6f14fbc63f76b044cee99.patch"
 
   # Integrate various fixes to make visualizations work.
   # See: https://github.com/NuCivic/visualization_entity/pull/40
@@ -60,12 +60,23 @@ projects:
       - "https://github.com/NuCivic/geo_file_entity/commit/116fe31efdf942369ee061040cc5941e6ba36377.patch"
 
 
-# RECLINE NVD3 VIEW
 libraries:
+  # RECLINE NVD3 VIEW
   reclineViewNvd3:
-    type: libraries
+    type: library
     download:
       # Forked NüCivic repo to add mmm-yyyy date format to graphs
       url: "https://github.com/NDItech/recline.view.nvd3.js.git"
       branch: date-formats
       revision: ~
+
+  recline_choropleth:
+    type: library
+    download:
+      type: git
+      # Forked NüCivic repo to fix Mapquest -> OpenStreetMaps conversion
+      # See: https://github.com/NuCivic/recline.view.choroplethmap.js/pull/5
+      url: 'https://github.com/NDItech/recline.view.choroplethmap.js.git'
+      branch: openstreetmap
+      revision: ~
+ 

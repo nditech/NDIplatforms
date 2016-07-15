@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.43'
+    version: '7.50'
   eck:
     version: 2.0-rc8
   geo_file_entity:
@@ -54,7 +54,7 @@ projects:
       branch: master
       revision: 34dc306ac5cfee67a2011b00ec995271fa085d0f
   hierarchical_select:
-    version: 3.0-beta3
+    version: 3.0-beta7
   quicktabs:
     version: '3.6'
   better_exposed_filters:
@@ -84,10 +84,10 @@ projects:
       type: git
       url: 'https://github.com/nucivic/dkan.git'
       branch: 7.x-1.x
-      revision: 7.x-1.11
+      revision: 7.x-1.12.5
     patch:
       - 'https://github.com/NuCivic/dkan/commit/9ce32eee738956393bb224ecbdc9aab2c361a932.patch'
-      - 'https://github.com/NuCivic/dkan/commit/c039c7b81446baf96ce97e9ab90c615700c34fad.patch'
+      - 'https://github.com/NuCivic/dkan/commit/8d8309ed0171636008f6f14fbc63f76b044cee99.patch'
   visualization_entity:
     download:
       url: 'https://github.com/NuCivic/visualization_entity.git'
@@ -117,8 +117,10 @@ libraries:
     type: library
   recline_choropleth:
     download:
-      type: file
-      url: 'https://github.com/NuCivic/recline.view.choroplethmap.js/archive/master.zip'
+      type: git
+      url: 'https://github.com/NDItech/recline.view.choroplethmap.js.git'
+      branch: openstreetmap
+      revision: ccac3efb7f1f31d60bdd04b720ba6b1fe2046649
     type: library
   nvd3:
     download:
