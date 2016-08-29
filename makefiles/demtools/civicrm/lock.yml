@@ -13,7 +13,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.43'
+    version: '7.50'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -56,21 +56,21 @@ projects:
       branch: master
       revision: e5ad4cc802150a508f6dd548c09b141c0fbf3b65
   webform_civicrm:
-    version: '4.15'
+    version: '4.16'
   webform:
-    version: '4.12'
+    version: '4.14'
   libraries:
     version: '2.3'
   options_element:
     version: '1.12'
   views:
-    version: '3.13'
+    version: '3.14'
   features:
     version: '2.10'
   strongarm:
     version: '2.0'
   ctools:
-    version: '1.9'
+    version: '1.10'
   admin_menu:
     version: 3.0-rc5
   variable:
@@ -80,7 +80,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.6.16-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.6.20-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
 libraries:
@@ -227,7 +227,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: fe0f4687d8086475c096841a94aad3491352097e
+      revision: 0641a71c094a5c574a56a7b99bdb6603807e5f5b
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -245,7 +245,7 @@ libraries:
       type: git
       url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
       branch: master
-      revision: 7fd50d402d009f9e7879e37c8b6363e6ae02d532
+      revision: 8caa6a51d48dbc885c52f71bb04ceada68f8cf79
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -281,7 +281,7 @@ libraries:
       type: git
       url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
       branch: master
-      revision: 56424dd3dd06939ab58b2a8afa881a0e9877cd3e
+      revision: 24d56243a72a5f72c4ea081f39bdd11d018fb42f
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
