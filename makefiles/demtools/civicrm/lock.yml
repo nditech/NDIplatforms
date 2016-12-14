@@ -13,7 +13,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.50'
+    version: '7.53'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -26,18 +26,18 @@ projects:
   ndi-pushbutton-roles:
     subdir: custom
     download:
-      url: 'git://git.koumbit.net/ndi-pushbutton-roles.git'
+      url: 'https://github.com/nditech/ndi_civi_admin_role.git'
       type: git
       branch: master
-      revision: df91fa32cd2cebad2f2654e3354b94cb9d69de48
+      revision: 006c7e181275d424aaa4534dd052acd9a2b8aa45
     directory_name: ndi_civi_admin_role
   ndi-pushbutton-config:
     subdir: custom
     download:
-      url: 'git://git.koumbit.net/ndi-pushbutton-config.git'
+      url: 'https://github.com/nditech/ndi_civi.git'
       type: git
       branch: master
-      revision: 51e66626a5dbf957fe9d17bcc6c929188f16ab6e
+      revision: 098ec6a294bf9bf2b7e6fa8c954a4b1a8c8aa8fe
     directory_name: ndi_civi
   CiviParty:
     type: theme
@@ -70,13 +70,13 @@ projects:
   strongarm:
     version: '2.0'
   ctools:
-    version: '1.10'
+    version: '1.12'
   admin_menu:
     version: 3.0-rc5
   variable:
     version: '2.5'
   i18n:
-    version: '1.13'
+    version: '1.14'
   civicrm:
     download:
       type: get

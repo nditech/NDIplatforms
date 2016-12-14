@@ -5,4 +5,4 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d8.patch'
-    version: 8.1.8
+    version: 8.2.4
