@@ -73,4 +73,10 @@ libraries:
   org.ndi.moroccocommunes:
     download:
       url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
+  org.ndi.serbiacounties:
+    download:
+      url: 'https://github.com/nditech/org.ndi.serbiacounties.git'
+  org.ndi.serbiamunicipalities:
+    download:
+      url: 'https://github.com/nditech/org.ndi.serbiamunicipalities.git'
  

@@ -184,6 +184,24 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.ndi.serbiacounties:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.serbiacounties.git'
+      branch: master
+      revision: b615694672ac70de121165c392168b7b6b1c967b
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.serbiamunicipalities:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.serbiamunicipalities.git'
+      branch: master
+      revision: 4a48997d75ab238f0b2708861a3389c09e5b664b
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git
