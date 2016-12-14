@@ -17,13 +17,13 @@ projects:
     directory_name: ndi_pushbutton
   ndi-pushbutton-roles:
     download:
-      url: 'git://git.koumbit.net/ndi-pushbutton-roles.git'
+      url: 'https://github.com/nditech/ndi_civi_admin_role.git'
     type: module
     subdir: custom
     directory_name: ndi_civi_admin_role
   ndi-pushbutton-config:
     download:
-      url: 'git://git.koumbit.net/ndi-pushbutton-config.git'
+      url: 'https://github.com/nditech/ndi_civi.git'
     type: module
     subdir: custom
     directory_name: ndi_civi
