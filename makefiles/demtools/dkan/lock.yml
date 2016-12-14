@@ -60,7 +60,7 @@ projects:
   better_exposed_filters:
     version: '3.2'
   i18n:
-    version: '1.13'
+    version: '1.14'
   i18nviews:
     version: 3.0-alpha1
   variable:

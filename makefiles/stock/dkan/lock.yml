@@ -16,4 +16,4 @@ projects:
       type: git
       url: 'https://github.com/nucivic/dkan.git'
       branch: 7.x-1.x
-      revision: 210154e6c4f69b784e314db7e79aaa29e80c21f4
+      revision: ba5aa20c33a107276cf8faea2d4977c35e47037b
