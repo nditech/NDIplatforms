@@ -5,7 +5,7 @@ projects:
     type: module
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.6.20-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.6.24-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/8980.patch'

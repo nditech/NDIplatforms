@@ -80,7 +80,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.6.20-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.6.24-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/8980.patch'
@@ -117,7 +117,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/ndicivimp.git'
       branch: master
-      revision: 5d655dc3f2d029937157f63f22f6139b95ad4a69
+      revision: 98ddf7f402fc5a3737aeb3b3a46bf1d9cbb68326
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -189,7 +189,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.serbiacounties.git'
       branch: master
-      revision: b615694672ac70de121165c392168b7b6b1c967b
+      revision: 9a6439041ea0587358ecb5897423069a891dc835
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
