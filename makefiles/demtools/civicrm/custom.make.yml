@@ -79,4 +79,13 @@ libraries:
   org.ndi.serbiamunicipalities:
     download:
       url: 'https://github.com/nditech/org.ndi.serbiamunicipalities.git'
- 
+  civicrm-metrics-server:
+    download:
+      url: 'https://github.com/nditech/civicrm-metrics-server'
+  civicrm-metrics-client:
+    download:
+      url: 'https://github.com/nditech/civicrm-metrics-client'
+  org.ndi.metrics:
+    download:
+      url: 'https://github.com/nditech/org.ndi.metrics'
+

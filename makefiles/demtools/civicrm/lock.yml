@@ -202,6 +202,33 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  civicrm-metrics-server:
+    download:
+      type: git
+      url: 'https://github.com/nditech/civicrm-metrics-server'
+      branch: master
+      revision: 681d9a3ec5771b95be75a8ea839a626326931d94
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  civicrm-metrics-client:
+    download:
+      type: git
+      url: 'https://github.com/nditech/civicrm-metrics-client'
+      branch: master
+      revision: 45eae0a831e9a644439b7d1e0cd91b6555e92af7
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.metrics:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.metrics'
+      branch: master
+      revision: 81adcb61b7f40efc8b35394eb64c906382edfd49
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git
@@ -265,33 +292,6 @@ libraries:
       url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
       branch: master
       revision: 8caa6a51d48dbc885c52f71bb04ceada68f8cf79
-    destination: modules/contrib/civicrm/extensions
-    overwrite: '1'
-    type: library
-  civicrm-metrics-server:
-    download:
-      type: git
-      url: 'https://github.com/ginkgostreet/civicrm-metrics-server'
-      branch: master
-      revision: 681d9a3ec5771b95be75a8ea839a626326931d94
-    destination: modules/contrib/civicrm/extensions
-    overwrite: '1'
-    type: library
-  civicrm-metrics-client:
-    download:
-      type: git
-      url: 'https://github.com/ginkgostreet/civicrm-metrics-client'
-      branch: master
-      revision: 45eae0a831e9a644439b7d1e0cd91b6555e92af7
-    destination: modules/contrib/civicrm/extensions
-    overwrite: '1'
-    type: library
-  org.ndi.metrics:
-    download:
-      type: git
-      url: 'https://github.com/ginkgostreet/org.ndi.metrics'
-      branch: master
-      revision: 81adcb61b7f40efc8b35394eb64c906382edfd49
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library

@@ -49,15 +49,6 @@ libraries:
   twilio_sms:
     download:
       url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
-  civicrm-metrics-server:
-    download:
-      url: 'https://github.com/ginkgostreet/civicrm-metrics-server'
-  civicrm-metrics-client:
-    download:
-      url: 'https://github.com/ginkgostreet/civicrm-metrics-client'
-  org.ndi.metrics:
-    download:
-      url: 'https://github.com/ginkgostreet/org.ndi.metrics'
   coop.symbiotic.translationhelper:
     download:
       url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
