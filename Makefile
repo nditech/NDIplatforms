@@ -25,8 +25,13 @@ demtools/%-test: demtools/% init
 	$(d) make $(demtools_dir)/$*/lock.yml $(test_dir)/demtools-$*-$(ts)
 demtools/%-platform: demtools/%
 	$(d) $(make) $(demtools_dir)/$*/lock.yml $(pl)/demtools-$*-$(ds)$(inc)
-	drush provision-save @platform_demtools$*$(ds)$(inc) --root=$(pl)/demtools-$*-$(ds)$(inc) --makefile=$(makes)/$(demtools_dir)/$*/lock.yml --context_type=platform
-	drush @hostmaster hosting-import @platform_demtools$*$(ds)$(inc)
+	drush provision-save @platform_demtools_$*_$(ds)$(inc) --root=$(pl)/demtools-$*-$(ds)$(inc) --makefile=$(makes)/$(demtools_dir)/$*/lock.yml --context_type=platform
+	drush @hostmaster hosting-import @platform_demtools_$*_$(ds)$(inc)
+demtools/%-dev: demtools/%
+	$(d) $(make) $(demtools_dir)/$*/lock.yml $(pl)/demtools-$*-dev-$(ds)$(inc) --working-copy
+	drush provision-save @platform_demtools_$*_dev_$(ds)$(inc) --root=$(pl)/demtools-$*-dev-$(ds)$(inc) --makefile=$(makes)/$(demtools_dir)/$*/lock.yml --context_type=platform
+	drush @hostmaster hosting-import @platform_demtools_$*_dev_$(ds)$(inc)
+	drush @hostmaster hosting-task @platform_demtools_$*_dev_$(ds)$(inc) lock
 
 d7platforms: $(d7platforms)
 $(d7platforms): %: $(makefile_dir)/%/lock.yml
@@ -36,6 +41,6 @@ d7platforms/%-test: d7platforms/% init
 	$(d) make $(d7platforms_dir)/$*/lock.yml $(test_dir)/d7platforms-$*-$(ts)
 d7platforms/%-platform: d7platforms/%
 	$(d) $(make) $(d7platforms_dir)/$*/lock.yml $(pl)/d7platforms-$*-$(ds)$(inc)
-	drush provision-save @platform_d7platforms$*$(ds)$(inc) --root=$(pl)/d7platforms-$*-$(ds)$(inc) --makefile=$(makes)/$(d7platforms_dir)/$*/lock.yml --context_type=platform
-	drush @hostmaster hosting-import @platform_d7platforms$*$(ds)$(inc)
+	drush provision-save @platform_d7platforms_$*_$(ds)$(inc) --root=$(pl)/d7platforms-$*-$(ds)$(inc) --makefile=$(makes)/$(d7platforms_dir)/$*/lock.yml --context_type=platform
+	drush @hostmaster hosting-import @platform_d7platforms_$*_$(ds)$(inc)
 
