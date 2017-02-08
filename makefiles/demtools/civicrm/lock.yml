@@ -80,10 +80,11 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.6.24-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.15-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/8980.patch'
+      - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
 libraries:
   ndipermissions:
     download:
@@ -117,7 +118,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/ndicivimp.git'
       branch: master
-      revision: 98ddf7f402fc5a3737aeb3b3a46bf1d9cbb68326
+      revision: d71c303c324203b99e5c2bd87dbd23a5260cce24
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -273,7 +274,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: 0641a71c094a5c574a56a7b99bdb6603807e5f5b
+      revision: 3454af69841e3afcdf31db2d3617d0bf07aad45a
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
