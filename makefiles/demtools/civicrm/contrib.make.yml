@@ -55,4 +55,10 @@ libraries:
   com.pesc.sparkpost:
     download:
       url: 'https://github.com/proexchange/com.pesc.sparkpost.git'
+  io.3sd.chainedsms:
+    download:
+      url: 'https://github.com/nditech/io.3sd.chainedsms.git'
+  org.ndi.sms.telerivet:
+    download:
+      url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
 

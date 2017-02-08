@@ -76,7 +76,7 @@ projects:
   variable:
     version: '2.5'
   i18n:
-    version: '1.14'
+    version: '1.15'
   civicrm:
     download:
       type: get
@@ -311,6 +311,24 @@ libraries:
       url: 'https://github.com/proexchange/com.pesc.sparkpost.git'
       branch: master
       revision: eeeabd42381ee2076f2574a4106391c0f7da8c8d
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  io.3sd.chainedsms:
+    download:
+      type: git
+      url: 'https://github.com/nditech/io.3sd.chainedsms.git'
+      branch: master
+      revision: 8a2f10b9bc532c8e737b0e28d515cfe0bfda9631
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.sms.telerivet:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
+      branch: master
+      revision: 97a0fd6d2bceca5e4424a4335a003907043cad43
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
