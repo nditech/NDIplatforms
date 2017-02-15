@@ -13,7 +13,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.53'
+    version: '7.54'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -56,7 +56,7 @@ projects:
       branch: master
       revision: e5ad4cc802150a508f6dd548c09b141c0fbf3b65
   webform_civicrm:
-    version: '4.16'
+    version: '4.17'
   webform:
     version: '4.14'
   libraries:
@@ -190,7 +190,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.serbiacounties.git'
       branch: master
-      revision: 9a6439041ea0587358ecb5897423069a891dc835
+      revision: 43413475dd77938d994aff06073364f30f574a6e
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -199,7 +199,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.serbiamunicipalities.git'
       branch: master
-      revision: 4a48997d75ab238f0b2708861a3389c09e5b664b
+      revision: d5d137c4e2684d192239a77d36930f22a516ed27
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -328,7 +328,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
       branch: master
-      revision: 97a0fd6d2bceca5e4424a4335a003907043cad43
+      revision: 6b7aa4771940fa3cc9e573c879b2be645a8a352a
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library

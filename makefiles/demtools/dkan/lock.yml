@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.53'
+    version: '7.54'
   eck:
     version: 2.0-rc8
   geo_file_entity:
@@ -54,13 +54,13 @@ projects:
       branch: master
       revision: 34dc306ac5cfee67a2011b00ec995271fa085d0f
   hierarchical_select:
-    version: 3.0-beta7
+    version: 3.0-beta8
   quicktabs:
     version: '3.6'
   better_exposed_filters:
-    version: '3.2'
+    version: '3.4'
   i18n:
-    version: '1.14'
+    version: '1.15'
   i18nviews:
     version: 3.0-alpha1
   variable:
