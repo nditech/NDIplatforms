@@ -319,7 +319,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/io.3sd.chainedsms.git'
       branch: master
-      revision: 8a2f10b9bc532c8e737b0e28d515cfe0bfda9631
+      revision: e8627bc393e4bbd95a126027a3af18b5cf31f24b
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -328,7 +328,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
       branch: master
-      revision: 6b7aa4771940fa3cc9e573c879b2be645a8a352a
+      revision: 910f6538f007a09f1bd4d0e1ca2d445af3059a8a
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
