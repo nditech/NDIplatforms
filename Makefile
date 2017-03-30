@@ -22,7 +22,7 @@ $(demtools): %: $(makefile_dir)/%/lock.yml
 $(demtools_dir)/%/lock.yml: $(demtools_dir)/%/build.yml $(stock_dir)/%/lock.yml $(demtools_dir)/%/*.make.yml
 	$(d) $(lock) $< --result-file=$@
 demtools/%-test: demtools/% init
-	$(d) make $(demtools_dir)/$*/lock.yml $(test_dir)/demtools-$*-$(ts)
+	$(d) make --working-copy $(demtools_dir)/$*/lock.yml $(test_dir)/demtools-$*-$(ts)
 demtools/%-platform: demtools/%
 	$(d) $(make) $(demtools_dir)/$*/lock.yml $(pl)/demtools-$*-$(ds)$(inc)
 	drush provision-save @platform_demtools_$*_$(ds)$(inc) --root=$(pl)/demtools-$*-$(ds)$(inc) --makefile=$(makes)/$(demtools_dir)/$*/lock.yml --context_type=platform
