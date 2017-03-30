@@ -211,8 +211,8 @@ libraries:
     download:
       type: git
       url: 'https://github.com/nditech/civicrm-metrics-server'
-      branch: master
-      revision: 681d9a3ec5771b95be75a8ea839a626326931d94
+      branch: ndi-prod
+      revision: 318f717dccf8e377761a321ab6c0f5aa5e6861a1
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -220,8 +220,8 @@ libraries:
     download:
       type: git
       url: 'https://github.com/nditech/civicrm-metrics-client'
-      branch: master
-      revision: 45eae0a831e9a644439b7d1e0cd91b6555e92af7
+      branch: ndi-prod
+      revision: 67488b635cc690ff59f0d4c7d3303e5373cbfc17
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
