@@ -23,6 +23,9 @@ projects:
   variable: { version: ~ }
   i18n: { version: ~ }
 
+  mobile_codes: { version: ~ }
+  ga_login: { version: ~ }
+
 libraries:
   civicrm_activity_ical:
     download:

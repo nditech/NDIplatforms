@@ -77,6 +77,10 @@ projects:
     version: '2.5'
   i18n:
     version: '1.15'
+  mobile_codes:
+    version: '2.1'
+  ga_login:
+    version: '1.7'
   civicrm:
     download:
       type: get
