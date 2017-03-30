@@ -91,4 +91,6 @@ libraries:
   org.ndi.metrics:
     download:
       url: 'https://github.com/nditech/org.ndi.metrics'
-
+  org.ndi.fieldvaluepermission:
+    download:
+      url: 'https://github.com/aghstrategies/org.ndi.fieldvaluepermission'
