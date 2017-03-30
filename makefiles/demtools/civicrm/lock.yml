@@ -64,7 +64,7 @@ projects:
   options_element:
     version: '1.12'
   views:
-    version: '3.14'
+    version: '3.15'
   features:
     version: '2.10'
   strongarm:
@@ -84,7 +84,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.15-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.17-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/8980.patch'
@@ -323,7 +323,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/io.3sd.chainedsms.git'
       branch: master
-      revision: e8627bc393e4bbd95a126027a3af18b5cf31f24b
+      revision: 9ff106b10a17ae54c47c48ae7b0467465b2451b7
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -332,7 +332,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
       branch: master
-      revision: 910f6538f007a09f1bd4d0e1ca2d445af3059a8a
+      revision: 7ce127047729ee6855f1b60fff146436bb485e37
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
