@@ -9,8 +9,8 @@ includes:
   - ../../stock/dkan/lock.yml
   - contrib.make.yml
   - custom.make.yml
-  - https://raw.githubusercontent.com/NuCivic/visualization_entity_charts/9beed7770e4793874c38c6e2aded3b55a31b30a3/visualization_entity_charts.make
-  - https://raw.githubusercontent.com/NuCivic/visualization_entity/586a7fdaec075d527e3d280890f3069077a912e7/visualization_entity.make
+  # - https://raw.githubusercontent.com/NuCivic/visualization_entity_charts/9beed7770e4793874c38c6e2aded3b55a31b30a3/visualization_entity_charts.make
+  # - https://raw.githubusercontent.com/NuCivic/visualization_entity/586a7fdaec075d527e3d280890f3069077a912e7/visualization_entity.make
 
 projects:
 
@@ -18,24 +18,12 @@ projects:
   dkan:
     download:
       branch: 7.x-1.x
-      revision: 7.x-1.12.5
+      revision: 7.x-1.13.2
     patch:
       # Add dependency on our keystone feature.
       - "https://github.com/NuCivic/dkan/commit/9ce32eee738956393bb224ecbdc9aab2c361a932.patch"
       # Add extra install task.
       - "https://github.com/NuCivic/dkan/commit/8d8309ed0171636008f6f14fbc63f76b044cee99.patch"
-
-  # Integrate various fixes to make visualizations work.
-  # See: https://github.com/NuCivic/visualization_entity/pull/40
-  visualization_entity:
-    download:
-      url: https://github.com/NuCivic/visualization_entity.git
-      branch: master
-      # TODO: Remove this pinning once https://github.com/drush-ops/drush/issues/2000 is merged and published in the phar.
-      revision: 586a7fd
-    patch:
-      # TODO: Remove once https://github.com/NuCivic/visualization_entity/pull/40 is merged.
-      - "https://patch-diff.githubusercontent.com/raw/NuCivic/visualization_entity/pull/40.patch"
 
   # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-81
   visualization_entity_charts:
@@ -48,35 +36,3 @@ projects:
       #- "https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch"
       - "https://github.com/NDItech/visualization_entity_charts/commit/5c26d14f88e0ead6ab966c400fb90aa295c9dea3.patch"
 
-
-  # Integrate fix for geo file previews.
-  geo_file_entity:
-    download:
-      url: https://github.com/NuCivic/geo_file_entity.git
-      branch: master
-      revision: e7197d15
-    patch:
-      # See: https://github.com/NuCivic/geo_file_entity/pull/9
-      - "https://github.com/NuCivic/geo_file_entity/commit/116fe31efdf942369ee061040cc5941e6ba36377.patch"
-
-
-libraries:
-  # RECLINE NVD3 VIEW
-  reclineViewNvd3:
-    type: library
-    download:
-      # Forked NüCivic repo to add mmm-yyyy date format to graphs
-      url: "https://github.com/NDItech/recline.view.nvd3.js.git"
-      branch: date-formats
-      revision: ~
-
-  recline_choropleth:
-    type: library
-    download:
-      type: git
-      # Forked NüCivic repo to fix Mapquest -> OpenStreetMaps conversion
-      # See: https://github.com/NuCivic/recline.view.choroplethmap.js/pull/5
-      url: 'https://github.com/NDItech/recline.view.choroplethmap.js.git'
-      branch: openstreetmap
-      revision: ~
- 

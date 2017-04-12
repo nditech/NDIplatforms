@@ -27,3 +27,13 @@ projects:
       type: git
       url: 'https://github.com/NDItech/demtools.git'
 
+libraries:
+  # RECLINE NVD3 VIEW
+  reclineViewNvd3:
+    type: library
+    download:
+      # Forked NüCivic repo to add mmm-yyyy date format to graphs
+      url: "https://github.com/NDItech/recline.view.nvd3.js.git"
+      branch: date-formats
+      revision: ~
+
