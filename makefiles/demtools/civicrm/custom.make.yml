@@ -94,3 +94,10 @@ libraries:
   org.ndi.fieldvaluepermission:
     download:
       url: 'https://github.com/aghstrategies/org.ndi.fieldvaluepermission'
+  org.ndi.nigeriastates:
+    download:
+      url: 'https://github.com/nditech/org.ndi.nigeriastates'
+  org.ndi.nigerialgas:
+    download:
+      url: 'https://github.com/nditech/org.ndi.nigerialgas'
+
