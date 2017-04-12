@@ -80,8 +80,7 @@ projects:
       branch: 7.x-1.x
       revision: 7.x-1.13.2
     patch:
-      - 'https://github.com/NuCivic/dkan/commit/9ce32eee738956393bb224ecbdc9aab2c361a932.patch'
-      - 'https://github.com/NuCivic/dkan/commit/8d8309ed0171636008f6f14fbc63f76b044cee99.patch'
+      - 'https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch'
   visualization_entity_charts:
     download:
       url: 'https://github.com/NuCivic/visualization_entity_charts.git'
