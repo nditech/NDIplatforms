@@ -245,10 +245,28 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.ndi.nigeriastates:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.nigeriastates'
+      branch: master
+      revision: e18ced5d6b4d78a240636f93b10e27eee0ed92e7
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.nigerialgas:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.nigerialgas'
+      branch: master
+      revision: 3cba7c4e7beecdcde23e5e657576041aa348ffce
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git
-      url: 'git://git.drupal.org/project/civicrm_activity_ical.git'
+      url: 'https://git.drupal.org/project/civicrm_activity_ical.git'
       tag: 7.x-1.1
       branch: master
       revision: 2550344484296e24e838032dd17cfd3833a4cc7d

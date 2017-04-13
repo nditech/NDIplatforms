@@ -29,7 +29,7 @@ projects:
 libraries:
   civicrm_activity_ical:
     download:
-      url: 'git://git.drupal.org/project/civicrm_activity_ical.git'
+      url: 'https://git.drupal.org/project/civicrm_activity_ical.git'
       tag: 7.x-1.1
   civisualize:
     download:
