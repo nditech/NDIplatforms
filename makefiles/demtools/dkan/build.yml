@@ -20,10 +20,8 @@ projects:
       branch: 7.x-1.x
       revision: 7.x-1.13.2
     patch:
-      # Add dependency on our keystone feature.
-      - "https://github.com/NuCivic/dkan/commit/9ce32eee738956393bb224ecbdc9aab2c361a932.patch"
-      # Add extra install task.
-      - "https://github.com/NuCivic/dkan/commit/8d8309ed0171636008f6f14fbc63f76b044cee99.patch"
+      # Add dependency on our keystone feature and extra install task.
+      - "https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch"
 
   # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-81
   visualization_entity_charts:
