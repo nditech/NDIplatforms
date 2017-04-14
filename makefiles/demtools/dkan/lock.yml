@@ -29,9 +29,9 @@ projects:
     subdir: custom
     download:
       type: git
-      url: 'https://github.com/NDItech/demtools_dkan.git'
+      url: 'https://github.com/ergonlogic/demtools_dkan.git'
       branch: master
-      revision: 56a5d54843fe56429f2da7c8f4db722bf164d12c
+      revision: f3374b0431eaebf7046ffa535d93a4ddfab5a034
   demtools:
     subdir: custom
     download:

@@ -20,7 +20,9 @@ projects:
     subdir: custom
     download:
       type: git
-      url: 'https://github.com/NDItech/demtools_dkan.git'
+      # See: https://nationaldemocraticinstitute.atlassian.net/browse/ENG-878
+      #url: 'https://github.com/NDItech/demtools_dkan.git'
+      url: 'https://github.com/ergonlogic/demtools_dkan.git'
   demtools:
     subdir: custom
     download:
