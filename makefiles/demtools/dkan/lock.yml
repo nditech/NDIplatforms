@@ -46,7 +46,7 @@ projects:
   better_exposed_filters:
     version: '3.4'
   i18n:
-    version: '1.15'
+    version: '1.17'
   i18nviews:
     version: 3.0-alpha1
   variable:
@@ -81,6 +81,7 @@ projects:
       revision: 7.x-1.13.2
     patch:
       - 'https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch'
+      - 'https://github.com/nditech/dkan/commit/1933d763817bf4b6b0ed93626ddbd0ed6bfd218f.patch'
   visualization_entity_charts:
     download:
       url: 'https://github.com/NuCivic/visualization_entity_charts.git'
