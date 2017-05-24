@@ -56,15 +56,15 @@ projects:
       branch: master
       revision: e5ad4cc802150a508f6dd548c09b141c0fbf3b65
   webform_civicrm:
-    version: '4.17'
+    version: '4.18'
   webform:
-    version: '4.14'
+    version: '4.15'
   libraries:
     version: '2.3'
   options_element:
     version: '1.12'
   views:
-    version: '3.15'
+    version: '3.16'
   features:
     version: '2.10'
   strongarm:
@@ -76,7 +76,7 @@ projects:
   variable:
     version: '2.5'
   i18n:
-    version: '1.15'
+    version: '1.17'
   mobile_codes:
     version: '2.1'
   ga_login:
@@ -84,10 +84,9 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.17-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.19-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
-      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/8980.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
       - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
       - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
@@ -316,7 +315,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: 02689e23b177a6c5c9cd79222a9295da5ec49a1f
+      revision: b2975b7b9f95ea4462c86b9c2fe54a42aecb5669
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
