@@ -1,0 +1,16 @@
+---
+language: php
+
+# http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
+sudo: false
+
+env:
+  matrix:
+    - MAKE_PLATFORM=demtools/civicrm-test
+    - MAKE_PLATFORM=demtools/dkan-test
+    - MAKE_PLATFORM=d7platforms/iredd-test
+
+script:
+  - make list
+  - make drush-unstable
+  - make $MAKE_PLATFORM

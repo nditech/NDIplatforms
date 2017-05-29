@@ -1,0 +1,41 @@
+core: 7.x
+api: 2
+
+projects:
+  elections:
+    subdir: custom
+    download:
+      type: git
+      url: 'https://github.com/nditech/elections_module.git'
+      branch: master
+  demtools_dkan_theme:
+    type: theme
+    subdir: custom
+    directory_name: "demtools_dkan"
+    download:
+      type: git
+      url: 'https://github.com/NDItech/demtools_dkan_theme.git'
+      branch: 7.x-1.x
+  demtools_dkan:
+    subdir: custom
+    download:
+      type: git
+      # See: https://nationaldemocraticinstitute.atlassian.net/browse/ENG-878
+      #url: 'https://github.com/NDItech/demtools_dkan.git'
+      url: 'https://github.com/ergonlogic/demtools_dkan.git'
+  demtools:
+    subdir: custom
+    download:
+      type: git
+      url: 'https://github.com/NDItech/demtools.git'
+
+libraries:
+  # RECLINE NVD3 VIEW
+  reclineViewNvd3:
+    type: library
+    download:
+      # Forked NüCivic repo to add mmm-yyyy date format to graphs
+      url: "https://github.com/NDItech/recline.view.nvd3.js.git"
+      branch: date-formats
+      revision: ~
+

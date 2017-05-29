@@ -1,0 +1,67 @@
+core: 7.x
+api: '2'
+
+defaults:
+  libraries:
+    download:
+      type: git
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+
+projects:
+  webform_civicrm: { version: ~ }
+  # Dependencies of webform_civicrm:
+  webform:  { version: ~ } 
+  libraries: { version: ~ }
+  options_element: { version: ~ }
+  views: { version: ~ }
+
+  features: { version: ~ }
+  strongarm: { version: ~ }
+  ctools: { version: ~ }
+  admin_menu: { version: ~ }
+  variable: { version: ~ }
+  i18n: { version: ~ }
+
+  mobile_codes: { version: ~ }
+  ga_login: { version: ~ }
+
+libraries:
+  civicrm_activity_ical:
+    download:
+      url: 'https://git.drupal.org/project/civicrm_activity_ical.git'
+      tag: 7.x-1.1
+  civisualize:
+    download:
+      url: 'https://github.com/agh1/civisualize.git'
+      branch: member-viz
+  clickatell_sms_provider:
+    download:
+      url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
+  event_calendar:
+    download:
+      url: 'https://github.com/osseed/com.osseed.eventcalendar.git'
+      tag: '1.1'
+  mandrill_email:
+    download:
+      url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
+      tag: v2.0
+  reporterror:
+    download:
+      url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
+  twilio_sms:
+    download:
+      url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
+  coop.symbiotic.translationhelper:
+    download:
+      url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
+  com.pesc.sparkpost:
+    download:
+      url: 'https://github.com/proexchange/com.pesc.sparkpost.git'
+  io.3sd.chainedsms:
+    download:
+      url: 'https://github.com/nditech/io.3sd.chainedsms.git'
+  org.ndi.sms.telerivet:
+    download:
+      url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
+

@@ -1,0 +1,10 @@
+core: 7.x
+api: 2
+
+defaults:
+  projects:
+    subdir: contrib
+
+includes:
+  - ../../cores/drupal7/lock.yml
+  - profile.make.yml

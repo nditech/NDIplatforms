@@ -1,0 +1,5 @@
+core: 7.x
+api: 2
+
+includes:
+  - ../../cores/drupal7/lock.yml

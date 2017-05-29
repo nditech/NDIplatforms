@@ -1,0 +1,16 @@
+core: 7.x
+api: 2
+
+projects:
+# The upstream theme from which this site's theme was forked.
+#  bootstrap_business:
+#    version: '1.1'
+  IREDD_theme:
+    type: theme
+    subdir: .
+    directory_name: "bootstrap_business"
+    download:
+      type: git
+      url: 'https://github.com/NDItech/IREDD_theme.git'
+      branch: master
+

@@ -4,10 +4,18 @@ theme: readthedocs
 site_favicon: '_images/favicon.ico'
 docs_dir: docs
 site_dir: '/tmp/NDIplatforms/_site'
+markdown_extensions:
+  - codehilite:
+      noclasses: True
+      pygments_style: emacs
+extra_css:
+  - '_css/menu.css'
+  - '_css/term.css'
+  - '_css/style.css'
 pages:
 - 'Home': 'index.md'
-- 'Install': 'INSTALL.md'
-- 'Usage': 'USAGE.md'
-- 'Structure': 'STRUCTURE.md'
-- 'Maintenance': 'MAINTENANCE.md'
-- 'Documentation': 'DOCUMENTATION.md'
+- 'Install': 'install.md'
+- 'Usage': 'usage.md'
+- 'Structure': 'structure.md'
+- 'Maintenance': 'maintenance.md'
+- 'Documentation': 'documentation.md'

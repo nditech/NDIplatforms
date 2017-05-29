@@ -1,0 +1,37 @@
+core: 7.x
+api: 2
+
+projects:
+  hierarchical_select: { version: ~ }
+  quicktabs: { version: ~ }
+  better_exposed_filters: { version: ~ }
+  i18n: { version: ~ }
+  i18nviews: { version: ~ }
+  variable: { version: ~ }
+
+  # Added for ndi_dkan_additions exported nodes
+  uuid_features: { version: ~ } 
+
+
+  # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-82
+  visualization_entity_maps:
+    download:
+      url: https://github.com/NuCivic/visualization_entity_maps.git
+      branch: master
+
+  geo_file_entity:
+    download:
+      url: https://github.com/NuCivic/geo_file_entity.git
+      branch: master
+
+  visualization_entity:
+    download:
+      url: https://github.com/NuCivic/visualization_entity.git
+      branch: master
+
+libraries:
+  recline_choropleth:
+    download:
+      url: 'https://github.com/NuCivic/recline.view.choroplethmap.js.git'
+      branch: master
+ 

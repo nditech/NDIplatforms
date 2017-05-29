@@ -1,0 +1,103 @@
+core: 7.x
+api: '2'
+
+defaults:
+  libraries:
+    download:
+      type: git
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+
+projects:
+  ndi-pushbutton-profile:
+    download:
+      url: 'https://github.com/nditech/demtools_civisociety_profile.git'
+    type: profile
+    subdir: .
+    directory_name: ndi_pushbutton
+  ndi-pushbutton-roles:
+    download:
+      url: 'https://github.com/nditech/ndi_civi_admin_role.git'
+    type: module
+    subdir: custom
+    directory_name: ndi_civi_admin_role
+  ndi-pushbutton-config:
+    download:
+      url: 'https://github.com/nditech/ndi_civi.git'
+    type: module
+    subdir: custom
+    directory_name: ndi_civi
+  CiviParty:
+    type: theme
+    download:
+      url: 'https://github.com/nditech/civiparty_drupal_theme.git'
+    destination: sites/all/themes
+  civimp_theme:
+    type: theme
+    directory_name: civimp
+    download:
+      url: 'https://github.com/nditech/civimp_theme.git'
+
+libraries:
+  ndipermissions:
+    download:
+      url: 'https://github.com/nditech/CiviLocalPermissionsExtension.git'
+  ndimisc:
+    download:
+      url: 'https://github.com/nditech/CiviCitizenCustomizerExtension.git'
+  ndiciviparty:
+    download:
+      url: 'https://github.com/nditech/ndiciviparty.git'
+  ndicivimp:
+    download:
+      url: 'https://github.com/nditech/ndicivimp.git'
+      branch: 'ndi_prod'
+  legcase:
+    download:
+      url: 'https://github.com/civicrm/org.civicrm.legcase.git'
+  ukrainerayons:
+    download:
+      url: 'https://github.com/nditech/ukrainerayons.git'
+  org.ndi.nicaraguadepartmentos:
+    download:
+      url: 'https://github.com/nditech/org.ndi.nicaraguadepartmentos.git'
+  org.ndi.nicaraguamunicipios:
+    download:
+      url: 'https://github.com/nditech/org.ndi.nicaraguamunicipios.git'
+      branch: 'state-names'
+  org.ndi.macedoniaprovinces:
+    download:
+      url: 'https://github.com/nditech/org.ndi.macedoniaprovinces.git'
+  org.ndi.moroccoprovinces:
+    download:
+      url: 'https://github.com/nditech/org.ndi.moroccoprovinces.git'
+  org.ndi.moroccocommunes:
+    download:
+      url: 'https://github.com/nditech/org.ndi.moroccocommunes.git'
+  org.ndi.serbiacounties:
+    download:
+      url: 'https://github.com/nditech/org.ndi.serbiacounties.git'
+  org.ndi.serbiamunicipalities:
+    download:
+      url: 'https://github.com/nditech/org.ndi.serbiamunicipalities.git'
+  civicrm-metrics-server:
+    download:
+      url: 'https://github.com/nditech/civicrm-metrics-server'
+      branch: 'ndi-prod'
+  civicrm-metrics-client:
+    download:
+      url: 'https://github.com/nditech/civicrm-metrics-client'
+      branch: 'ndi-prod'
+  org.ndi.metrics:
+    download:
+      url: 'https://github.com/nditech/org.ndi.metrics'
+  org.ndi.fieldvaluepermission:
+    download:
+      url: 'https://github.com/aghstrategies/org.ndi.fieldvaluepermission'
+  org.ndi.nigeriastates:
+    download:
+      url: 'https://github.com/nditech/org.ndi.nigeriastates'
+  org.ndi.nigerialgas:
+    download:
+      url: 'https://github.com/nditech/org.ndi.nigerialgas'
+
