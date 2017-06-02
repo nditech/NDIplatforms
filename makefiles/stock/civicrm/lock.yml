@@ -18,6 +18,7 @@ projects:
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
       - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
       - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10399.patch'
 libraries:
   civicrm_l10n_core:
     destination: modules/contrib/civicrm

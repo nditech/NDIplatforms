@@ -90,6 +90,7 @@ projects:
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
       - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
       - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10399.patch'
 libraries:
   ndipermissions:
     download:
@@ -315,7 +316,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: b2975b7b9f95ea4462c86b9c2fe54a42aecb5669
+      revision: 66fd86734eac5fae1cfd96c133fafe0829631589
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
