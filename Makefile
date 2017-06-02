@@ -17,8 +17,8 @@ ts=`date --iso-8601=seconds`
 ds=`date +%Y%m%d`
 
 cores = drupal7 drupal8
-stock = dkan civicrm d7
-demtools = demtools/dkan demtools/civicrm
+stock = dkan civicrm d7 petitions
+demtools = demtools/dkan demtools/civicrm demtools/petitions
 d7platforms = d7platforms/iredd
 
 all: cores stock demtools d7platforms

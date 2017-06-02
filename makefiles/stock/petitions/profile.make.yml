@@ -1,0 +1,14 @@
+core: 7.x
+api: 2
+
+projects:
+  petitions:
+    type: profile
+    subdir: '.'
+    download:
+      type: git
+      #url: 'https://github.com/WhiteHouse/petitions'
+      url: 'https://github.com/nditech/demtools-petitions'
+      #branch: 7.x-3.x
+      branch: 'upstream+patches'
+
