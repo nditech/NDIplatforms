@@ -16,4 +16,4 @@ projects:
       type: git
       url: 'https://github.com/nditech/demtools-petitions'
       branch: upstream+patches
-      revision: 99bec0aaddcf8afc2df0675c4efc1c24cf6824d9
+      revision: f24b418d54eb2cda31c1cb861e9a47894ce6969d
