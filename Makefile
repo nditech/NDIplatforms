@@ -1,9 +1,25 @@
+include .mk/GNUmakefile
+
+d=drush
+lock=make-lock
+make=make
+pl=/var/aegir/platforms
+makes=~/makefiles/NDIplatforms
+makefile_dir=makefiles
+cores_dir=$(makefile_dir)/cores
+stock_dir=$(makefile_dir)/stock
+demtools_dir=$(makefile_dir)/demtools
+d7platforms_dir=$(makefile_dir)/d7platforms
+
+tmp_dir=tmp
+test_dir=$(tmp_dir)/tests
+ts=`date --iso-8601=seconds`
+ds=`date +%Y%m%d`
+
 cores = drupal7 drupal8
 stock = dkan civicrm d7
 demtools = demtools/dkan demtools/civicrm
 d7platforms = d7platforms/iredd
-
-include .mk/*
 
 all: cores stock demtools d7platforms
 
@@ -43,4 +59,29 @@ d7platforms/%-platform: d7platforms/%
 	$(d) $(make) $(d7platforms_dir)/$*/lock.yml $(pl)/d7platforms-$*-$(ds)$(inc)
 	drush provision-save @platform_d7platforms_$*_$(ds)$(inc) --root=$(pl)/d7platforms-$*-$(ds)$(inc) --makefile=$(makes)/$(d7platforms_dir)/$*/lock.yml --context_type=platform
 	drush @hostmaster hosting-import @platform_d7platforms_$*_$(ds)$(inc)
+
+os := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+debian := $(shell sh -c 'which apt > /dev/null; echo $$?')
+mkdocs := $(shell sh -c 'which mkdocs > /dev/null; echo $$?')
+
+mkdocs:
+ifeq ($(mkdocs),1)
+	@echo Installing MkDocs. Administrator rights are required.
+ifeq ($(debian),0)
+	@sudo apt-get install python-pip
+else ifeq ($(os),Darwin)
+	@sudo brew install python
+else
+	@echo Only Debian flavours of GNU/Linux and OSX are currently supported.
+	@echo Install mkdocs manually: http://www.mkdocs.org/\#installation
+	@exit 1
+endif
+	@sudo pip install mkdocs
+endif
+
+docs: mkdocs
+	@mkdocs build --clean && mkdocs serve
+
+docs-deploy: mkdocs
+	@mkdocs gh-deploy --clean
 
