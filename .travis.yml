@@ -11,6 +11,6 @@ env:
     - MAKE_PLATFORM=d7platforms/iredd-test
 
 script:
-  - make list
-  - make drush-unstable
+  - . d # Bootstrap Drumkit
+  - make drush
   - make $MAKE_PLATFORM
