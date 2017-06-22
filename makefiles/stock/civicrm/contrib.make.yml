@@ -22,6 +22,9 @@ projects:
       # See: https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-227
       # Should be safe to remove for upgrade to 4.7.20+
       - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10399.patch'
+      # See: https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-229
+      # Should be safe to remove for upgrade to 4.7.20+
+      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10325.patch'
 
 libraries:
   civicrm_l10n_core:
