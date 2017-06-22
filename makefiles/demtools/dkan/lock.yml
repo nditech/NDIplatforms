@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.54'
+    version: '7.56'
   elections:
     subdir: custom
     download:
@@ -42,11 +42,11 @@ projects:
   hierarchical_select:
     version: 3.0-beta8
   quicktabs:
-    version: '3.6'
+    version: '3.8'
   better_exposed_filters:
     version: '3.4'
   i18n:
-    version: '1.17'
+    version: '1.18'
   i18nviews:
     version: 3.0-alpha1
   variable:

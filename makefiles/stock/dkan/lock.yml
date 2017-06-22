@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.54'
+    version: '7.56'
   dkan:
     subdir: .
     type: profile
@@ -16,4 +16,4 @@ projects:
       type: git
       url: 'https://github.com/nucivic/dkan.git'
       branch: 7.x-1.x
-      revision: ba5978abdde65aa47179854948bff55468df762b
+      revision: 1f01aaf67ce6e427a5d8823638a5d205cc58325c
