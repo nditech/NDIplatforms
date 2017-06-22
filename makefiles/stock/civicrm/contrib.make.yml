@@ -6,7 +6,7 @@ projects:
     download:
       type: get
       # Check for the latest version at: https://civicrm.org/download/list
-      url: 'https://download.civicrm.org/civicrm-4.7.19-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.20-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
@@ -19,12 +19,6 @@ projects:
       # once we have removed these patches though, as a courtesy.
       - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
       - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
-      # See: https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-227
-      # Should be safe to remove for upgrade to 4.7.20+
-      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10399.patch'
-      # See: https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-229
-      # Should be safe to remove for upgrade to 4.7.20+
-      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10325.patch'
 
 libraries:
   civicrm_l10n_core:
