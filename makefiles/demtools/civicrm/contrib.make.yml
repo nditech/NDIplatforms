@@ -70,3 +70,11 @@ libraries:
   com.cividesk.email.sparkpost:
     download:
       url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'
+  civicrm.sms.conversations:
+    download:
+      url: 'https://github.com/3sd/civicrm-sms-conversations.git'
+  org.civicoop.civirules:
+    download:
+      # Using alternate repo per: https://nationaldemocraticinstitute.atlassian.net/browse/NTYTRCIVI-15
+      url: 'https://github.com/michaelmcandrew/org.civicoop.civirules.git'
+      branch: 'sms-conversation'

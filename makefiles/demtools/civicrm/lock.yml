@@ -403,6 +403,24 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  civicrm.sms.conversations:
+    download:
+      type: git
+      url: 'https://github.com/3sd/civicrm-sms-conversations.git'
+      branch: master
+      revision: 80268161ef7bd2c2307127955d9af1048caad51a
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicoop.civirules:
+    download:
+      type: git
+      url: 'https://github.com/michaelmcandrew/org.civicoop.civirules.git'
+      branch: sms-conversation
+      revision: 729a4707fc09de7549f97a78ae31840a52ce1464
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_l10n_core:
     download:
       type: file
