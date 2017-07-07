@@ -274,6 +274,24 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.ndi.malawidistricts:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.malawidistricts.git'
+      branch: master
+      revision: 9271f1d1043de3520a7ec284ed23c6102f32fd7a
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.malawiconstituencies:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.malawiconstituencies.git'
+      branch: master
+      revision: 8bb882641f175df951c7b8352146b5331b781fa2
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git

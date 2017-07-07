@@ -103,3 +103,10 @@ libraries:
   org.ndi.moldovarayons:
     download:
       url: 'https://github.com/nditech/org.ndi.moldovarayons.git'
+  org.ndi.malawidistricts:
+    download:
+      url: 'https://github.com/nditech/org.ndi.malawidistricts.git'
+  org.ndi.malawiconstituencies:
+    download:
+      url: 'https://github.com/nditech/org.ndi.malawiconstituencies.git'
+
