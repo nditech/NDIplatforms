@@ -19,6 +19,9 @@ projects:
       # once we have removed these patches though, as a courtesy.
       - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
       - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      # This patch should be safe to remove once 4.7.21 is released. See:
+      # https://issues.civicrm.org/jira/browse/CRM-20556
+      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10503.patch'
 
 libraries:
   civicrm_l10n_core:

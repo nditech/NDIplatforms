@@ -100,4 +100,6 @@ libraries:
   org.ndi.nigerialgas:
     download:
       url: 'https://github.com/nditech/org.ndi.nigerialgas'
-
+  org.ndi.moldovarayons:
+    download:
+      url: 'https://github.com/nditech/org.ndi.moldovarayons.git'

@@ -23,7 +23,10 @@ projects:
   variable: { version: ~ }
   i18n: { version: ~ }
 
-  mobile_codes: { version: ~ }
+  mobile_codes:
+    version: ~
+    patch:
+      - 'https://www.drupal.org/files/issues/2766323-2.patch'
   ga_login: { version: ~ }
 
 libraries:
@@ -64,4 +67,6 @@ libraries:
   org.ndi.sms.telerivet:
     download:
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
-
+  com.cividesk.email.sparkpost:
+    download:
+      url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'

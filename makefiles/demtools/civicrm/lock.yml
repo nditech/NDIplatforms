@@ -79,6 +79,8 @@ projects:
     version: '1.18'
   mobile_codes:
     version: '2.1'
+    patch:
+      - 'https://www.drupal.org/files/issues/2766323-2.patch'
   ga_login:
     version: '1.7'
   civicrm:
@@ -90,6 +92,7 @@ projects:
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
       - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
       - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      - 'https://patch-diff.githubusercontent.com/raw/civicrm/civicrm-core/pull/10503.patch'
 libraries:
   ndipermissions:
     download:
@@ -262,6 +265,15 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.ndi.moldovarayons:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.moldovarayons.git'
+      branch: master
+      revision: 104e802d83f908c9b0667b423bab9377d6360818
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git
@@ -361,6 +373,15 @@ libraries:
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
       branch: master
       revision: 7ce127047729ee6855f1b60fff146436bb485e37
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  com.cividesk.email.sparkpost:
+    download:
+      type: git
+      url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'
+      branch: master
+      revision: 22a02b6946b99d25e1bd4ed70567a224065784b7
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
