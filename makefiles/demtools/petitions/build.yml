@@ -10,3 +10,14 @@ includes:
   - contrib.make.yml
   - custom.make.yml
 
+projects:
+  petitions:
+    type: profile
+    subdir: '.'
+    download:
+      type: git
+      url: 'https://github.com/nditech/demtools-petitions'
+      branch: 'demtools'
+      # Allow the new branch's revision to override the one in the stock lock
+      # file.
+      revision: ~
