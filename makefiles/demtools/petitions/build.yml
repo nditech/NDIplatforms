@@ -5,6 +5,13 @@ defaults:
   projects:
     subdir: contrib
 
+translations:
+  - ar
+  - fr
+  - id
+  - ru
+  - es
+
 includes:
   - ../../stock/petitions/lock.yml
   - contrib.make.yml
