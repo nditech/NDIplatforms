@@ -52,6 +52,9 @@ libraries:
     download:
       url: 'https://github.com/nditech/ndicivimp.git'
       branch: 'ndi_prod'
+  org.ndi.demtools:
+    download:
+      url: 'https://github.com/nditech/org.ndi.demtools.git'
   legcase:
     download:
       url: 'https://github.com/civicrm/org.civicrm.legcase.git'
