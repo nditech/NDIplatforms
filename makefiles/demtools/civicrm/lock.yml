@@ -86,12 +86,11 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.21-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.23-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      - 'https://github.com/civicrm/civicrm-core/commit/0e0807631a44e97da509cc11f4317fb1a3b6f2de.patch'
 libraries:
   ndipermissions:
     download:
@@ -398,7 +397,7 @@ libraries:
       type: git
       url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'
       branch: master
-      revision: 22a02b6946b99d25e1bd4ed70567a224065784b7
+      revision: 9d3d65cbfdca3861e04e90a29f2d57b9f6122a02
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -407,7 +406,7 @@ libraries:
       type: git
       url: 'https://github.com/3sd/civicrm-sms-conversations.git'
       branch: master
-      revision: 80268161ef7bd2c2307127955d9af1048caad51a
+      revision: 7ba2be3aedfde57150e4d0ea4c32709214853da9
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library

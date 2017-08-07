@@ -12,12 +12,11 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.21-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.23-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      - 'https://github.com/civicrm/civicrm-core/commit/0e0807631a44e97da509cc11f4317fb1a3b6f2de.patch'
 libraries:
   civicrm_l10n_core:
     destination: modules/contrib/civicrm

@@ -6,19 +6,13 @@ projects:
     download:
       type: get
       # Check for the latest version at: https://civicrm.org/download/list
-      url: 'https://download.civicrm.org/civicrm-4.7.21-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.23-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      # These two patches are required to fix underlying bugs exposed by the
-      # org.ndi.fieldvaluepermission extension. They are both in PR:
-      # https://github.com/civicrm/civicrm-core/pull/10068. These patches are
-      # pulled from AGH's PR branch. Andrew agreed not to delete the branch as
-      # soon as the PR is accepted, and instead wait until the next CiviCRM
-      # release, so that we can remove these patches. We should let him know
-      # once we have removed these patches though, as a courtesy.
-      - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      # https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-241
+      # Should be merged in CiviCRM 4.7.25, so remove this patch then.
+      - 'https://github.com/civicrm/civicrm-core/commit/0e0807631a44e97da509cc11f4317fb1a3b6f2de.patch'
 
 libraries:
   civicrm_l10n_core:
