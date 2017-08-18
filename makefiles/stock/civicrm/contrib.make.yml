@@ -13,6 +13,10 @@ projects:
       # https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-241
       # Should be merged in CiviCRM 4.7.25, so remove this patch then.
       - 'https://github.com/civicrm/civicrm-core/commit/0e0807631a44e97da509cc11f4317fb1a3b6f2de.patch'
+      # https://nationaldemocraticinstitute.atlassian.net/browse/UACASE-106
+      # From: https://github.com/civicrm/civicrm-core/pull/10819
+      # Should be merged in CiviCRM 4.7.25, so remove this patch then.
+      - 'https://github.com/civicrm/civicrm-core/commit/cbbc16ecbd84a7d137cac0c3b5acacecc5a67140.patch'
 
 libraries:
   civicrm_l10n_core:
