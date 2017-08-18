@@ -64,7 +64,7 @@ projects:
   options_element:
     version: '1.12'
   views:
-    version: '3.16'
+    version: '3.17'
   features:
     version: '2.10'
   strongarm:
