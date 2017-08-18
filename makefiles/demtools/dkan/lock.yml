@@ -72,9 +72,20 @@ projects:
       type: git
       url: 'https://github.com/nucivic/dkan.git'
       branch: 7.x-1.x
-      revision: 7.x-1.13.4
+      revision: 7.x-1.13.6
     patch:
       - 'https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch'
+  entityreference:
+    version: '1.5'
+  entity:
+    version: '1.8'
+  file_resup:
+    version: '1.4'
+  features:
+    version: '2.10'
+  views:
+    version: '3.17'
+    contrib: ../../../profiles/dkan/modules/contrib
 libraries:
   recline_choropleth:
     download:

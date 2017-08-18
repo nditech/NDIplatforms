@@ -16,10 +16,16 @@ projects:
   dkan:
     download:
       branch: 7.x-1.x
-      revision: 7.x-1.13.4
+      revision: 7.x-1.13.6
     patch:
       # Add dependency on our keystone feature and extra install task.
       - "https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch"
       # Add a custom date format (mmm-yyyy). Patch need a re-roll.
 #      - "https://github.com/nditech/dkan/commit/1933d763817bf4b6b0ed93626ddbd0ed6bfd218f.patch"
 
+  # Overrides for security releases.
+  entityreference: { version: ~ }
+  entity: { version: ~ }
+  file_resup: { version: ~ }
+  features: { version: ~ }
+  views: { version: ~ }
