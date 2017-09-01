@@ -23,11 +23,23 @@ projects:
   variable: { version: ~ }
   i18n: { version: ~ }
 
+  # civi-development
+  globalredirect : { version: ~ }
+  jquery_update : { version: ~ }
+  metatag : { version: ~ }
+  pathauto : { version: ~ }
+  redirect : { version: ~ }
+  themekey : { version: ~ }
+  token : { version: ~ }
+  webform_classes : { version: ~ }
+
+  # 2-factor authentication
   mobile_codes:
     version: ~
     patch:
       - 'https://www.drupal.org/files/issues/2766323-2.patch'
   ga_login: { version: ~ }
+  duo: { version: ~ }
 
 libraries:
   civicrm_activity_ical:
