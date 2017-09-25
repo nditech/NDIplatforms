@@ -363,7 +363,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: 3454af69841e3afcdf31db2d3617d0bf07aad45a
+      revision: 3a0a1019ca9b3a102a33ee2bd3c8ba667263c881
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -435,7 +435,7 @@ libraries:
       type: git
       url: 'https://github.com/3sd/civicrm-sms-conversations.git'
       branch: master
-      revision: 7ba2be3aedfde57150e4d0ea4c32709214853da9
+      revision: e126b6c79c59d43e7a84780974a600d894b18fcc
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -445,6 +445,33 @@ libraries:
       url: 'https://github.com/michaelmcandrew/org.civicoop.civirules.git'
       branch: sms-conversation
       revision: 729a4707fc09de7549f97a78ae31840a52ce1464
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.volunteer:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.volunteer.git'
+      branch: master
+      revision: 1d06027909c5200b7e5ca0bbecb0d3ae9538c8ea
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  ca.bidon.civiexportexcel:
+    download:
+      type: git
+      url: 'https://github.com/mlutfy/ca.bidon.civiexportexcel.git'
+      branch: master
+      revision: 0fd03a3a9a52c7929308591e7dbb77b84c529584
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.angularprofiles:
+    download:
+      type: git
+      url: 'https://github.com/ginkgostreet/org.civicrm.angularprofiles'
+      branch: master
+      revision: 91a95a7e113e79d11d9f6a1f8569ffb692c3c682
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
