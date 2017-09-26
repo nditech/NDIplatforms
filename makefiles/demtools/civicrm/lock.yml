@@ -452,6 +452,7 @@ libraries:
     download:
       type: git
       url: 'https://github.com/civicrm/org.civicrm.volunteer.git'
+      tag: v4.7.21-2.2.2
       branch: master
       revision: 1d06027909c5200b7e5ca0bbecb0d3ae9538c8ea
     destination: modules/contrib/civicrm/extensions
