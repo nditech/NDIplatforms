@@ -9,3 +9,4 @@ includes:
   - ../../stock/civicrm/lock.yml
   - contrib.make.yml
   - custom.make.yml
+  - byactive.make.yml

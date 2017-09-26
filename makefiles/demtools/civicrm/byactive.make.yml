@@ -1,0 +1,20 @@
+core: 7.x
+api: '2'
+
+defaults:
+  libraries:
+    download:
+      type: git
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+
+libraries:
+
+  org.ndi.bystates:
+    download:
+      url: git@github.com:nditech/org.ndi.bystates.git
+
+  org.ndi.bycounties:
+    download:
+      url: git@github.com:nditech/org.ndi.bycounties.git
+
