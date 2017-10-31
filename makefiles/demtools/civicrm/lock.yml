@@ -56,9 +56,9 @@ projects:
       branch: master
       revision: e5ad4cc802150a508f6dd548c09b141c0fbf3b65
   webform_civicrm:
-    version: '4.18'
+    version: '4.19'
   webform:
-    version: '4.15'
+    version: '4.16'
   libraries:
     version: '2.3'
   options_element:
@@ -104,12 +104,10 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.23-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.25-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      - 'https://github.com/civicrm/civicrm-core/commit/0e0807631a44e97da509cc11f4317fb1a3b6f2de.patch'
-      - 'https://github.com/civicrm/civicrm-core/commit/cbbc16ecbd84a7d137cac0c3b5acacecc5a67140.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/64075/64075_silence_warnings.patch'
 libraries:
   ndipermissions:
@@ -343,7 +341,7 @@ libraries:
       type: git
       url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
       branch: master
-      revision: 416ad4e765d235f424804836b082df18affb865e
+      revision: ad2f3558a8d350edb5cb7e829d2731632b2a2ff3
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -363,7 +361,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: 3a0a1019ca9b3a102a33ee2bd3c8ba667263c881
+      revision: 86725f83e9f5581451b6bf24f86ef37aadeec1dd
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -372,7 +370,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: 66fd86734eac5fae1cfd96c133fafe0829631589
+      revision: 6ad6fc3dc6b516fe3c26ca7eb704bd208ded19f0
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -381,7 +379,7 @@ libraries:
       type: git
       url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
       branch: master
-      revision: 8caa6a51d48dbc885c52f71bb04ceada68f8cf79
+      revision: c324f44365c5fc886d2564891555cd46a00c739f
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -417,7 +415,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
       branch: master
-      revision: 7ce127047729ee6855f1b60fff146436bb485e37
+      revision: 95f6eb2511decc538831fa7bafac633f4703da40
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -435,7 +433,7 @@ libraries:
       type: git
       url: 'https://github.com/3sd/civicrm-sms-conversations.git'
       branch: master
-      revision: e126b6c79c59d43e7a84780974a600d894b18fcc
+      revision: baa7ba11bb97331ff33e6178f2db9d8af380f112
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -444,7 +442,7 @@ libraries:
       type: git
       url: 'https://github.com/michaelmcandrew/org.civicoop.civirules.git'
       branch: sms-conversation
-      revision: 729a4707fc09de7549f97a78ae31840a52ce1464
+      revision: b96723d78d10b341a57fcf782a9d22c6b4a46b17
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
