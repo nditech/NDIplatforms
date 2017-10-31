@@ -6,17 +6,10 @@ projects:
     download:
       type: get
       # Check for the latest version at: https://civicrm.org/download/list
-      url: 'https://download.civicrm.org/civicrm-4.7.23-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.25-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      # https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-241
-      # Should be merged in CiviCRM 4.7.25, so remove this patch then.
-      - 'https://github.com/civicrm/civicrm-core/commit/0e0807631a44e97da509cc11f4317fb1a3b6f2de.patch'
-      # https://nationaldemocraticinstitute.atlassian.net/browse/UACASE-106
-      # From: https://github.com/civicrm/civicrm-core/pull/10819
-      # Should be merged in CiviCRM 4.7.25, so remove this patch then.
-      - 'https://github.com/civicrm/civicrm-core/commit/cbbc16ecbd84a7d137cac0c3b5acacecc5a67140.patch'
       # https://nationaldemocraticinstitute.atlassian.net/browse/CIVISOCIET-230
       # Temporary fix, to silence warnings, pending a proper fix for:
       # https://issues.civicrm.org/jira/browse/CRM-21101
