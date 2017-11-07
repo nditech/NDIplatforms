@@ -104,7 +104,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.25-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.27-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
@@ -458,9 +458,10 @@ libraries:
   org.civicoop.civirules:
     download:
       type: git
-      url: 'https://github.com/michaelmcandrew/org.civicoop.civirules.git'
-      branch: sms-conversation
-      revision: b96723d78d10b341a57fcf782a9d22c6b4a46b17
+      url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
+      tag: '1.13'
+      branch: master
+      revision: cf879a8b93bf4354fbb8e6e34d2a5c7095f0abd5
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library

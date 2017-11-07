@@ -87,9 +87,8 @@ libraries:
       url: 'https://github.com/3sd/civicrm-sms-conversations.git'
   org.civicoop.civirules:
     download:
-      # Using alternate repo per: https://nationaldemocraticinstitute.atlassian.net/browse/NTYTRCIVI-15
-      url: 'https://github.com/michaelmcandrew/org.civicoop.civirules.git'
-      branch: 'sms-conversation'
+      url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
+      tag: '1.13'
   org.civicrm.volunteer:
     # Needs config changes to MySQL. See: https://nationaldemocraticinstitute.atlassian.net/browse/BYFREEDOM-93
     download:
@@ -101,4 +100,3 @@ libraries:
   org.civicrm.angularprofiles:
     download:
       url: https://github.com/ginkgostreet/org.civicrm.angularprofiles
-
