@@ -6,7 +6,7 @@ projects:
     download:
       type: get
       # Check for the latest version at: https://civicrm.org/download/list
-      url: 'https://download.civicrm.org/civicrm-4.7.25-drupal.tar.gz'
+      url: 'https://download.civicrm.org/civicrm-4.7.27-drupal.tar.gz'
     patch:
       - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
       - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'

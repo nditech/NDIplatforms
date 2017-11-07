@@ -1,3 +1,5 @@
+
+drush_RELEASE = 8.1.12
 include .mk/GNUmakefile
 
 d=drush
