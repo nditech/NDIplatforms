@@ -335,6 +335,15 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.ndi.contactnumbers:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.contactnumbers.git'
+      branch: master
+      revision: fb5ea432f0c1955aa6dab1fb024bdcfe823008a4
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_activity_ical:
     download:
       type: git
