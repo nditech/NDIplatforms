@@ -103,3 +103,6 @@ libraries:
   uk.org.futurefirst.networks.civipoints:
     download:
       url: https://github.com/futurefirst/uk.org.futurefirst.networks.civipoints
+  eu.tttp.sendeventconf:
+    download:
+      url: https://github.com/TechToThePeople/sendeventconf

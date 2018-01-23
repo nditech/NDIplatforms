@@ -511,6 +511,15 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  eu.tttp.sendeventconf:
+    download:
+      type: git
+      url: 'https://github.com/TechToThePeople/sendeventconf'
+      branch: master
+      revision: 9509a00802e6540163c8a5e773083b039ffc9a5b
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_l10n_core:
     download:
       type: file
