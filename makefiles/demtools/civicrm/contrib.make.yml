@@ -41,6 +41,8 @@ projects:
   ga_login: { version: ~ }
   duo: { version: ~ }
 
+  autologout: { version: ~ }
+
 libraries:
   civicrm_activity_ical:
     download:
