@@ -100,3 +100,6 @@ libraries:
   org.civicrm.angularprofiles:
     download:
       url: https://github.com/ginkgostreet/org.civicrm.angularprofiles
+  uk.org.futurefirst.networks.civipoints:
+    download:
+      url: https://github.com/futurefirst/uk.org.futurefirst.networks.civipoints

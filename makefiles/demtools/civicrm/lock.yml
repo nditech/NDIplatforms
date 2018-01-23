@@ -484,6 +484,15 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  uk.org.futurefirst.networks.civipoints:
+    download:
+      type: git
+      url: 'https://github.com/futurefirst/uk.org.futurefirst.networks.civipoints'
+      branch: master
+      revision: e2f1f53a93d045581a567619aa809ab5fb357966
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_l10n_core:
     download:
       type: file
