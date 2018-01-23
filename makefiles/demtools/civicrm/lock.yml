@@ -76,7 +76,7 @@ projects:
   variable:
     version: '2.5'
   i18n:
-    version: '1.18'
+    version: '1.22'
   globalredirect:
     version: '1.5'
   jquery_update:
@@ -378,7 +378,7 @@ libraries:
       url: 'https://github.com/osseed/com.osseed.eventcalendar.git'
       tag: '1.1'
       branch: master
-      revision: 344ab19cfd7fbe8a122ad65232453a17c562f565
+      revision: 35a1a9fca6f800a8a3b3bc552703ee8a354d34db
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -397,7 +397,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: 6ad6fc3dc6b516fe3c26ca7eb704bd208ded19f0
+      revision: 9ae9404d3b8383e98441fe1bffcad5e8922c05f8
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -460,7 +460,7 @@ libraries:
       type: git
       url: 'https://github.com/3sd/civicrm-sms-conversations.git'
       branch: master
-      revision: baa7ba11bb97331ff33e6178f2db9d8af380f112
+      revision: 1e0b8845f339439d576a70e05a192d004d45bf4d
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -470,7 +470,7 @@ libraries:
       url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
       tag: '1.13'
       branch: master
-      revision: cf879a8b93bf4354fbb8e6e34d2a5c7095f0abd5
+      revision: 4cc5b2eb071d22fa6d8d7a7f7822698863c1a632
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -480,7 +480,7 @@ libraries:
       url: 'https://github.com/civicrm/org.civicrm.volunteer.git'
       tag: v4.7.21-2.2.2
       branch: master
-      revision: 1d06027909c5200b7e5ca0bbecb0d3ae9538c8ea
+      revision: 82934adb04babb3e6df2b22993af27ad65782bb8
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
