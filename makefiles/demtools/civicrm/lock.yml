@@ -101,6 +101,8 @@ projects:
     version: '1.7'
   duo:
     version: '1.11'
+  autologout:
+    version: '4.5'
   civicrm:
     download:
       type: get
