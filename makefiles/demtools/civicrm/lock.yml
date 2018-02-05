@@ -470,7 +470,7 @@ libraries:
     download:
       type: git
       url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
-      tag: '1.13'
+      tag: '1.17'
       branch: master
       revision: 4cc5b2eb071d22fa6d8d7a7f7822698863c1a632
     destination: modules/contrib/civicrm/extensions
@@ -507,9 +507,9 @@ libraries:
   uk.org.futurefirst.networks.civipoints:
     download:
       type: git
-      url: 'https://github.com/futurefirst/uk.org.futurefirst.networks.civipoints'
-      branch: master
-      revision: e2f1f53a93d045581a567619aa809ab5fb357966
+      url: 'https://github.com/nditech/uk.org.futurefirst.networks.civipoints'
+      branch: detect-civirules
+      revision: 28b13095f4acf75246faef776a91030bc340380e
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
