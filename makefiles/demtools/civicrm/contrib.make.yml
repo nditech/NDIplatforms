@@ -110,3 +110,15 @@ libraries:
   eu.tttp.sendeventconf:
     download:
       url: https://github.com/TechToThePeople/sendeventconf
+
+  # Mosaico & dependencies
+  org.civicrm.shoreditch:
+    download:
+      url: https://github.com/civicrm/org.civicrm.shoreditch.git
+  org.civicrm.flexmailer:
+    download:
+      url: https://github.com/civicrm/org.civicrm.flexmailer.git
+  uk.co.vedaconsulting.mosaico:
+    download:
+      type: "file"
+      url: https://download.civicrm.org/extension/uk.co.vedaconsulting.mosaico/latest/uk.co.vedaconsulting.mosaico-latest.zip

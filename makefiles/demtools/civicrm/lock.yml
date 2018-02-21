@@ -504,6 +504,31 @@ libraries:
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
+  org.civicrm.shoreditch:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.shoreditch.git'
+      branch: master
+      revision: ecac193f88cf3b5ee7575a701a66e2ea91f9a128
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.flexmailer:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.flexmailer.git'
+      branch: master
+      revision: cc2314e006d81a8282307c97f9b5bab5ba069dac
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  uk.co.vedaconsulting.mosaico:
+    download:
+      type: file
+      url: 'https://download.civicrm.org/extension/uk.co.vedaconsulting.mosaico/latest/uk.co.vedaconsulting.mosaico-latest.zip'
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
   civicrm_l10n_core:
     download:
       type: file
