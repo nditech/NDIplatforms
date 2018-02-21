@@ -70,7 +70,7 @@ projects:
   strongarm:
     version: '2.0'
   ctools:
-    version: '1.12'
+    version: '1.13'
   admin_menu:
     version: 3.0-rc5
   variable:
@@ -78,7 +78,7 @@ projects:
   i18n:
     version: '1.22'
   globalredirect:
-    version: '1.5'
+    version: '1.6'
   jquery_update:
     version: '2.7'
   metatag:
@@ -399,7 +399,7 @@ libraries:
       type: git
       url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
       branch: master
-      revision: b8f83ea92c72f78d4f52818268f1be7f886dee9c
+      revision: c537eade4343e70af628fbce5a9e5e884cfa83dd
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -435,7 +435,7 @@ libraries:
       type: git
       url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'
       branch: master
-      revision: 6251f1c80292c6155b11f22d7ac7bfdd08d5666a
+      revision: 40c87c2702e36269b0671642e228fb427ac01424
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -454,7 +454,7 @@ libraries:
       url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
       tag: '1.17'
       branch: master
-      revision: 4cc5b2eb071d22fa6d8d7a7f7822698863c1a632
+      revision: 07e8e19facc2bd9cb906668826b7e0d89898f012
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
