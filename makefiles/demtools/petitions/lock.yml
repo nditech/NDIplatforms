@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.56'
+    version: '7.58'
     translations:
       - ar
       - fr
@@ -29,7 +29,7 @@ projects:
       - ru
       - es
   i18n:
-    version: '1.18'
+    version: '1.24'
     translations:
       - ar
       - fr
@@ -83,7 +83,6 @@ projects:
       type: git
       url: 'https://github.com/nditech/demtools-petitions'
       branch: demtools
-      revision: d22450e6933ccdc32a4a19e3d1cb26911d5e1864
     translations:
       - ar
       - fr
