@@ -58,7 +58,7 @@ projects:
   webform_civicrm:
     version: '4.20'
   webform:
-    version: '4.16'
+    version: '4.17'
   libraries:
     version: '2.3'
   options_element:
@@ -104,11 +104,7 @@ projects:
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.27-drupal.tar.gz'
-    patch:
-      - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
-      - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      - 'https://issues.civicrm.org/jira/secure/attachment/64075/64075_silence_warnings.patch'
+      url: 'https://download.civicrm.org/civicrm-4.7.31-drupal.tar.gz'
 libraries:
   ndipermissions:
     download:
