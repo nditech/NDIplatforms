@@ -24,11 +24,6 @@ projects:
       url: https://github.com/NuCivic/geo_file_entity.git
       branch: master
 
-  visualization_entity:
-    download:
-      url: https://github.com/NuCivic/visualization_entity.git
-      branch: master
-
 libraries:
   recline_choropleth:
     download:

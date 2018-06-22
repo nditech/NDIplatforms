@@ -4,6 +4,8 @@ theme: readthedocs
 site_favicon: '_images/favicon.ico'
 docs_dir: docs
 site_dir: '/tmp/NDIplatforms/_site'
+dev_addr: '0.0.0.0:18002'
+
 markdown_extensions:
   - codehilite:
       noclasses: True

@@ -7,59 +7,31 @@ Download
 Download NDIplatforms somewhere convenient, such as:
 
     :::console
-    $ git clone https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
+    $ git clone --recursive https://github.com/nditech/NDIplatforms.git ~/makefiles/NDIplatforms
     $ cd ~/makefiles/NDIplatforms
 
 
 Install
 -------
 
-To use the latest version of NDIplatforms effectively, you need a recent version
-of Drush. As such, we recommend using a local Drush install, so as not to
-interfere with other Drush functionality on the server.
-
-There are various options available, that are explained further in the next
-section. Use the following command to install the recommended version of Drush:
-
-    :::console
-    $ make install
-    Switched to branch 'dev/2000'
-    [...]
-     Drush git branch: dev/2000
-
-
-### Install Drush
-
-If you prefer to use the latest release of Drush:
+To use the latest version of NDIplatforms effectively, you need a recent
+version of Drush. If you don't have Drush 8 installed on the server, you can
+use [Drumkit](http://drumk.it) (included as a git sub-module) to quickly
+install a local version of Drush:
 
     :::console
     $ make drush
-     Drush Version   :  8.0.3
+    [...]
+    Installing the 8.1.2 release of Drush.
+     Drush Version   :  8.1.2 
 
-Alternatively, you might want to use the latest (unstable) Drush development
-build:
+Then, to make it available on the command-line, you can add the local binary
+directory to your $PATH by bootstrapping Drumkit:
 
     :::console
-    $ make drush-unstable
-     Drush Version   :  8.1-dev
+    $ . d
 
-You could also deploy Drush from source code:
-
-    :::console
-    $ make drush-source
-    Already on 'master'
-    [...]
-    All settings correct for using Composer
-    Downloading...
-    [...]
-     Drush Version   :  8.1-dev
-
-Finally, deploying Drush from source code allows the use of arbitrary branches
-(from a PR, for example):
-
-    :::console
-    $ make drush-source branch=dev/2000
-    Switched to branch 'dev/2000'
-    [...]
-     Drush git branch: dev/2000
+Note that we're `sourcing` a file, which will change your environment. This
+will only last for the current session. If you login to a new terminal session,
+you'll need to re-run `. d`.
 

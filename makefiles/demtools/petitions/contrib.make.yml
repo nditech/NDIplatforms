@@ -1,0 +1,12 @@
+core: 7.x
+api: 2
+
+projects:
+  # TODO: Move these to the demtools_petitions modude?
+  i18n: { version: ~ }
+  i18nviews: { version: ~ }
+  path_breadcrumbs: { version: ~ }
+  rules: { version: ~ }
+  variable: { version: ~ }
+  # Allow for easier interface translation
+  l10n_client: { version: ~ }

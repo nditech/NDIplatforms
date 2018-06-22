@@ -52,6 +52,9 @@ libraries:
     download:
       url: 'https://github.com/nditech/ndicivimp.git'
       branch: 'ndi_prod'
+  org.ndi.demtools:
+    download:
+      url: 'https://github.com/nditech/org.ndi.demtools.git'
   legcase:
     download:
       url: 'https://github.com/civicrm/org.civicrm.legcase.git'
@@ -100,4 +103,16 @@ libraries:
   org.ndi.nigerialgas:
     download:
       url: 'https://github.com/nditech/org.ndi.nigerialgas'
+  org.ndi.moldovarayons:
+    download:
+      url: 'https://github.com/nditech/org.ndi.moldovarayons.git'
+  org.ndi.malawidistricts:
+    download:
+      url: 'https://github.com/nditech/org.ndi.malawidistricts.git'
+  org.ndi.malawiconstituencies:
+    download:
+      url: 'https://github.com/nditech/org.ndi.malawiconstituencies.git'
+  org.ndi.contactnumbers:
+    download:
+      url: 'https://github.com/nditech/org.ndi.contactnumbers.git'
 

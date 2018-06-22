@@ -23,8 +23,25 @@ projects:
   variable: { version: ~ }
   i18n: { version: ~ }
 
-  mobile_codes: { version: ~ }
+  # civi-development
+  globalredirect : { version: ~ }
+  jquery_update : { version: ~ }
+  metatag : { version: ~ }
+  pathauto : { version: ~ }
+  redirect : { version: ~ }
+  themekey : { version: ~ }
+  token : { version: ~ }
+  webform_classes : { version: ~ }
+
+  # 2-factor authentication
+  mobile_codes:
+    version: ~
+    patch:
+      - 'https://www.drupal.org/files/issues/2766323-2.patch'
   ga_login: { version: ~ }
+  duo: { version: ~ }
+
+  autologout: { version: ~ }
 
 libraries:
   civicrm_activity_ical:
@@ -64,4 +81,32 @@ libraries:
   org.ndi.sms.telerivet:
     download:
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
-
+  com.cividesk.email.sparkpost:
+    download:
+      url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'
+  civicrm.sms.conversations:
+    download:
+      url: 'https://github.com/3sd/civicrm-sms-conversations.git'
+  org.civicoop.civirules:
+    download:
+      url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
+      tag: '1.17'
+  org.civicrm.volunteer:
+    # Needs config changes to MySQL. See: https://nationaldemocraticinstitute.atlassian.net/browse/BYFREEDOM-93
+    download:
+      url: https://github.com/civicrm/org.civicrm.volunteer.git
+      tag: v4.7.21-2.2.2
+  ca.bidon.civiexportexcel:
+    download:
+      url: https://github.com/mlutfy/ca.bidon.civiexportexcel.git
+  org.civicrm.angularprofiles:
+    download:
+      url: https://github.com/ginkgostreet/org.civicrm.angularprofiles
+  uk.org.futurefirst.networks.civipoints:
+    download:
+      # Use our fork, pending resolution of https://github.com/futurefirst/uk.org.futurefirst.networks.civipoints/pull/18
+      url: https://github.com/nditech/uk.org.futurefirst.networks.civipoints
+      branch: detect-civirules
+  eu.tttp.sendeventconf:
+    download:
+      url: https://github.com/TechToThePeople/sendeventconf

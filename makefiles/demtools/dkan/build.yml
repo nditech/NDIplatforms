@@ -9,8 +9,6 @@ includes:
   - ../../stock/dkan/lock.yml
   - contrib.make.yml
   - custom.make.yml
-  # - https://raw.githubusercontent.com/NuCivic/visualization_entity_charts/9beed7770e4793874c38c6e2aded3b55a31b30a3/visualization_entity_charts.make
-  # - https://raw.githubusercontent.com/NuCivic/visualization_entity/586a7fdaec075d527e3d280890f3069077a912e7/visualization_entity.make
 
 projects:
 
@@ -18,20 +16,16 @@ projects:
   dkan:
     download:
       branch: 7.x-1.x
-      revision: 7.x-1.13.2
+      revision: 7.x-1.14.1
     patch:
       # Add dependency on our keystone feature and extra install task.
       - "https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch"
-      - "https://github.com/nditech/dkan/commit/1933d763817bf4b6b0ed93626ddbd0ed6bfd218f.patch"
+      # Add a custom date format (mmm-yyyy). Patch need a re-roll.
+#      - "https://github.com/nditech/dkan/commit/1933d763817bf4b6b0ed93626ddbd0ed6bfd218f.patch"
 
-  # See: https://nationaldemocraticinstitute.atlassian.net/browse/DKAN-81
-  visualization_entity_charts:
-    download:
-      url: https://github.com/NuCivic/visualization_entity_charts.git
-      branch: master
-      revision: 7c72365
-    patch:
-#      # See: https://github.com/NuCivic/dkan/commit/84921bc372768af6f2bc529ee69ea23f83e135ad
-      #- "https://github.com/NuCivic/visualization_entity_charts/commit/23d9a7123024700a5b40510de14aa47c9fdcf220.patch"
-      - "https://github.com/NDItech/visualization_entity_charts/commit/5c26d14f88e0ead6ab966c400fb90aa295c9dea3.patch"
-
+  # Overrides for security releases.
+  entityreference: { version: ~ }
+  entity: { version: ~ }
+  file_resup: { version: ~ }
+  features: { version: ~ }
+  views: { version: ~ }

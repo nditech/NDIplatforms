@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.54'
+    version: '7.59'
   elections:
     subdir: custom
     download:
@@ -42,11 +42,11 @@ projects:
   hierarchical_select:
     version: 3.0-beta8
   quicktabs:
-    version: '3.6'
+    version: '3.8'
   better_exposed_filters:
-    version: '3.4'
+    version: '3.5'
   i18n:
-    version: '1.17'
+    version: '1.24'
   i18nviews:
     version: 3.0-alpha1
   variable:
@@ -64,13 +64,7 @@ projects:
       url: 'https://github.com/NuCivic/geo_file_entity.git'
       branch: master
       type: git
-      revision: be45046e636cfebbbb53a314c0f3693fc2e03d39
-  visualization_entity:
-    download:
-      url: 'https://github.com/NuCivic/visualization_entity.git'
-      branch: master
-      type: git
-      revision: 4cd6cc79de1fe0ef4710197e876c437702f73e24
+      revision: 5bf259ac1679d8a7f847053b19f8579e0d494a64
   dkan:
     subdir: .
     type: profile
@@ -78,24 +72,20 @@ projects:
       type: git
       url: 'https://github.com/nucivic/dkan.git'
       branch: 7.x-1.x
-      revision: 7.x-1.13.2
+      revision: 7.x-1.15.1
     patch:
       - 'https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch'
-      - 'https://github.com/nditech/dkan/commit/1933d763817bf4b6b0ed93626ddbd0ed6bfd218f.patch'
-  visualization_entity_charts:
-    download:
-      url: 'https://github.com/NuCivic/visualization_entity_charts.git'
-      branch: master
-      revision: 7c72365
-      type: git
-    patch:
-      - 'https://github.com/NDItech/visualization_entity_charts/commit/5c26d14f88e0ead6ab966c400fb90aa295c9dea3.patch'
+  entityreference:
+    version: '1.5'
+  entity:
+    version: '1.9'
+  file_resup:
+    version: '1.5'
+  features:
+    version: '2.10'
+  views:
+    version: '3.20'
 libraries:
-  reclineViewNvd3:
-    type: library
-    download:
-      url: 'https://github.com/NDItech/recline.view.nvd3.js.git'
-      branch: date-formats
   recline_choropleth:
     download:
       url: 'https://github.com/NuCivic/recline.view.choroplethmap.js.git'

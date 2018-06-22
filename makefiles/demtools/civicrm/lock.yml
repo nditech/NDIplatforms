@@ -13,7 +13,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.54'
+    version: '7.59'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -56,40 +56,57 @@ projects:
       branch: master
       revision: e5ad4cc802150a508f6dd548c09b141c0fbf3b65
   webform_civicrm:
-    version: '4.18'
+    version: '4.20'
   webform:
-    version: '4.15'
+    version: '4.17'
   libraries:
     version: '2.3'
   options_element:
     version: '1.12'
   views:
-    version: '3.16'
+    version: '3.20'
   features:
     version: '2.10'
   strongarm:
     version: '2.0'
   ctools:
-    version: '1.12'
+    version: '1.14'
   admin_menu:
     version: 3.0-rc5
   variable:
     version: '2.5'
   i18n:
-    version: '1.17'
+    version: '1.24'
+  globalredirect:
+    version: '1.6'
+  jquery_update:
+    version: '2.7'
+  metatag:
+    version: '1.25'
+  pathauto:
+    version: '1.3'
+  redirect:
+    version: 1.0-rc3
+  themekey:
+    version: '3.4'
+  token:
+    version: '1.7'
+  webform_classes:
+    version: '2.23'
   mobile_codes:
     version: '2.1'
+    patch:
+      - 'https://www.drupal.org/files/issues/2766323-2.patch'
   ga_login:
     version: '1.7'
+  duo:
+    version: '1.11'
+  autologout:
+    version: '4.5'
   civicrm:
     download:
       type: get
-      url: 'https://download.civicrm.org/civicrm-4.7.19-drupal.tar.gz'
-    patch:
-      - 'https://issues.civicrm.org/jira/secure/attachment/43773/CRM-17662_0.patch'
-      - 'https://issues.civicrm.org/jira/secure/attachment/56872/CRM-19915.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/cd8027584a6fa6457a0119b6b52c1d299b8d5362.patch'
-      - 'https://github.com/agh1/civicrm-core/commit/a44d527c01eaf715a2447e7a0d154369cc91b658.patch'
+      url: 'https://download.civicrm.org/civicrm-4.7.31-drupal.tar.gz'
 libraries:
   ndipermissions:
     download:
@@ -124,6 +141,15 @@ libraries:
       url: 'https://github.com/nditech/ndicivimp.git'
       branch: ndi_prod
       revision: 39de42756dc75d885fc4f1a6070d948fce2cf737
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.demtools:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.demtools.git'
+      branch: master
+      revision: 63fdc44edee5ef5bc032b114bb1752cbf3569dba
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -249,7 +275,7 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.nigeriastates'
       branch: master
-      revision: e18ced5d6b4d78a240636f93b10e27eee0ed92e7
+      revision: 9df382dde5b628b3f4522f2cb5dcd4ac123aeabd
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -259,6 +285,42 @@ libraries:
       url: 'https://github.com/nditech/org.ndi.nigerialgas'
       branch: master
       revision: 3cba7c4e7beecdcde23e5e657576041aa348ffce
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.moldovarayons:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.moldovarayons.git'
+      branch: master
+      revision: 104e802d83f908c9b0667b423bab9377d6360818
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.malawidistricts:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.malawidistricts.git'
+      branch: master
+      revision: 9271f1d1043de3520a7ec284ed23c6102f32fd7a
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.malawiconstituencies:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.malawiconstituencies.git'
+      branch: master
+      revision: 8bb882641f175df951c7b8352146b5331b781fa2
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.ndi.contactnumbers:
+    download:
+      type: git
+      url: 'https://github.com/nditech/org.ndi.contactnumbers.git'
+      branch: master
+      revision: fb5ea432f0c1955aa6dab1fb024bdcfe823008a4
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -286,7 +348,7 @@ libraries:
       type: git
       url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
       branch: master
-      revision: 416ad4e765d235f424804836b082df18affb865e
+      revision: aca99ae2f785d63034ff7aa3ea5191ea82ad0653
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -296,7 +358,7 @@ libraries:
       url: 'https://github.com/osseed/com.osseed.eventcalendar.git'
       tag: '1.1'
       branch: master
-      revision: 344ab19cfd7fbe8a122ad65232453a17c562f565
+      revision: ee26dd46fa0038e215dd4cce5dc5d4f3a03f2b41
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -306,7 +368,7 @@ libraries:
       url: 'https://github.com/JMAConsulting/biz.jmaconsulting.mte.git'
       tag: v2.0
       branch: master
-      revision: 3454af69841e3afcdf31db2d3617d0bf07aad45a
+      revision: f227f3e0380d4fc483b0c30f2a1b82a20a2e32ae
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -315,7 +377,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: b2975b7b9f95ea4462c86b9c2fe54a42aecb5669
+      revision: a2e4081f3ce9fe6f09f9ef8504780d278110b506
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -324,7 +386,7 @@ libraries:
       type: git
       url: 'https://github.com/civicrm/org.civicrm.sms.twilio.git'
       branch: master
-      revision: 8caa6a51d48dbc885c52f71bb04ceada68f8cf79
+      revision: c324f44365c5fc886d2564891555cd46a00c739f
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -333,7 +395,7 @@ libraries:
       type: git
       url: 'https://github.com/coopsymbiotic/coop.symbiotic.translationhelper.git'
       branch: master
-      revision: 24d56243a72a5f72c4ea081f39bdd11d018fb42f
+      revision: c537eade4343e70af628fbce5a9e5e884cfa83dd
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -342,7 +404,7 @@ libraries:
       type: git
       url: 'https://github.com/proexchange/com.pesc.sparkpost.git'
       branch: master
-      revision: eeeabd42381ee2076f2574a4106391c0f7da8c8d
+      revision: eb469d305637b5fa21dcea8e756f45b97c7e4e3c
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -360,7 +422,81 @@ libraries:
       type: git
       url: 'https://github.com/nditech/org.ndi.sms.telerivet.git'
       branch: master
-      revision: 7ce127047729ee6855f1b60fff146436bb485e37
+      revision: 95f6eb2511decc538831fa7bafac633f4703da40
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  com.cividesk.email.sparkpost:
+    download:
+      type: git
+      url: 'https://github.com/cividesk/com.cividesk.email.sparkpost.git'
+      branch: master
+      revision: f6a5b5108d56a9261688732bd1494e8be0de346b
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  civicrm.sms.conversations:
+    download:
+      type: git
+      url: 'https://github.com/3sd/civicrm-sms-conversations.git'
+      branch: master
+      revision: c5efb7444e114e27bdc9b520071de0ea4a8fd02a
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicoop.civirules:
+    download:
+      type: git
+      url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
+      tag: '1.17'
+      branch: master
+      revision: 8ed44137697ea7d345157b19f3cfd02c92545b4f
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.volunteer:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.volunteer.git'
+      tag: v4.7.21-2.2.2
+      branch: master
+      revision: b5a5ef2577b492e3726df9a2e520428e8138c6e2
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  ca.bidon.civiexportexcel:
+    download:
+      type: git
+      url: 'https://github.com/mlutfy/ca.bidon.civiexportexcel.git'
+      branch: master
+      revision: 0fd03a3a9a52c7929308591e7dbb77b84c529584
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.angularprofiles:
+    download:
+      type: git
+      url: 'https://github.com/ginkgostreet/org.civicrm.angularprofiles'
+      branch: master
+      revision: 1aba6451d141165ee690d78684e41d07689cb8bf
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  uk.org.futurefirst.networks.civipoints:
+    download:
+      type: git
+      url: 'https://github.com/nditech/uk.org.futurefirst.networks.civipoints'
+      branch: detect-civirules
+      revision: 28b13095f4acf75246faef776a91030bc340380e
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  eu.tttp.sendeventconf:
+    download:
+      type: git
+      url: 'https://github.com/TechToThePeople/sendeventconf'
+      branch: master
+      revision: 9509a00802e6540163c8a5e773083b039ffc9a5b
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
