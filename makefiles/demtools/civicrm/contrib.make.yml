@@ -41,6 +41,8 @@ projects:
   ga_login: { version: ~ }
   duo: { version: ~ }
 
+  autologout: { version: ~ }
+
 libraries:
   civicrm_activity_ical:
     download:
@@ -88,7 +90,7 @@ libraries:
   org.civicoop.civirules:
     download:
       url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
-      tag: '1.13'
+      tag: '1.17'
   org.civicrm.volunteer:
     # Needs config changes to MySQL. See: https://nationaldemocraticinstitute.atlassian.net/browse/BYFREEDOM-93
     download:
@@ -100,3 +102,11 @@ libraries:
   org.civicrm.angularprofiles:
     download:
       url: https://github.com/ginkgostreet/org.civicrm.angularprofiles
+  uk.org.futurefirst.networks.civipoints:
+    download:
+      # Use our fork, pending resolution of https://github.com/futurefirst/uk.org.futurefirst.networks.civipoints/pull/18
+      url: https://github.com/nditech/uk.org.futurefirst.networks.civipoints
+      branch: detect-civirules
+  eu.tttp.sendeventconf:
+    download:
+      url: https://github.com/TechToThePeople/sendeventconf

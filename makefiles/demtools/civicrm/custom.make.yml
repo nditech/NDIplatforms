@@ -112,4 +112,7 @@ libraries:
   org.ndi.malawiconstituencies:
     download:
       url: 'https://github.com/nditech/org.ndi.malawiconstituencies.git'
+  org.ndi.contactnumbers:
+    download:
+      url: 'https://github.com/nditech/org.ndi.contactnumbers.git'
 
