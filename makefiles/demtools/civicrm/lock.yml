@@ -508,3 +508,43 @@ libraries:
     overwrite: true
     directory_name: l10n
     type: library
+  de.systopia.birthdays:
+    download:
+      type: git
+      url: 'https://github.com/systopia/de.systopia.birthdays.git'
+      branch: master
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.shoreditch:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.shoreditch.git'
+      branch: master
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  org.civicrm.flexmailer:
+    download:
+      type: git
+      url: 'https://github.com/civicrm/org.civicrm.flexmailer.git'
+      branch: master
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  uk.co.vedaconsulting.mosaico:
+    download:
+      type: get
+      url: 'https://github.com/veda-consulting/uk.co.vedaconsulting.mosaico/archive/1.1.zip'
+      branch: master
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
+  uk.co.vedaconsulting.gdpr:
+    download:
+      type: git
+      url: 'https://github.com/veda-consulting/uk.co.vedaconsulting.gdpr'
+      branch: master
+    destination: modules/contrib/civicrm/extensions
+    overwrite: '1'
+    type: library
