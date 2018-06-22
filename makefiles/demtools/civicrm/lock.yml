@@ -13,7 +13,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.58'
+    version: '7.59'
   ndi-pushbutton-profile:
     subdir: .
     download:
@@ -337,7 +337,7 @@ libraries:
       type: git
       url: 'https://github.com/veda-consulting/org.civicrm.sms.clickatell.git'
       branch: master
-      revision: ad2f3558a8d350edb5cb7e829d2731632b2a2ff3
+      revision: aca99ae2f785d63034ff7aa3ea5191ea82ad0653
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -366,7 +366,7 @@ libraries:
       type: git
       url: 'https://github.com/mlutfy/ca.bidon.reporterror.git'
       branch: master
-      revision: e6f054b2bfb746dfeadc990cdb1c01f6a3d8769d
+      revision: a2e4081f3ce9fe6f09f9ef8504780d278110b506
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library
@@ -439,7 +439,7 @@ libraries:
       url: 'https://github.com/CiviCooP/org.civicoop.civirules.git'
       tag: '1.13'
       branch: master
-      revision: 0b76efd839780a99afc31fb8e395ec68ee32dac4
+      revision: 8ed44137697ea7d345157b19f3cfd02c92545b4f
     destination: modules/contrib/civicrm/extensions
     overwrite: '1'
     type: library

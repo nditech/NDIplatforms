@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.58'
+    version: '7.59'
   elections:
     subdir: custom
     download:
@@ -72,7 +72,7 @@ projects:
       type: git
       url: 'https://github.com/nucivic/dkan.git'
       branch: 7.x-1.x
-      revision: 7.x-1.13.6
+      revision: 7.x-1.15.1
     patch:
       - 'https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch'
   entityreference:
@@ -80,7 +80,7 @@ projects:
   entity:
     version: '1.9'
   file_resup:
-    version: '1.4'
+    version: '1.5'
   features:
     version: '2.10'
   views:

@@ -16,7 +16,7 @@ projects:
   dkan:
     download:
       branch: 7.x-1.x
-      revision: 7.x-1.13.6
+      revision: 7.x-1.14.1
     patch:
       # Add dependency on our keystone feature and extra install task.
       - "https://github.com/NuCivic/dkan/compare/7.x-1.13.2...nditech:nditech-dkan-7.x-1.13.2.patch"

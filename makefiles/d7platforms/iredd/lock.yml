@@ -8,7 +8,7 @@ projects:
     type: core
     patch:
       - 'https://www.drupal.org/files/issues/drupal-clean_up_temp_files-2496173-1-d7.patch'
-    version: '7.58'
+    version: '7.59'
   IREDD_theme:
     subdir: .
     type: theme
