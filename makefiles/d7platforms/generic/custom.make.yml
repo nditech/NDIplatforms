@@ -1,0 +1,16 @@
+core: 7.x
+api: 2
+
+projects:
+# The upstream theme from which this site's theme was forked.
+#  footheme:
+#    version: 3.0-rc1
+  CPmanual_theme:
+    type: theme
+    subdir: .
+    directory_name: "footheme"
+    download:
+      type: git
+      url: 'https://github.com/NDItech/CPmanual_theme.git'
+      branch: master
+
