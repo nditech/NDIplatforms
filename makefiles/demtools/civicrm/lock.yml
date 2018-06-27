@@ -535,7 +535,7 @@ libraries:
   uk.co.vedaconsulting.mosaico:
     download:
       type: get
-      url: 'https://github.com/veda-consulting/uk.co.vedaconsulting.mosaico/archive/1.1.zip'
+      url: 'https://storage.googleapis.com/civicrm/mosaico/2.0-beta4.1528762072/uk.co.vedaconsulting.mosaico-2.0-beta4.1528762072.zip'
       branch: master
     destination: vendor/civicrm
     overwrite: '1'
