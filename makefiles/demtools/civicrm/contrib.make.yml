@@ -42,7 +42,6 @@ projects:
   duo: { version: ~ }
 
   autologout: { version: ~ }
-  saml_sp: { version: ~ }
 
 libraries:
   civicrm_activity_ical:
