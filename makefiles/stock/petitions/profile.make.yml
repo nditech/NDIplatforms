@@ -7,8 +7,6 @@ projects:
     subdir: '.'
     download:
       type: git
-      #url: 'https://github.com/WhiteHouse/petitions'
       url: 'https://github.com/nditech/demtools-petitions'
-      #branch: 7.x-3.x
-      branch: 'upstream+patches'
+      branch: 7.x-3.x
 

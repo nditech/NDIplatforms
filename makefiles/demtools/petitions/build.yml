@@ -24,7 +24,7 @@ projects:
     download:
       type: git
       url: 'https://github.com/nditech/demtools-petitions'
-      branch: 'demtools'
+      branch: '7.x-3.x'
       # Allow the new branch's revision to override the one in the stock lock
       # file.
       revision: ~

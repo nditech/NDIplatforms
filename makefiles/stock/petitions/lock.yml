@@ -15,4 +15,5 @@ projects:
     download:
       type: git
       url: 'https://github.com/nditech/demtools-petitions'
-      branch: upstream+patches
+      branch: 7.x-3.x
+      revision: 947863bf81964d1e9bfe0549089966abfbf71ce6

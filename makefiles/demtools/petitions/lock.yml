@@ -53,7 +53,7 @@ projects:
       - ru
       - es
   rules:
-    version: '2.10'
+    version: '2.11'
     translations:
       - ar
       - fr
@@ -82,7 +82,8 @@ projects:
     download:
       type: git
       url: 'https://github.com/nditech/demtools-petitions'
-      branch: demtools
+      branch: 7.x-3.x
+      revision: 947863bf81964d1e9bfe0549089966abfbf71ce6
     translations:
       - ar
       - fr
