@@ -331,7 +331,7 @@ libraries:
       tag: 7.x-1.1
       branch: master
       revision: 2550344484296e24e838032dd17cfd3833a4cc7d
-    destination: vendor/civicrm
+    destination: modules/contrib
     overwrite: '1'
     type: library
   civisualize:
